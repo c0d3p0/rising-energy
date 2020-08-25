@@ -1,0 +1,23 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 5
+load_path = "res://.import/zombie_diffuse.png-67ef48749783bc96ba39bd95a92bd3a6.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 5
+load_path = "res://.import/zombie_specular.png-684fffbda38732c601b9f7e4585cba27.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 5
+load_path = "res://.import/zombie_normal.png-45191b8ab8d3c6864bc3ab5ac6a67fce.s3tc.stex"
+
+[resource]
+resource_name = "Prisoner_material"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 2 )
+roughness = 0.6
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 3 )

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/bg.png-3437a15667e5938c4b1adcea081c958e.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/border.png-6e5a02a4271a0612a7f38acf0d1435ce.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/progress_blue.png-d70a6f8c308167426de02c6c5b7a9768.stex"
+
+[node name="BlueStatusBar" type="TextureProgress"]
+margin_right = 355.0
+margin_bottom = 60.0
+rect_scale = Vector2( 0.6, 0.6 )
+max_value = 1000.0
+value = 600.0
+texture_under = SubResource( 1 )
+texture_over = SubResource( 2 )
+texture_progress = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

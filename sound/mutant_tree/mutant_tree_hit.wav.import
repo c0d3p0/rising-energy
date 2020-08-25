@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mutant_tree_hit.wav-3d023d03fc8024aa727bc8ac1dd27f7e.sample"
+
+[deps]
+
+source_file="res://sound/mutant_tree/mutant_tree_hit.wav"
+dest_files=[ "res://.import/mutant_tree_hit.wav-3d023d03fc8024aa727bc8ac1dd27f7e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

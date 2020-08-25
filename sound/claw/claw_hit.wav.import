@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/claw_hit.wav-4ecf647c2a2586b4bea58d2d066799c8.sample"
+
+[deps]
+
+source_file="res://sound/claw/claw_hit.wav"
+dest_files=[ "res://.import/claw_hit.wav-4ecf647c2a2586b4bea58d2d066799c8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

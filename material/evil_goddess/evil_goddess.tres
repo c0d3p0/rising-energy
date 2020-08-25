@@ -1,0 +1,33 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/evil_goddess_diffuse.png-5e4863042e1c1ea2a53d438d1014defa.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/evil_goddess_glow.png-e9345ac640b0132f96a3f62aeddf5cda.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/evil_goddess_specular.png-ccfc543c414cd37b6d60cccb22f3b596.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/evil_goddess_normal.png-e5f48dc8c111813b91a37dc5afaf774a.stex"
+
+[resource]
+resource_name = "Nightshade_MAT"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 3 )
+roughness = 0.95
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 5.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = SubResource( 2 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 4 )

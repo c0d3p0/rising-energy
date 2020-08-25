@@ -1,0 +1,190 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://source/character/enemy/BaseEnemyCharacter.cs" type="Script" id=1]
+[ext_resource path="res://model/skull/skull.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/character/CharacterMove.cs" type="Script" id=3]
+[ext_resource path="res://animation/cranium/idle.tres" type="Animation" id=4]
+[ext_resource path="res://source/character/enemy/BaseEnemyCharacterAction.cs" type="Script" id=5]
+[ext_resource path="res://source/character/CharacterPhysics.cs" type="Script" id=6]
+[ext_resource path="res://animation/cranium/spawn.tres" type="Animation" id=7]
+[ext_resource path="res://source/character/enemy/floater/FloaterEnemyBehavior.cs" type="Script" id=8]
+[ext_resource path="res://source/character/enemy/BaseEnemyInitializer.cs" type="Script" id=9]
+[ext_resource path="res://material/skull/skull_yellow.tres" type="Material" id=10]
+[ext_resource path="res://animation/character/pre_spawn_immortal.tres" type="Animation" id=11]
+[ext_resource path="res://animation/cranium/cranium_move.tres" type="Animation" id=12]
+[ext_resource path="res://.import/cranium_move.wav-c3dccb5d943a3c0840698f824db7195b.sample" type="AudioStream" id=13]
+[ext_resource path="res://source/character/BaseCharacterVitality.cs" type="Script" id=15]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+height = 0.2
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.45
+height = 0.2
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "cranium_move"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "pre_spawn"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "spawn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/idle/node = SubResource( 3 )
+states/idle/position = Vector2( 319.63, 196.901 )
+states/move/node = SubResource( 4 )
+states/move/position = Vector2( 319.63, 81.421 )
+states/pre_spawn/node = SubResource( 5 )
+states/pre_spawn/position = Vector2( -31.196, 154.247 )
+states/spawn/node = SubResource( 6 )
+states/spawn/position = Vector2( 145.63, 154.247 )
+transitions = [ "pre_spawn", "spawn", SubResource( 7 ), "spawn", "move", SubResource( 8 ), "move", "idle", SubResource( 9 ), "idle", "move", SubResource( 10 ) ]
+start_node = "pre_spawn"
+graph_offset = Vector2( -248.531, 37.421 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
+
+[node name="Cranium" type="KinematicBody"]
+collision_mask = 18
+script = ExtResource( 1 )
+enemyBehaviorNP = NodePath("Source/FloaterEnemyBehavior")
+enemyCharacterActionNP = NodePath("Source/EnemyCharacterAction")
+enemyCharacterVitalityNP = NodePath("Source/EnemyCharacterVitality")
+immortal = true
+
+[node name="StandCollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.6, 0 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Body" type="Spatial" parent="."]
+transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="Skull" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( -4.88762e-07, 0, 3, 0, 3, 0, -3, 0, -4.88762e-07, 0, 0.65, 0 )
+
+[node name="SkullMeshInstance" parent="Body/Skull/Top" index="0"]
+material_override = ExtResource( 10 )
+
+[node name="TeethTopMeshInstance" parent="Body/Skull/Top" index="1"]
+material_override = ExtResource( 10 )
+
+[node name="Bottom" parent="Body/Skull" index="1"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0 )
+
+[node name="TeethBottomMeshInstance" parent="Body/Skull/Bottom" index="0"]
+material_override = ExtResource( 10 )
+
+[node name="JawMeshInstance" parent="Body/Skull/Bottom" index="1"]
+material_override = ExtResource( 10 )
+
+[node name="StrikeArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+monitoring = false
+monitorable = false
+collision_layer = 256
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="StrikeArea"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="DespawnVisibilityNotifier" type="VisibilityNotifier" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+aabb = AABB( -0.5, -0.6, -0.5, 1, 1.2, 1 )
+
+[node name="EffectAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+stream = ExtResource( 13 )
+attenuation_model = 3
+unit_db = 20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/cranium_move = ExtResource( 12 )
+anims/idle = ExtResource( 4 )
+anims/pre_spawn = ExtResource( 11 )
+anims/spawn = ExtResource( 7 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 11 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 12 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="CharacterPhysics" type="Node" parent="Source"]
+script = ExtResource( 6 )
+gravityEnabled = false
+kinematicBodyNP = NodePath("../..")
+
+[node name="CharacterMove" type="Node" parent="Source"]
+script = ExtResource( 3 )
+moveSpeed = Vector3( 4.6, 4.6, 0 )
+acceleration = 30.0
+deacceleration = 30.0
+
+[node name="FloaterEnemyBehavior" type="Node" parent="Source"]
+script = ExtResource( 8 )
+enemyCharacterNP = NodePath("../..")
+verticalMoveLimit = Vector2( 0.5, 3.5 )
+horizontalMoveRange = Vector2( 1, 7 )
+
+[node name="EnemyCharacterAction" type="Node" parent="Source"]
+script = ExtResource( 5 )
+directionXBodyRotation = Vector2( -160, -20 )
+toMoveMap = {
+"idle": "move",
+"move": "move"
+}
+bodyNP = NodePath("../../Body")
+animationTreeNP = NodePath("../../AnimationTree")
+enemyCharacterNP = NodePath("../..")
+despawnTimerNP = NodePath("../../DespawnTimer")
+despawnVisibilityNotifierNP = NodePath("../../DespawnVisibilityNotifier")
+
+[node name="EnemyCharacterVitality" type="Node" parent="Source"]
+script = ExtResource( 15 )
+strikeAreaNP = NodePath("../../StrikeArea")
+maxHealth = 1.0
+currentHealth = 1.0
+healthRecoverPerSecond = 0.0
+energyRecoverPerSecond = 0.0
+damageGivenMap = {
+"default": Vector3( 200, 200, 200 )
+}
+
+[node name="EnemyInitializer" type="Node" parent="Source"]
+script = ExtResource( 9 )
+enemyCharacterNP = NodePath("../..")
+characterPhysicsNP = NodePath("../CharacterPhysics")
+characterMoveNP = NodePath("../CharacterMove")
+enemyBehaviorNP = NodePath("../FloaterEnemyBehavior")
+enemyCharacterActionNP = NodePath("../EnemyCharacterAction")
+enemyCharacterVitalityNP = NodePath("../EnemyCharacterVitality")
+[connection signal="area_entered" from="StrikeArea" to="Source/EnemyCharacterVitality" method="OnStrikeAreaEntered"]
+[connection signal="timeout" from="DespawnTimer" to="Source/EnemyCharacterAction" method="OnDespawnTimeout"]
+[connection signal="camera_entered" from="DespawnVisibilityNotifier" to="Source/EnemyCharacterAction" method="OnCameraEntered"]
+[connection signal="camera_exited" from="DespawnVisibilityNotifier" to="Source/EnemyCharacterAction" method="OnCameraExited"]
+
+[editable path="Body/Skull"]

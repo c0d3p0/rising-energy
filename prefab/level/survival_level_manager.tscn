@@ -1,0 +1,177 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://source/level/SurvivalLevelManager.cs" type="Script" id=1]
+[ext_resource path="res://source/level/SurvivalLevelManagerInitializer.cs" type="Script" id=2]
+[ext_resource path="res://source/level/CameraManager.cs" type="Script" id=3]
+[ext_resource path="res://source/level/SurvivalLevelProgress.cs" type="Script" id=4]
+[ext_resource path="res://gui/font/black_chacery_60_o.tres" type="DynamicFont" id=6]
+[ext_resource path="res://animation/level/intro.tres" type="Animation" id=7]
+[ext_resource path="res://animation/level/finish_survival.tres" type="Animation" id=8]
+[ext_resource path="res://.import/escape_alexander_nakarada.ogg-a6a79d8ceb951dd6c53c3d1eaeb11044.oggstr" type="AudioStream" id=9]
+[ext_resource path="res://gui/font/black_chacery_18_o.tres" type="DynamicFont" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "survival_bgm"
+length = 121.8
+loop = true
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 121.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -6.0, -6.0 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "finish"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "intro"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "survival_bgm"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+
+[sub_resource type="AnimationNodeStateMachine" id=8]
+states/finish/node = SubResource( 3 )
+states/finish/position = Vector2( 592, 79 )
+states/intro/node = SubResource( 4 )
+states/intro/position = Vector2( 198, 79 )
+states/survival_bgm/node = SubResource( 5 )
+states/survival_bgm/position = Vector2( 387, 79 )
+transitions = [ "intro", "survival_bgm", SubResource( 6 ), "survival_bgm", "finish", SubResource( 7 ) ]
+start_node = "intro"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
+
+[node name="SurvivalLevelManager" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+nextLevelScenePath = "screen/title_screen"
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="LevelNameLabel" type="Label" parent="."]
+margin_left = -1280.0
+margin_top = 200.0
+margin_right = 0.000488281
+margin_bottom = 276.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 0.8, 0.25, 1 )
+text = "Survival"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreControl" type="Control" parent="."]
+margin_left = 544.0
+margin_top = 20.0
+margin_right = 745.0
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="ScoreControl"]
+margin_right = 201.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 10 )
+text = "Score: 0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextBossLabel" type="Label" parent="ScoreControl"]
+margin_top = 26.0
+margin_right = 201.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 10 )
+text = "Next Boss: 0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadePanel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/finish = ExtResource( 8 )
+anims/intro = ExtResource( 7 )
+anims/survival_bgm = SubResource( 2 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 8 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -6.0
+
+[node name="Source" type="Node" parent="."]
+
+[node name="LevelProgress" type="Node" parent="Source"]
+script = ExtResource( 4 )
+enemySpawnTimerNP = NodePath("../../EnemySpawnTimer")
+evilEnergyPrefabKey = "evil_energy"
+spawnDelayRange = Vector2( 3, 4 )
+loadScreenScenePath = "screen/load_screen"
+fightAreaPrefabKey = "fight_area"
+swordPrefabKeyList = [ "blaze_sword", "avenger_sword", "monarch_sword" ]
+energySourcePrefabKeyList = [ "blaze_energy_source", "avenger_energy_source", "monarch_energy_source" ]
+
+[node name="CameraManager" type="Node" parent="Source"]
+script = ExtResource( 3 )
+
+[node name="SurivalLevelManagerInitializer" type="Node" parent="Source"]
+script = ExtResource( 2 )
+levelManagerNP = NodePath("../..")
+cameraManagerNP = NodePath("../CameraManager")
+levelProgressNP = NodePath("../LevelProgress")
+animationTreeNP = NodePath("../../AnimationTree")
+scoreLabelNP = NodePath("../../ScoreControl/ScoreLabel")
+nextBossScoreLabelNP = NodePath("../../ScoreControl/NextBossLabel")

@@ -1,0 +1,158 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://source/character/enemy/BaseEnemyCharacter.cs" type="Script" id=1]
+[ext_resource path="res://model/skull/skull.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/character/CharacterMove.cs" type="Script" id=3]
+[ext_resource path="res://animation/skull/spawn.tres" type="Animation" id=4]
+[ext_resource path="res://source/character/enemy/BaseEnemyCharacterAction.cs" type="Script" id=5]
+[ext_resource path="res://source/character/CharacterPhysics.cs" type="Script" id=6]
+[ext_resource path="res://.import/skull_move.wav-4a44958e58fe89ecc37ca36bbc23e113.sample" type="AudioStream" id=7]
+[ext_resource path="res://source/character/enemy/waver/WaverEnemyBehavior.cs" type="Script" id=8]
+[ext_resource path="res://source/character/enemy/BaseEnemyInitializer.cs" type="Script" id=9]
+[ext_resource path="res://animation/character/pre_spawn_immortal.tres" type="Animation" id=10]
+[ext_resource path="res://animation/skull/skull_move.tres" type="Animation" id=11]
+[ext_resource path="res://source/character/BaseCharacterVitality.cs" type="Script" id=15]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+height = 0.2
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.45
+height = 0.2
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "skull_move"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "pre_spawn_immortal"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "spawn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=8]
+states/move/node = SubResource( 3 )
+states/move/position = Vector2( 318.63, 154.247 )
+states/pre_spawn/node = SubResource( 4 )
+states/pre_spawn/position = Vector2( -51.365, 154.247 )
+states/spawn/node = SubResource( 5 )
+states/spawn/position = Vector2( 145.63, 154.247 )
+transitions = [ "pre_spawn", "spawn", SubResource( 6 ), "spawn", "move", SubResource( 7 ) ]
+start_node = "pre_spawn"
+graph_offset = Vector2( -272.365, 5.1534 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
+
+[node name="Skull" type="KinematicBody"]
+collision_mask = 18
+script = ExtResource( 1 )
+enemyBehaviorNP = NodePath("Source/WaverEnemyBehavior")
+enemyCharacterActionNP = NodePath("Source/EnemyCharacterAction")
+enemyCharacterVitalityNP = NodePath("Source/EnemyCharacterVitality")
+immortal = true
+
+[node name="StandCollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.6, 0 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Body" type="Spatial" parent="."]
+transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.05, 0, 0 )
+
+[node name="Skull" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( -4.88762e-07, 0, 3, 0, 3, 0, -3, 0, -4.88762e-07, 0, 0.65, 0 )
+
+[node name="StrikeArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+monitoring = false
+monitorable = false
+collision_layer = 256
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="StrikeArea"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="DespawnVisibilityNotifier" type="VisibilityNotifier" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+aabb = AABB( -0.5, -0.6, -0.5, 1, 1.2, 1 )
+
+[node name="EffectAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+stream = ExtResource( 7 )
+attenuation_model = 3
+unit_db = 20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/pre_spawn_immortal = ExtResource( 10 )
+anims/skull_move = ExtResource( 11 )
+anims/spawn = ExtResource( 4 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 8 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 9 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="CharacterPhysics" type="Node" parent="Source"]
+script = ExtResource( 6 )
+gravityEnabled = false
+kinematicBodyNP = NodePath("../..")
+
+[node name="CharacterMove" type="Node" parent="Source"]
+script = ExtResource( 3 )
+moveSpeed = Vector3( 4, 14, 0 )
+acceleration = 3.0
+deacceleration = 3.0
+
+[node name="WaverEnemyBehavior" type="Node" parent="Source"]
+script = ExtResource( 8 )
+enemyCharacterNP = NodePath("../..")
+
+[node name="EnemyCharacterAction" type="Node" parent="Source"]
+script = ExtResource( 5 )
+directionXBodyRotation = Vector2( -160, -20 )
+toMoveMap = {
+"move": "move"
+}
+bodyNP = NodePath("../../Body")
+animationTreeNP = NodePath("../../AnimationTree")
+enemyCharacterNP = NodePath("../..")
+despawnTimerNP = NodePath("../../DespawnTimer")
+despawnVisibilityNotifierNP = NodePath("../../DespawnVisibilityNotifier")
+
+[node name="EnemyCharacterVitality" type="Node" parent="Source"]
+script = ExtResource( 15 )
+strikeAreaNP = NodePath("../../StrikeArea")
+maxHealth = 1.0
+currentHealth = 1.0
+healthRecoverPerSecond = 0.0
+energyRecoverPerSecond = 0.0
+damageGivenMap = {
+"default": Vector3( 250, 250, 250 )
+}
+
+[node name="EnemyInitializer" type="Node" parent="Source"]
+script = ExtResource( 9 )
+enemyCharacterNP = NodePath("../..")
+characterPhysicsNP = NodePath("../CharacterPhysics")
+characterMoveNP = NodePath("../CharacterMove")
+enemyBehaviorNP = NodePath("../WaverEnemyBehavior")
+enemyCharacterActionNP = NodePath("../EnemyCharacterAction")
+enemyCharacterVitalityNP = NodePath("../EnemyCharacterVitality")
+[connection signal="area_entered" from="StrikeArea" to="Source/EnemyCharacterVitality" method="OnStrikeAreaEntered"]
+[connection signal="timeout" from="DespawnTimer" to="Source/EnemyCharacterAction" method="OnDespawnTimeout"]
+[connection signal="camera_entered" from="DespawnVisibilityNotifier" to="Source/EnemyCharacterAction" method="OnCameraEntered"]
+[connection signal="camera_exited" from="DespawnVisibilityNotifier" to="Source/EnemyCharacterAction" method="OnCameraExited"]

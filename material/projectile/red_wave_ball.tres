@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://shader/line_waves.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/resolution = Vector2( 1, 1 )
+shader_param/effect_color = Color( 2.1, 0.3, 0.2, 1 )
+shader_param/bg_color = Color( 0, 0, 0, 1 )
+shader_param/max_amplitude = 4.0
+shader_param/thickness = 0.6
+shader_param/alpha_factor = 1.0
+shader_param/alpha_enabled = false
+shader_param/line_amount = 10.0

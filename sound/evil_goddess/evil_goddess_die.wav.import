@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/evil_goddess_die.wav-e2ef32ad9fe818803904496b3cd46068.sample"
+
+[deps]
+
+source_file="res://sound/evil_goddess/evil_goddess_die.wav"
+dest_files=[ "res://.import/evil_goddess_die.wav-e2ef32ad9fe818803904496b3cd46068.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

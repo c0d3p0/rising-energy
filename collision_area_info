@@ -1,0 +1,35 @@
+==================== Physic Boxes ====================
+
+Layer 1:		Players
+Layer 2:		Enemies
+Layer 3:		Unused
+Layer 4:		Unused
+Layer 5:		Static Objects
+
+=================== Collision Boxes ==================
+
+Layer 6:		Player Hurt
+Layer 7:		Enemy Hurt
+Layer 8:		Player Strike
+Layer 9:		Enemy Strike
+Layer 10:		Strike All
+
+==================== Unused Boxes ====================
+
+Layer 11:	Object Interation
+Layer 12:	Unused
+Layer 13:	Unused
+Layer 14:	Unused
+Layer 15:	Unused
+
+==================== Unused Boxes ====================
+
+Layer 16:	Unused
+Layer 17:	Unused
+Layer 18:	Unused
+Layer 19:	Unused
+Layer 20:	Unused
+
+======================================================
+
+

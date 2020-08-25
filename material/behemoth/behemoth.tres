@@ -1,0 +1,19 @@
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/behemoth_diffuse.png-f7a2b700bd6c4e10271607034565682d.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/behemoth_normal.png-982fba1a6375b37c39b5f7a6f632ff11.stex"
+
+[resource]
+resource_name = "PumpkinHulk_Material"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic = 0.2
+roughness = 0.5
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 2 )

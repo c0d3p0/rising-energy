@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://material/effect/warrior_spirit_energy_rings.tres" type="Material" id=1]
+[ext_resource path="res://material/effect/warrior_spirit_magic_circle.tres" type="Material" id=2]
+[ext_resource path="res://material/effect/warrior_spirit_energy_aura.tres" type="Material" id=3]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.2, 0.6, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.244275, 0.85 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 0.5, 0, 0.5 )
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.5
+linear_accel = 0.01
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[sub_resource type="CylinderMesh" id=6]
+top_radius = 0.004
+bottom_radius = 0.008
+height = 0.4
+
+[sub_resource type="SphereMesh" id=7]
+radius = 0.01
+height = 0.02
+
+[sub_resource type="PlaneMesh" id=8]
+size = Vector2( 1.5, 1.5 )
+
+[sub_resource type="PlaneMesh" id=9]
+
+[node name="WarriorSpiritSmallEnergy" type="Spatial"]
+
+[node name="AuraParticles" type="Particles" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+material_override = ExtResource( 3 )
+amount = 20
+lifetime = 2.0
+speed_scale = 1.2
+visibility_aabb = AABB( -0.7, 0, -0.7, 1.4, 1, 1.4 )
+process_material = SubResource( 5 )
+draw_pass_1 = SubResource( 6 )
+
+[node name="AuraBallParticles" type="Particles" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+material_override = ExtResource( 3 )
+amount = 20
+lifetime = 2.0
+speed_scale = 1.2
+visibility_aabb = AABB( -1, 0, -1, 2, 1, 2 )
+process_material = SubResource( 5 )
+draw_pass_1 = SubResource( 7 )
+
+[node name="CircleMeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0 )
+material_override = ExtResource( 2 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="RingsMeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0 )
+mesh = SubResource( 9 )
+material/0 = ExtResource( 1 )

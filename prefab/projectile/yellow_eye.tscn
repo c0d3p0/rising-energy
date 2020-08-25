@@ -1,0 +1,206 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://source/character/CharacterMove.cs" type="Script" id=1]
+[ext_resource path="res://source/projectile/SelfParkingProjectileBehavior.cs" type="Script" id=2]
+[ext_resource path="res://source/character/enemy/BaseEnemyCharacter.cs" type="Script" id=3]
+[ext_resource path="res://source/character/BaseCharacterVitality.cs" type="Script" id=4]
+[ext_resource path="res://source/character/enemy/BaseEnemyCharacterAction.cs" type="Script" id=5]
+[ext_resource path="res://source/character/CharacterPhysics.cs" type="Script" id=6]
+[ext_resource path="res://source/character/enemy/BaseEnemyInitializer.cs" type="Script" id=7]
+[ext_resource path="res://animation/eye/spawn.tres" type="Animation" id=8]
+[ext_resource path="res://material/eye/eye_yellow.tres" type="Material" id=9]
+[ext_resource path="res://animation/eye/move.tres" type="Animation" id=10]
+[ext_resource path="res://animation/projectile/pre_spawn.tres" type="Animation" id=11]
+[ext_resource path="res://animation/projectile/wait.tres" type="Animation" id=12]
+[ext_resource path="res://.import/projectile_active.ogg-7e2f742888f93463255fc28083b9c625.oggstr" type="AudioStream" id=13]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.45
+
+[sub_resource type="SphereMesh" id=2]
+radius = 0.4
+height = 0.8
+
+[sub_resource type="SphereShape" id=3]
+radius = 0.41
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("StrikeArea:monitorable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "move"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "pre_spawn"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "spawn"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "wait"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=15]
+states/idle/node = SubResource( 5 )
+states/idle/position = Vector2( 379.668, 115.279 )
+states/move/node = SubResource( 6 )
+states/move/position = Vector2( 534.668, 115.279 )
+states/pre_spawn/node = SubResource( 7 )
+states/pre_spawn/position = Vector2( -98.608, 115.279 )
+states/spawn/node = SubResource( 8 )
+states/spawn/position = Vector2( 225.668, 115.279 )
+states/wait/node = SubResource( 9 )
+states/wait/position = Vector2( 71.795, 115.279 )
+transitions = [ "spawn", "idle", SubResource( 10 ), "idle", "move", SubResource( 11 ), "move", "idle", SubResource( 12 ), "wait", "spawn", SubResource( 13 ), "pre_spawn", "wait", SubResource( 14 ) ]
+start_node = "pre_spawn"
+graph_offset = Vector2( -218.205, 24.2791 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+
+[node name="YellowEye" type="KinematicBody"]
+collision_mask = 18
+script = ExtResource( 3 )
+enemyBehaviorNP = NodePath("Source/SelfParkingProjectileBehavior")
+enemyCharacterActionNP = NodePath("Source/ProjectileAction")
+enemyCharacterVitalityNP = NodePath("Source/ProjectileVitality")
+immortal = true
+
+[node name="StandCollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.45, 0 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Body" type="Spatial" parent="."]
+transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.45, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Body"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 9 )
+
+[node name="StrikeArea" type="Area" parent="." groups=[
+"strike_all",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0 )
+monitoring = false
+monitorable = false
+collision_layer = 256
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="StrikeArea"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ParkingTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+aabb = AABB( -0.5, 0, -0.5, 1, 0.9, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 4 )
+anims/move = ExtResource( 10 )
+anims/pre_spawn = ExtResource( 11 )
+anims/spawn = ExtResource( 8 )
+anims/wait = ExtResource( 12 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 15 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 16 )
+
+[node name="LoopAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0 )
+stream = ExtResource( 13 )
+unit_db = -2.0
+
+[node name="Source" type="Node" parent="."]
+
+[node name="CharacterPhysics" type="Node" parent="Source"]
+script = ExtResource( 6 )
+gravityEnabled = false
+kinematicBodyNP = NodePath("../..")
+
+[node name="CharacterMove" type="Node" parent="Source"]
+script = ExtResource( 1 )
+moveSpeed = Vector3( 6, 2, 0 )
+acceleration = 45.0
+deacceleration = 50.0
+
+[node name="SelfParkingProjectileBehavior" type="Node" parent="Source"]
+script = ExtResource( 2 )
+enemyCharacterNP = NodePath("../..")
+parkingTimerNP = NodePath("../../ParkingTimer")
+yMoveRange = Vector2( -1, 1.5 )
+
+[node name="ProjectileAction" type="Node" parent="Source"]
+script = ExtResource( 5 )
+directionXBodyRotation = Vector2( -25, 25 )
+toMoveMap = {
+"idle": "move",
+"move": "move"
+}
+bodyNP = NodePath("../../Body")
+animationTreeNP = NodePath("../../AnimationTree")
+enemyCharacterNP = NodePath("../..")
+despawnTimerNP = NodePath("../../DespawnTimer")
+despawnVisibilityNotifierNP = NodePath("../../VisibilityNotifier")
+
+[node name="ProjectileVitality" type="Node" parent="Source"]
+script = ExtResource( 4 )
+strikeAreaNP = NodePath("../../StrikeArea")
+healthRecoverPerSecond = 0.0
+energyRecoverPerSecond = 0.0
+damageGivenMap = {
+"default": Vector3( 250, 250, 250 )
+}
+
+[node name="ProjectileInitializer" type="Node" parent="Source"]
+script = ExtResource( 7 )
+enemyCharacterNP = NodePath("../..")
+characterPhysicsNP = NodePath("../CharacterPhysics")
+characterMoveNP = NodePath("../CharacterMove")
+enemyBehaviorNP = NodePath("../SelfParkingProjectileBehavior")
+enemyCharacterActionNP = NodePath("../ProjectileAction")
+enemyCharacterVitalityNP = NodePath("../ProjectileVitality")
+hurtAreaNP = NodePath("")
+[connection signal="area_entered" from="StrikeArea" to="Source/ProjectileVitality" method="OnStrikeAreaEntered"]
+[connection signal="timeout" from="DespawnTimer" to="Source/ProjectileAction" method="OnDespawnTimeout"]
+[connection signal="timeout" from="ParkingTimer" to="Source/SelfParkingProjectileBehavior" method="OnParkingTimeout"]
+[connection signal="camera_entered" from="VisibilityNotifier" to="Source/ProjectileAction" method="OnCameraEntered"]
+[connection signal="camera_exited" from="VisibilityNotifier" to="Source/ProjectileAction" method="OnCameraExited"]

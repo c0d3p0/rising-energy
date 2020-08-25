@@ -1,0 +1,29 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "dialogue_1"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DialogueControl/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 10, 15, 20, 23, 27, 31, 35, 39, 43, 47, 52, 55, 60, 66, 71, 76, 80, 84 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Sophie: What is going on? What are you?", "Sophie: I was training at the top of the mountain and then these weird creatures started to appear and now you?", "Warrior Spirit: I know you're shocked, but we don't have time for this.", "Warrior Spirit: Listen, I am an ancient warrior that faced the same situation you're living now.", "Sophie: So you have the answer to all of this.", "Warrior Spirit: Yes, you need to find the creature responsible for all of this, ", "Warrior Spirit: the \"Evil Goddess\" is using her power to release creatures on Earth.", "Warrior Spirit: The only way to stop this is by defeating her. I did it 500 years ago.", "Sophie: The \"Evil Goddess\"? It sounds like a supreme creature.", "Sophie: How can a normal person like me defeat a goddess?", "Warrior Spirit: You look like a true warrior, I know you can do this.", "Warrior Spirit: Well, in case you can't deal with her, the Earth will pay a big price.", "Warrior Spirit: Look, you need to find the \"Energy Sources\",", "Warrior Spirit: and let your inner energy rise as much as you can to be able to control it,", "Warrior Spirit: then the energy will manifest inside you in a way that will allow you to fight these creatures.", "Warrior Spirit: The \"Evil Goddess\" is hidden somewhere near here, I can feel her energy.", "Warrior Spirit: She likes to hide in places of hard access like caves, inactive lava tubes, etc.", "Warrior Spirit: It might be a good idea to search for her in such places.", "Warrior Spirit: Hurry, find the \"Energy Sources\" and control it.", "Warrior Spirit: That is the only way you can defeat her before she destroys our beloved planet." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DialogueControl:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}

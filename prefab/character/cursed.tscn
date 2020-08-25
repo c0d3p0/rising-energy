@@ -1,0 +1,430 @@
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://source/character/enemy/boss/BaseBossCharacter.cs" type="Script" id=1]
+[ext_resource path="res://source/character/CharacterPhysics.cs" type="Script" id=2]
+[ext_resource path="res://source/gui/game/StatusBarManager.cs" type="Script" id=3]
+[ext_resource path="res://source/character/CharacterMove.cs" type="Script" id=4]
+[ext_resource path="res://gui/font/black_chacery_14_o.tres" type="DynamicFont" id=5]
+[ext_resource path="res://source/character/enemy/boss/StandardBossBehavior.cs" type="Script" id=6]
+[ext_resource path="res://source/character/enemy/boss/BaseBossInitializer.cs" type="Script" id=7]
+[ext_resource path="res://source/character/enemy/boss/BaseBossVitality.cs" type="Script" id=8]
+[ext_resource path="res://gui/status/red_gameplay_bar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://gui/status/green_gameplay_bar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://.import/cursed_die.wav-346aa6e31994384e66fe7e818c296892.sample" type="AudioStream" id=11]
+[ext_resource path="res://source/character/enemy/EnemyCharacterAction.cs" type="Script" id=12]
+[ext_resource path="res://model/cursed/cursed.tscn" type="PackedScene" id=13]
+[ext_resource path="res://animation/cursed/t_pose.tres" type="Animation" id=14]
+[ext_resource path="res://animation/cursed/idle.tres" type="Animation" id=15]
+[ext_resource path="res://animation/cursed/ready_idle.tres" type="Animation" id=16]
+[ext_resource path="res://animation/cursed/die.tres" type="Animation" id=17]
+[ext_resource path="res://animation/cursed/inactive_idle.tres" type="Animation" id=18]
+[ext_resource path="res://animation/cursed/spell.tres" type="Animation" id=19]
+[ext_resource path="res://animation/cursed/walk.tres" type="Animation" id=20]
+[ext_resource path="res://animation/cursed/spawn.tres" type="Animation" id=21]
+[ext_resource path="res://animation/cursed/hit.tres" type="Animation" id=22]
+[ext_resource path="res://.import/scale_teleport.wav-91f175e81a2addbf90eecb11af680eaa.sample" type="AudioStream" id=23]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+height = 0.8
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.3
+height = 1.2
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.35
+height = 1.1
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/cursed_profile.png-f68e6e4b2066e0623dab2271fdef62db.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/profile_image_border.png-4da1582b73dae9e47679e588dd845f72.stex"
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/bg.png-3437a15667e5938c4b1adcea081c958e.stex"
+
+[sub_resource type="StreamTexture" id=7]
+flags = 4
+load_path = "res://.import/border.png-6e5a02a4271a0612a7f38acf0d1435ce.stex"
+
+[sub_resource type="StreamTexture" id=8]
+flags = 4
+load_path = "res://.import/progress_green.png-5e5a8468ce4618f2fe7c40fa59cc4799.stex"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "die"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "hit"
+
+[sub_resource type="AnimationNodeTimeScale" id=11]
+
+[sub_resource type="AnimationNodeBlendTree" id=12]
+graph_offset = Vector2( 0, 48.75 )
+nodes/Animation/node = SubResource( 10 )
+nodes/Animation/position = Vector2( 120, 100 )
+nodes/TimeScale/node = SubResource( 11 )
+nodes/TimeScale/position = Vector2( 360, 100 )
+nodes/output/position = Vector2( 600, 120 )
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "inactive_idle"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "ready_idle"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "spawn"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "spell"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachine" id=30]
+states/die/node = SubResource( 9 )
+states/die/position = Vector2( 495.243, 289.496 )
+states/hit/node = SubResource( 12 )
+states/hit/position = Vector2( 611.63, 200.044 )
+states/idle/node = SubResource( 13 )
+states/idle/position = Vector2( 356.243, 200.044 )
+states/inactive_idle/node = SubResource( 14 )
+states/inactive_idle/position = Vector2( 85.63, 104.247 )
+states/ready_idle/node = SubResource( 15 )
+states/ready_idle/position = Vector2( 275.243, 104.247 )
+states/spawn/node = SubResource( 16 )
+states/spawn/position = Vector2( 85.63, 212.496 )
+states/spell/node = SubResource( 17 )
+states/spell/position = Vector2( 717.243, 104.247 )
+states/walk/node = SubResource( 18 )
+states/walk/position = Vector2( 495.243, 104.247 )
+transitions = [ "idle", "die", SubResource( 19 ), "spawn", "inactive_idle", SubResource( 20 ), "inactive_idle", "ready_idle", SubResource( 21 ), "idle", "hit", SubResource( 22 ), "ready_idle", "walk", SubResource( 23 ), "walk", "spell", SubResource( 24 ), "spell", "walk", SubResource( 25 ), "idle", "walk", SubResource( 26 ), "walk", "idle", SubResource( 27 ), "hit", "walk", SubResource( 28 ), "walk", "hit", SubResource( 29 ) ]
+start_node = "spawn"
+graph_offset = Vector2( -9.75658, 60.1476 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=31]
+
+[node name="Cursed" type="KinematicBody"]
+collision_mask = 18
+script = ExtResource( 1 )
+enemyBehaviorNP = NodePath("Source/StandardBossBehavior")
+enemyCharacterActionNP = NodePath("Source/EnemyCharacterAction")
+enemyCharacterVitalityNP = NodePath("Source/BossVitality")
+
+[node name="StandCollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.9, 0 )
+shape = SubResource( 1 )
+
+[node name="Body" type="Spatial" parent="."]
+
+[node name="CursedSkeleton" parent="Body" instance=ExtResource( 13 )]
+transform = Transform( -1.46629e-07, 0, 0.9, 0, 0.9, 0, -0.9, 0, -1.46629e-07, -0.05, 0, 0 )
+
+[node name="FrontRayCast" type="RayCast" parent="Body"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0.1, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 0.65 )
+collision_mask = 30
+
+[node name="DownRayCast" type="RayCast" parent="Body"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.5, 0.5, 0 )
+enabled = true
+cast_to = Vector3( 0, -0.55, 0 )
+collision_mask = 30
+
+[node name="VRingSpot" type="Spatial" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15, 2.4, 0 )
+
+[node name="HRingSpot" type="Spatial" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15, 0.1, 0 )
+
+[node name="TRingSpot" type="Spatial" parent="Body"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
+
+[node name="StrikeArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
+monitoring = false
+collision_layer = 256
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="StrikeArea"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="HurtArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
+monitoring = false
+monitorable = false
+collision_layer = 64
+collision_mask = 640
+
+[node name="CollisionShape" type="CollisionShape" parent="HurtArea"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="HUDControl" type="Control" parent="."]
+margin_top = -200.0
+margin_right = 1280.0
+margin_bottom = 520.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProfileTextureRect" type="TextureRect" parent="HUDControl"]
+margin_left = 1174.0
+margin_right = 1474.0
+margin_bottom = 300.0
+rect_scale = Vector2( 0.334, 0.334 )
+texture = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BorderTextureRect" type="TextureRect" parent="HUDControl"]
+margin_left = 1175.0
+margin_top = 2.0
+margin_right = 1656.0
+margin_bottom = 483.0
+rect_scale = Vector2( 0.208, 0.208 )
+texture = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthControl" type="Control" parent="HUDControl"]
+margin_left = 975.0
+margin_right = 1195.0
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RedStatusBar" parent="HUDControl/HealthControl" instance=ExtResource( 9 )]
+margin_top = 20.0
+margin_bottom = 80.0
+
+[node name="Label" type="Label" parent="HUDControl/HealthControl"]
+margin_left = 14.0
+margin_top = 46.0
+margin_right = 165.0
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 5 )
+text = "Health: 1000 / 1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="HUDControl/HealthControl"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 196.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 5 )
+text = "Cursed"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyControl" type="Control" parent="HUDControl"]
+margin_left = 756.0
+margin_top = 20.0
+margin_right = 976.0
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreenStatusBar" parent="HUDControl/EnergyControl" instance=ExtResource( 10 )]
+texture_under = SubResource( 6 )
+texture_over = SubResource( 7 )
+texture_progress = SubResource( 8 )
+
+[node name="Label" type="Label" parent="HUDControl/EnergyControl"]
+margin_left = 14.0
+margin_top = 26.0
+margin_right = 165.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 5 )
+text = "Energy: 1000 / 1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="DespawnVisibilityNotifier" type="VisibilityNotifier" parent="."]
+aabb = AABB( -0.5, 0, -0.5, 1, 2, 1 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
+stream = ExtResource( 11 )
+attenuation_model = 3
+
+[node name="EffectAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 23 )
+attenuation_model = 3
+unit_db = 20.0
+
+[node name="EffectAudioStreamPlayer3D_2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 23 )
+unit_db = 20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/die = ExtResource( 17 )
+anims/hit = ExtResource( 22 )
+anims/idle = ExtResource( 15 )
+anims/inactive_idle = ExtResource( 18 )
+anims/ready_idle = ExtResource( 16 )
+anims/spawn = ExtResource( 21 )
+anims/spell = ExtResource( 19 )
+anims/t_pose = ExtResource( 14 )
+anims/walk = ExtResource( 20 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 30 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 31 )
+parameters/hit/TimeScale/scale = 1.2
+
+[node name="Source" type="Node" parent="."]
+
+[node name="CharacterPhysics" type="Node" parent="Source"]
+script = ExtResource( 2 )
+kinematicBodyNP = NodePath("../..")
+
+[node name="CharacterMove" type="Node" parent="Source"]
+script = ExtResource( 4 )
+moveSpeed = Vector3( 2.5, 0, 0 )
+acceleration = 28.0
+deacceleration = 30.0
+moveInYEnabled = false
+
+[node name="StandardBossBehavior" type="Node" parent="Source"]
+script = ExtResource( 6 )
+enemyCharacterNP = NodePath("../..")
+kinPrefabKeyList = [ "head_bone" ]
+projectilePrefabKeyList = [ "h_red_ring", "t_red_ring", "v_red_ring" ]
+projectileSpotNPMap = {
+"h_red_ring": NodePath("../../Body/HRingSpot"),
+"t_red_ring": NodePath("../../Body/TRingSpot"),
+"v_red_ring": NodePath("../../Body/VRingSpot")
+}
+kinSpawnRange = Vector2( 8, 0 )
+spellTriggerRng = 360
+kinDespawnTimeTolerance = 4.0
+idleTriggerRng = 15
+frontRayCastNP = NodePath("../../Body/FrontRayCast")
+downRayCastNP = NodePath("../../Body/DownRayCast")
+
+[node name="EnemyCharacterAction" type="Node" parent="Source"]
+script = ExtResource( 12 )
+toAttackMap = {
+"walk": "spell"
+}
+toMoveMap = {
+"idle": "walk",
+"walk": "walk"
+}
+bodyNP = NodePath("../../Body")
+animationTreeNP = NodePath("../../AnimationTree")
+enemyCharacterNP = NodePath("../..")
+despawnTimerNP = NodePath("../../DespawnTimer")
+despawnVisibilityNotifierNP = NodePath("../../DespawnVisibilityNotifier")
+despawn = false
+damageReductionScale = 0.01
+
+[node name="BossVitality" type="Node" parent="Source"]
+script = ExtResource( 8 )
+strikeAreaNP = NodePath("../../StrikeArea")
+hurtAreaNP = NodePath("../../HurtArea")
+maxHealth = 400.0
+maxEnergy = 500.0
+currentHealth = 400.0
+currentEnergy = 500.0
+healthRecoverPerSecond = 0.4
+energyRecoverPerSecond = 14.0
+damageGivenMap = {
+"default": Vector3( 230, 230, 230 )
+}
+energyTakenMap = {
+
+}
+energySpentMap = {
+"h_red_ring": Vector3( 130, 130, 130 ),
+"head_bone": Vector3( 140, 140, 140 ),
+"t_red_ring": Vector3( 80, 80, 80 ),
+"v_red_ring": Vector3( 110, 110, 110 )
+}
+
+[node name="HealthStatusBarManager" type="Node" parent="Source"]
+script = ExtResource( 3 )
+statusBarNP = NodePath("../../HUDControl/HealthControl/RedStatusBar")
+statusBarLabelNP = NodePath("../../HUDControl/HealthControl/Label")
+statusText = "Health"
+
+[node name="EnergyStatusBarManager" type="Node" parent="Source"]
+script = ExtResource( 3 )
+statusBarNP = NodePath("../../HUDControl/EnergyControl/GreenStatusBar")
+statusBarLabelNP = NodePath("../../HUDControl/EnergyControl/Label")
+statusText = "Energy"
+
+[node name="BossInitializer" type="Node" parent="Source"]
+script = ExtResource( 7 )
+enemyCharacterNP = NodePath("../..")
+characterPhysicsNP = NodePath("../CharacterPhysics")
+characterMoveNP = NodePath("../CharacterMove")
+enemyBehaviorNP = NodePath("../StandardBossBehavior")
+enemyCharacterActionNP = NodePath("../EnemyCharacterAction")
+enemyCharacterVitalityNP = NodePath("../BossVitality")
+hurtAreaNP = NodePath("../../HurtArea")
+healthStatusBarManagerNP = NodePath("../HealthStatusBarManager")
+energyStatusBarManagerNP = NodePath("../EnergyStatusBarManager")
+[connection signal="area_entered" from="StrikeArea" to="Source/BossVitality" method="OnStrikeAreaEntered"]
+[connection signal="area_entered" from="HurtArea" to="Source/BossVitality" method="OnHurtAreaEntered"]
+[connection signal="timeout" from="DespawnTimer" to="Source/EnemyCharacterAction" method="OnDespawnTimeout"]
+[connection signal="camera_entered" from="DespawnVisibilityNotifier" to="Source/EnemyCharacterAction" method="OnCameraEntered"]
+[connection signal="camera_exited" from="DespawnVisibilityNotifier" to="Source/EnemyCharacterAction" method="OnCameraExited"]

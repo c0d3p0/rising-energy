@@ -1,0 +1,37 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://shader/blink_over_texture.shader" type="Shader" id=1]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/sophie_diffuse.png-87ce83239678fea95b055daeebd5fc7f.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/sophie_specular.png-2c7aff878374fd3079c2699f04480550.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/sophie_normal.png-dddf3fd7dea60ccf66954a7dea75349c.stex"
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/alpha_scissor_threshold = null
+shader_param/roughness = 0.95
+shader_param/point_size = 1.0
+shader_param/metallic_texture_channel = Plane( 1, 0, 0, 0 )
+shader_param/normal_scale = 1.0
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/speed = 10.0
+shader_param/range = 1.5
+shader_param/blink = true
+shader_param/blink_color = Color( 0.1, 0.2, 0.9, 1 )
+shader_param/texture_albedo = SubResource( 1 )
+shader_param/texture_metallic = SubResource( 2 )
+shader_param/texture_normal = SubResource( 3 )

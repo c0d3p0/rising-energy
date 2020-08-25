@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/golbin_run.wav-512a1cda2f6d0dd2bd82e7ae99ae3bc5.sample"
+
+[deps]
+
+source_file="res://sound/goblin/golbin_run.wav"
+dest_files=[ "res://.import/golbin_run.wav-512a1cda2f6d0dd2bd82e7ae99ae3bc5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

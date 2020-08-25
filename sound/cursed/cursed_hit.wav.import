@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cursed_hit.wav-37033620a2b1fc2995f399e476ebc519.sample"
+
+[deps]
+
+source_file="res://sound/cursed/cursed_hit.wav"
+dest_files=[ "res://.import/cursed_hit.wav-37033620a2b1fc2995f399e476ebc519.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

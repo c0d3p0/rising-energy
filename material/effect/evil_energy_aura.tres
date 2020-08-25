@@ -1,0 +1,15 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/flare_aura.png-f300afc8b7d692f8b0ae721e3aaa7590.stex"
+
+[resource]
+flags_transparent = true
+albedo_color = Color( 0.7, 0.2, 0.3, 1 )
+albedo_texture = SubResource( 1 )
+emission_enabled = true
+emission = Color( 3.2, 0.5, 0.7, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false

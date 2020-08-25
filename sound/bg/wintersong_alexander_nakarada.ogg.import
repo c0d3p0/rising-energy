@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wintersong_alexander_nakarada.ogg-4109d6d1c84a265716bf235d003ab0d2.oggstr"
+
+[deps]
+
+source_file="res://sound/bg/wintersong_alexander_nakarada.ogg"
+dest_files=[ "res://.import/wintersong_alexander_nakarada.ogg-4109d6d1c84a265716bf235d003ab0d2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

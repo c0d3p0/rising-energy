@@ -1,0 +1,33 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/cursed_diffuse.png-bab61820a12825b282a6f059689996b7.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/cursed_emission.png-be60daa161676bda35d3fe86283c077f.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/cursed_specular.png-b3ce9a95a2c09dac0fe13c698e02ba51.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/cursed_normal.png-0cdf65399a15211ca9bfd8da449c5a23.stex"
+
+[resource]
+resource_name = "Vampire_MAT"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 3 )
+roughness = 0.5
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 8.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = SubResource( 2 )
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = SubResource( 4 )

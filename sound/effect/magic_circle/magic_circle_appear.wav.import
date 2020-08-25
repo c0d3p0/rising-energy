@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/magic_circle_appear.wav-33b350ac8945b653d53c28fc365aab98.sample"
+
+[deps]
+
+source_file="res://sound/effect/magic_circle/magic_circle_appear.wav"
+dest_files=[ "res://.import/magic_circle_appear.wav-33b350ac8945b653d53c28fc365aab98.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

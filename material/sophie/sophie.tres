@@ -1,0 +1,25 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/sophie_diffuse.png-87ce83239678fea95b055daeebd5fc7f.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/sophie_specular.png-2c7aff878374fd3079c2699f04480550.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/sophie_normal.png-dddf3fd7dea60ccf66954a7dea75349c.stex"
+
+[resource]
+resource_name = "kachujin_MAT"
+params_cull_mode = 2
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.6
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 2 )
+roughness = 0.95
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 3 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tap_alexander_nakarada.ogg-3cf665f39dd59dc8e0fc18f7edfb2141.oggstr"
+
+[deps]
+
+source_file="res://sound/bg/tap_alexander_nakarada.ogg"
+dest_files=[ "res://.import/tap_alexander_nakarada.ogg-3cf665f39dd59dc8e0fc18f7edfb2141.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

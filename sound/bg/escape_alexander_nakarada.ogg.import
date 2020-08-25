@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/escape_alexander_nakarada.ogg-a6a79d8ceb951dd6c53c3d1eaeb11044.oggstr"
+
+[deps]
+
+source_file="res://sound/bg/escape_alexander_nakarada.ogg"
+dest_files=[ "res://.import/escape_alexander_nakarada.ogg-a6a79d8ceb951dd6c53c3d1eaeb11044.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

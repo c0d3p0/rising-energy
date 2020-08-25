@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://prefab/block/test/test_block_8.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/block/test/test_block.tscn" type="PackedScene" id=2]
+
+[node name="TestAreaOne" type="Spatial"]
+
+[node name="TestBlock8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 4, 0 )
+
+[node name="TestBlock8_2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48, -4, 0 )
+
+[node name="TestBlock8_3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, -4, 0 )
+
+[node name="TestBlock8_4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, -4, 0 )
+
+[node name="TestBlock8_5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, -4, 0 )
+
+[node name="TestBlock8_6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, -4, 0 )
+
+[node name="TestBlock8_7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -4, 0 )
+
+[node name="TestBlock8_8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
+
+[node name="TestBlock8_9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -4, 0 )
+
+[node name="TestBlock8_10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -4, 0 )
+
+[node name="TestBlock8_11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -4, 0 )
+
+[node name="TestBlock8_12" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -4, 0 )
+
+[node name="TestBlock8_13" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -4, 0 )
+
+[node name="TestBlock8_14" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48, -4, 0 )
+
+[node name="TestBlock8_15" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56, -6, 0 )
+
+[node name="TestBlock8_16" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -4, 0 )
+
+[node name="TestBlock8_17" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -4, 0 )
+
+[node name="TestBlock8_18" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 4, 0 )
+
+[node name="TestBlock" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73663, 0.5, 2.5 )
+
+[node name="TestBlock2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86286, 0.5, 2.5 )
+
+[node name="TestBlock3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.863, 1.5, 2.5 )
+
+[node name="TestBlock4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5, 0.5, 2.5 )
+
+[node name="TestBlock5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5, 1.5, 2.5 )
+
+[node name="TestBlock6" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.508, 0.5, 2.5 )
+
+[node name="TestBlock7" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.508, 1.5, 2.5 )
+
+[node name="TestBlock9" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0.5, 2.5 )
+
+[node name="TestBlock10" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 1.5, 2.5 )

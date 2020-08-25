@@ -1,0 +1,504 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "default"
+length = 0.233333
+step = 0.04
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Body/SophieSkeleton:Spine2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, -4.47035e-08, -1.86265e-09, 0.0179495, -0.0111442, -0.0135202, 0.999685, 1, 1, 1, 0.233333, 1, 0, -4.47035e-08, -1.86265e-09, 0.00303346, 0.00978698, 0.00764193, 0.999918, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("Body/SophieSkeleton:Spine1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, 1.00117e-08, -4.47035e-08, 9.31323e-10, 0.0177564, -0.0116937, -0.0138803, 0.999678, 1, 1, 1, 0.233333, 1, 1.00117e-08, -4.47035e-08, 9.31323e-10, 0.0113179, 0.0105673, 0.0180985, 0.999716, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("Body/SophieSkeleton:Spine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, -1.00154e-08, 6.70552e-08, 0, 0.244762, 0.0881048, -0.121659, 0.957877, 1, 1, 1, 0.133333, 1, -1.00154e-08, 6.70552e-08, 0, 0.148316, 0.0547869, -0.0720584, 0.984788, 1, 1, 1, 0.2, 1, -1.00154e-08, 6.70552e-08, 0, 0.0999453, 0.0410169, -0.0460905, 0.993078, 1, 1, 1, 0.233333, 1, -1.00154e-08, 6.70552e-08, 0, 0.075777, 0.0352937, -0.0322089, 0.995979, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("Body/SophieSkeleton:RightUpLeg")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, 0, 4.47035e-08, -9.31323e-09, -0.680792, -0.0255204, -0.445524, 0.580844, 1, 1, 1, 0.033333, 1, 0, 4.47035e-08, -9.31323e-09, -0.594154, -0.111257, -0.38799, 0.695749, 1, 0.999999, 1, 0.066667, 1, 0, 4.47035e-08, -9.31323e-09, -0.517172, -0.157898, -0.361487, 0.759558, 1, 1, 1, 0.1, 1, 0, 4.47035e-08, -9.31323e-09, -0.456413, -0.180622, -0.327735, 0.80725, 1, 1, 1, 0.133333, 1, 0, 4.47035e-08, -9.31323e-09, -0.393482, -0.203349, -0.280419, 0.851579, 1, 1, 1, 0.166667, 1, 0, 4.47035e-08, -9.31323e-09, -0.318253, -0.214664, -0.237275, 0.892376, 1, 1, 1, 0.2, 1, 0, 4.47035e-08, -9.31323e-09, -0.265347, -0.228261, -0.229223, 0.908265, 1, 1, 1, 0.233333, 1, 0, 4.47035e-08, -9.31323e-09, -0.240933, -0.240799, -0.238704, 0.909389, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("Body/SophieSkeleton:RightToeBase")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, -2.32831e-09, -7.45058e-09, 1.49012e-08, -0.154746, -0.00479948, 0.021138, 0.987716, 1, 1, 1, 0.033333, 1, -2.32831e-09, -7.45058e-09, 1.49012e-08, -0.0534796, 0.00124496, 6.08849e-06, 0.998568, 1, 1, 1, 0.066667, 1, -2.32831e-09, -7.45058e-09, 1.49012e-08, -0.00823151, 0.00534968, -0.00901427, 0.999911, 1, 1, 1, 0.1, 1, -2.32831e-09, -7.45058e-09, 1.49012e-08, -0.0102499, 0.00535239, -0.00881207, 0.999894, 1, 1, 1, 0.133333, 1, -2.32831e-09, -7.45058e-09, 1.49012e-08, -0.0118004, 0.00537429, -0.00865514, 0.999878, 1, 1, 1, 0.233333, 1, -2.32831e-09, -7.45058e-09, 1.49012e-08, -0.0119921, 0.00537673, -0.00863609, 0.999876, 1, 1, 1 )
+tracks/5/type = "transform"
+tracks/5/path = NodePath("Body/SophieSkeleton:RightShoulder")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = PoolRealArray( 0, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, 0.0261857, -0.0208991, 0.0687818, 0.997069, 1, 1, 1, 0.033333, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, 0.0107095, -0.0158848, 0.109663, 0.993784, 1, 1, 1, 0.066667, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.00787762, -0.0118132, 0.145143, 0.989309, 1, 1, 1, 0.1, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.0242205, -0.0222542, 0.153623, 0.987582, 1, 0.999999, 1, 0.133333, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.0365853, -0.0458237, 0.140007, 0.988413, 1, 1, 1, 0.166667, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.0462513, -0.0775938, 0.113666, 0.989404, 1, 1, 1, 0.233333, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.0631833, -0.149378, 0.0494601, 0.985519, 1, 1, 1 )
+tracks/6/type = "transform"
+tracks/6/path = NodePath("Body/SophieSkeleton:RightLeg")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = PoolRealArray( 0, 1, -1.15251e-08, 0, 9.31323e-09, 0.928305, 0.0517921, 0.10619, 0.352549, 0.999999, 1, 1, 0.033333, 1, -1.15251e-08, 0, 9.31323e-09, 0.88188, 0.0540381, 0.00888855, 0.468283, 1, 1, 1, 0.066667, 1, -1.15251e-08, 0, 9.31323e-09, 0.811966, 0.0438682, -0.0381386, 0.580803, 1, 1, 1, 0.1, 1, -1.15251e-08, 0, 9.31323e-09, 0.726719, 0.0275427, -0.0529965, 0.684333, 1, 1, 1, 0.133333, 1, -1.15251e-08, 0, 9.31323e-09, 0.613897, 0.00756681, -0.0629473, 0.786836, 1, 1, 1, 0.166667, 1, -1.15251e-08, 0, 9.31323e-09, 0.47756, -0.0163253, -0.0672029, 0.875873, 0.999999, 1, 1, 0.2, 1, -1.15251e-08, 0, 9.31323e-09, 0.389679, -0.0125038, -0.0575826, 0.919064, 1, 0.999999, 1, 0.233333, 1, -1.15251e-08, 0, 9.31323e-09, 0.354365, 0.00191711, -0.0496461, 0.933787, 1, 1, 1 )
+tracks/7/type = "transform"
+tracks/7/path = NodePath("Body/SophieSkeleton:RightHandThumb3")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = PoolRealArray( 0, 1, 0, -3.95812e-08, 1.86265e-09, -0.119655, -0.178421, -0.0823559, 0.973173, 1, 1, 1, 0.233333, 1, 0, -3.95812e-08, 1.86265e-09, -0.119656, -0.178421, -0.0823554, 0.973173, 1, 1, 1 )
+tracks/8/type = "transform"
+tracks/8/path = NodePath("Body/SophieSkeleton:RightHandThumb2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = PoolRealArray( 0, 1, 3.1665e-08, -1.49012e-08, 0, 0.0663894, 0.0832963, -0.149927, 0.982943, 1, 1, 0.999999, 0.233333, 1, 3.1665e-08, -1.49012e-08, 0, 0.0663893, 0.0832958, -0.149927, 0.982943, 1, 1, 1 )
+tracks/9/type = "transform"
+tracks/9/path = NodePath("Body/SophieSkeleton:RightHandThumb1")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = PoolRealArray( 0, 1, -2.6077e-08, 2.98023e-08, 7.45058e-09, 0.157493, -0.230115, 0.212575, 0.936512, 1, 1, 1, 0.233333, 1, -2.6077e-08, 2.98023e-08, 7.45058e-09, 0.157493, -0.230115, 0.212575, 0.936512, 1, 0.999999, 1 )
+tracks/10/type = "transform"
+tracks/10/path = NodePath("Body/SophieSkeleton:RightHandRing3")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = PoolRealArray( 0, 1, 1.67638e-08, -1.15814e-08, -1.94273e-08, -0.00404151, -0.00990498, 0.334952, 0.942174, 1, 1, 1, 0.233333, 1, 1.67638e-08, -1.15814e-08, -1.94273e-08, -0.00404104, -0.00990481, 0.334952, 0.942174, 1, 1, 1 )
+tracks/11/type = "transform"
+tracks/11/path = NodePath("Body/SophieSkeleton:RightHandRing2")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = PoolRealArray( 0, 1, -1.86265e-09, -6.92093e-08, -9.68001e-10, 0.000887139, 0.011319, 0.596522, 0.802516, 1, 1, 1, 0.233333, 1, -1.86265e-09, -6.92093e-08, -9.68001e-10, 0.000887145, 0.011319, 0.596522, 0.802516, 1, 1, 1 )
+tracks/12/type = "transform"
+tracks/12/path = NodePath("Body/SophieSkeleton:RightHandRing1")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = PoolRealArray( 0, 1, -1.49012e-08, 9.58098e-08, 2.23517e-08, -0.0197798, -0.0364375, 0.636569, 0.770104, 1, 1, 1, 0.233333, 1, -1.49012e-08, 9.58098e-08, 2.23517e-08, -0.0197798, -0.0364375, 0.636569, 0.770105, 1, 1, 1 )
+tracks/13/type = "transform"
+tracks/13/path = NodePath("Body/SophieSkeleton:RightHandPinky3")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = PoolRealArray( 0, 1, -2.79397e-08, 1.05256e-07, 1.31221e-08, -6.24124e-06, 0.000121171, 0.223514, 0.974701, 1, 1, 1, 0.233333, 1, -2.79397e-08, 1.05256e-07, 1.31221e-08, -6.24124e-06, 0.000121171, 0.223514, 0.974701, 1, 1, 1 )
+tracks/14/type = "transform"
+tracks/14/path = NodePath("Body/SophieSkeleton:RightHandPinky2")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = PoolRealArray( 0, 1, 3.53903e-08, -1.07907e-08, -2.37213e-09, -7.9149e-07, 0.00019074, 0.457188, 0.88937, 1, 1, 1, 0.233333, 1, 3.53903e-08, -1.07907e-08, -2.37213e-09, -7.9149e-07, 0.00019074, 0.457188, 0.88937, 1, 1, 1 )
+tracks/15/type = "transform"
+tracks/15/path = NodePath("Body/SophieSkeleton:RightHandPinky1")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = PoolRealArray( 0, 1, 2.98023e-08, -1.6531e-08, 3.72529e-09, -0.0245282, 0.0238854, 0.686459, 0.726362, 1, 1, 1, 0.233333, 1, 2.98023e-08, -1.6531e-08, 3.72529e-09, -0.0245282, 0.0238854, 0.686459, 0.726362, 1, 1, 1 )
+tracks/16/type = "transform"
+tracks/16/path = NodePath("Body/SophieSkeleton:RightHandMiddle3")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = PoolRealArray( 0, 1, 2.23517e-08, -7.90706e-10, 3.73548e-09, 0.00442298, -0.013652, 0.281507, 0.959452, 1, 1, 1, 0.233333, 1, 2.23517e-08, -7.90706e-10, 3.73548e-09, 0.00442298, -0.013652, 0.281507, 0.959452, 1, 1, 1 )
+tracks/17/type = "transform"
+tracks/17/path = NodePath("Body/SophieSkeleton:RightHandMiddle2")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = PoolRealArray( 0, 1, -1.86265e-09, 5.31628e-08, 3.93315e-09, 0.0282308, 0.0316152, 0.671748, 0.739566, 1, 1, 1, 0.233333, 1, -1.86265e-09, 5.31628e-08, 3.93315e-09, 0.0282308, 0.0316152, 0.671748, 0.739566, 1, 1, 1 )
+tracks/18/type = "transform"
+tracks/18/path = NodePath("Body/SophieSkeleton:RightHandMiddle1")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = PoolRealArray( 0, 1, 1.49012e-08, -1.28837e-08, 8.43896e-09, -0.00945877, 0.00464462, 0.561167, 0.827635, 1, 1, 1, 0.233333, 1, 1.49012e-08, -1.28837e-08, 8.43896e-09, -0.00945835, 0.0046449, 0.561167, 0.827635, 1, 1, 1 )
+tracks/19/type = "transform"
+tracks/19/path = NodePath("Body/SophieSkeleton:RightHandIndex3")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = PoolRealArray( 0, 1, -4.65661e-09, -6.60465e-08, 2.17446e-09, 0.00443248, 0.00159353, 0.520136, 0.85407, 1, 1, 1, 0.233333, 1, -4.65661e-09, -6.60465e-08, 2.17446e-09, 0.00443274, 0.00159311, 0.520136, 0.85407, 1, 1, 1 )
+tracks/20/type = "transform"
+tracks/20/path = NodePath("Body/SophieSkeleton:RightHandIndex2")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = PoolRealArray( 0, 1, 5.58794e-09, -2.39535e-08, -1.37355e-09, 0.0211026, 0.0316222, 0.548757, 0.835117, 1, 1, 1, 0.233333, 1, 5.58794e-09, -2.39535e-08, -1.37355e-09, 0.0211026, 0.0316222, 0.548758, 0.835117, 1, 1, 1 )
+tracks/21/type = "transform"
+tracks/21/path = NodePath("Body/SophieSkeleton:RightHandIndex1")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = PoolRealArray( 0, 1, 0, 1.93249e-08, 1.67638e-08, -0.0139221, -0.0227192, 0.510523, 0.859451, 1, 1, 1, 0.233333, 1, 0, 1.93249e-08, 1.67638e-08, -0.0139221, -0.0227192, 0.510523, 0.859451, 1, 1, 1 )
+tracks/22/type = "transform"
+tracks/22/path = NodePath("Body/SophieSkeleton:RightHand")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = PoolRealArray( 0, 1, -2.98023e-08, 7.62788e-09, -3.69471e-09, 0.00172822, -0.0129608, 0.0294992, 0.999479, 1, 1, 1, 0.033333, 1, -2.98023e-08, 7.62788e-09, -3.69471e-09, -0.00371013, -0.0815762, -0.0554877, 0.995114, 1, 1, 1, 0.066667, 1, -2.98023e-08, 7.62788e-09, -3.69471e-09, -0.0352131, -0.135781, -0.114372, 0.983485, 1, 1, 1, 0.1, 1, -2.98023e-08, 7.62788e-09, -3.69471e-09, -0.063186, -0.0992946, -0.116273, 0.986219, 1, 1, 1, 0.133333, 1, -2.98023e-08, 7.62788e-09, -3.69471e-09, -0.067183, -0.01013, -0.0942371, 0.993229, 1, 1, 1, 0.166667, 1, -2.98023e-08, 7.62788e-09, -3.69471e-09, -0.0532405, 0.114672, -0.0500739, 0.990711, 1, 1, 1, 0.2, 1, -2.98023e-08, 7.62788e-09, -3.69471e-09, -0.031298, 0.231938, 0.00880406, 0.972187, 1, 1, 1, 0.233333, 1, -2.98023e-08, 7.62788e-09, -3.69471e-09, -0.00862652, 0.251045, 0.0621942, 0.965937, 1, 1, 1 )
+tracks/23/type = "transform"
+tracks/23/path = NodePath("Body/SophieSkeleton:RightForeArm")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = PoolRealArray( 0, 1, 2.98023e-08, -2.8871e-08, -3.72529e-09, -0.0732105, 0.146844, 0.00820094, 0.986413, 1, 1, 1, 0.033333, 1, 2.98023e-08, -2.8871e-08, -3.72529e-09, 0.0501251, 0.137908, -0.0429374, 0.988244, 1, 1, 1, 0.066667, 1, 2.98023e-08, -2.8871e-08, -3.72529e-09, 0.163097, 0.119559, -0.0873205, 0.975438, 1, 1, 1, 0.1, 1, 2.98023e-08, -2.8871e-08, -3.72529e-09, 0.20232, 0.144564, -0.112907, 0.961987, 1, 1, 1, 0.133333, 1, 2.98023e-08, -2.8871e-08, -3.72529e-09, 0.180587, 0.23743, -0.12655, 0.946045, 1, 1, 1, 0.166667, 1, 2.98023e-08, -2.8871e-08, -3.72529e-09, 0.127175, 0.337812, -0.111896, 0.925845, 0.999999, 1, 1, 0.2, 1, 2.98023e-08, -2.8871e-08, -3.72529e-09, 0.0636371, 0.443542, -0.0714555, 0.891131, 1, 1, 1, 0.233333, 1, 2.98023e-08, -2.8871e-08, -3.72529e-09, 0.00267668, 0.537691, -0.0096144, 0.843083, 1, 1, 1 )
+tracks/24/type = "transform"
+tracks/24/path = NodePath("Body/SophieSkeleton:RightFoot")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = PoolRealArray( 0, 1, 2.91038e-10, 0, -1.11759e-08, -0.197559, -0.0145359, 0.201644, 0.959218, 1, 1, 1, 0.033333, 1, 2.91038e-10, 0, -1.11759e-08, -0.32526, -0.0191153, 0.245225, 0.913075, 1, 1, 1, 0.066667, 1, 2.91038e-10, 0, -1.11759e-08, -0.336615, -0.0156386, 0.27718, 0.899787, 0.999999, 1, 1, 0.1, 1, 2.91038e-10, 0, -1.11759e-08, -0.283692, -0.0150418, 0.2759, 0.918244, 1, 1, 0.999999, 0.133333, 1, 2.91038e-10, 0, -1.11759e-08, -0.219504, -0.0154786, 0.258622, 0.940581, 1, 1, 1, 0.166667, 1, 2.91038e-10, 0, -1.11759e-08, -0.150558, -0.0124208, 0.245507, 0.957551, 1, 1, 1, 0.2, 1, 2.91038e-10, 0, -1.11759e-08, -0.111149, -0.010722, 0.246479, 0.962694, 1, 1, 1, 0.233333, 1, 2.91038e-10, 0, -1.11759e-08, -0.0982649, -0.0119313, 0.260117, 0.96049, 1, 1, 1 )
+tracks/25/type = "transform"
+tracks/25/path = NodePath("Body/SophieSkeleton:RightArm")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = PoolRealArray( 0, 1, 0, 7.07805e-08, -5.52973e-10, -0.377599, -0.132208, 0.512456, 0.759822, 1, 1, 1, 0.033333, 1, 0, 7.07805e-08, -5.52973e-10, -0.361439, -0.0534108, 0.486506, 0.793613, 1, 1, 1, 0.066667, 1, 0, 7.07805e-08, -5.52973e-10, -0.340299, 0.025032, 0.462928, 0.818088, 1, 1, 1, 0.1, 1, 0, 7.07805e-08, -5.52973e-10, -0.29805, 0.0699785, 0.454152, 0.836669, 1, 1, 1, 0.133333, 1, 0, 7.07805e-08, -5.52973e-10, -0.236468, 0.0817585, 0.461769, 0.85098, 1, 1, 1, 0.166667, 1, 0, 7.07805e-08, -5.52973e-10, -0.166491, 0.076379, 0.464787, 0.866268, 1, 1, 1, 0.2, 1, 0, 7.07805e-08, -5.52973e-10, -0.0916155, 0.0604638, 0.462782, 0.87965, 1, 1, 1, 0.233333, 1, 0, 7.07805e-08, -5.52973e-10, -0.0173959, 0.043516, 0.453448, 0.89005, 1, 1, 1 )
+tracks/26/type = "transform"
+tracks/26/path = NodePath("Body/SophieSkeleton:Neck")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = PoolRealArray( 0, 1, 1.00117e-08, -1.49012e-08, 1.86265e-09, -0.0142372, 0.0696672, -0.00170696, 0.997467, 1, 1, 1, 0.033333, 1, 1.00117e-08, -1.49012e-08, 1.86265e-09, -0.0303823, 0.0543039, 0.00935542, 0.998018, 1, 1, 1, 0.066667, 1, 1.00117e-08, -1.49012e-08, 1.86265e-09, -0.019861, 0.048077, 0.0111572, 0.998584, 1, 1, 1, 0.1, 1, 1.00117e-08, -1.49012e-08, 1.86265e-09, -0.000550857, 0.0467833, 0.00826661, 0.998871, 1, 1, 1, 0.133333, 1, 1.00117e-08, -1.49012e-08, 1.86265e-09, 0.00368456, 0.0508623, 0.00426118, 0.99869, 1, 1, 1, 0.166667, 1, 1.00117e-08, -1.49012e-08, 1.86265e-09, -0.010285, 0.0620021, -0.00145619, 0.998022, 1, 1, 1, 0.2, 1, 1.00117e-08, -1.49012e-08, 1.86265e-09, -0.0218878, 0.0734076, -0.00752911, 0.997033, 1, 1, 1, 0.233333, 1, 1.00117e-08, -1.49012e-08, 1.86265e-09, -0.0195374, 0.0813059, -0.0125951, 0.996418, 1, 1, 1 )
+tracks/27/type = "transform"
+tracks/27/path = NodePath("Body/SophieSkeleton:LeftUpLeg")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = PoolRealArray( 0, 1, 0, 4.47035e-08, -9.31323e-09, -0.723696, 0.163611, 0.370323, 0.558888, 0.999999, 1, 0.999999, 0.033333, 1, 0, 4.47035e-08, -9.31323e-09, -0.695086, 0.17084, 0.340397, 0.609754, 1, 1, 1, 0.066667, 1, 0, 4.47035e-08, -9.31323e-09, -0.652324, 0.184985, 0.307687, 0.667519, 1, 1, 1, 0.1, 1, 0, 4.47035e-08, -9.31323e-09, -0.58883, 0.206766, 0.278733, 0.729955, 1, 1, 1, 0.133333, 1, 0, 4.47035e-08, -9.31323e-09, -0.51919, 0.231626, 0.255026, 0.782146, 1, 1, 1, 0.166667, 1, 0, 4.47035e-08, -9.31323e-09, -0.470805, 0.277975, 0.221796, 0.80739, 1, 1, 1, 0.2, 1, 0, 4.47035e-08, -9.31323e-09, -0.414704, 0.345178, 0.182657, 0.821893, 1, 1, 1, 0.233333, 1, 0, 4.47035e-08, -9.31323e-09, -0.427377, 0.359888, 0.185309, 0.808387, 0.999999, 1, 1 )
+tracks/28/type = "transform"
+tracks/28/path = NodePath("Body/SophieSkeleton:LeftToeBase")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = PoolRealArray( 0, 1, 2.32831e-09, 7.45058e-09, 0, -0.0185468, -0.00141586, -0.00182708, 0.999825, 1, 1, 1, 0.1, 1, 2.32831e-09, 7.45058e-09, 0, -0.0185463, -0.00141586, -0.00182708, 0.999825, 1, 1, 1, 0.133333, 1, 2.32831e-09, 7.45058e-09, 0, -0.0186495, -0.00228035, -0.000753661, 0.999823, 1, 1, 1, 0.166667, 1, 2.32831e-09, 7.45058e-09, 0, -0.0198797, -0.0116564, 0.0109208, 0.999675, 1, 1, 1, 0.2, 1, 2.32831e-09, 7.45058e-09, 0, -0.0369924, -0.028949, 0.0182403, 0.99873, 1, 1, 1, 0.233333, 1, 2.32831e-09, 7.45058e-09, 0, -0.030424, -0.0323124, 0.0294848, 0.99858, 1, 1, 1 )
+tracks/29/type = "transform"
+tracks/29/path = NodePath("Body/SophieSkeleton:LeftShoulder")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = PoolRealArray( 0, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.00965695, -0.129219, 0.162045, 0.978239, 1, 1, 0.999999, 0.033333, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.013593, -0.12431, 0.14695, 0.981207, 1, 1, 1, 0.066667, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.0179725, -0.118913, 0.139871, 0.982839, 1, 1, 1, 0.1, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.0213221, -0.113217, 0.129591, 0.984852, 1, 1, 1, 0.133333, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.0223824, -0.107564, 0.104395, 0.988449, 1, 1, 1, 0.233333, 1, -3.72529e-09, -5.96046e-08, 1.86265e-09, -0.0187044, -0.0901986, -0.0151513, 0.995633, 1, 1, 1 )
+tracks/30/type = "transform"
+tracks/30/path = NodePath("Body/SophieSkeleton:LeftLeg")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = PoolRealArray( 0, 1, 5.23869e-10, -2.98023e-08, 0, 0.711097, -0.00712468, -0.0408118, 0.701873, 1, 1, 1, 0.033333, 1, 5.23869e-10, -2.98023e-08, 0, 0.718467, 0.000984571, -0.0311376, 0.694863, 1, 1, 1, 0.066667, 1, 5.23869e-10, -2.98023e-08, 0, 0.705792, 0.0110107, -0.0196201, 0.708062, 1, 1, 1, 0.1, 1, 5.23869e-10, -2.98023e-08, 0, 0.652734, 0.0267421, -0.00582888, 0.757093, 1, 1, 1, 0.133333, 1, 5.23869e-10, -2.98023e-08, 0, 0.565652, 0.037796, 0.00370138, 0.823769, 1, 0.999999, 1, 0.166667, 1, 5.23869e-10, -2.98023e-08, 0, 0.440123, -0.0304491, -0.0152667, 0.897291, 1, 1, 1, 0.2, 1, 5.23869e-10, -2.98023e-08, 0, 0.278118, -0.111389, -0.00895442, 0.954025, 1, 1, 1, 0.233333, 1, 5.23869e-10, -2.98023e-08, 0, 0.332657, -0.123655, -0.00891353, 0.934863, 1, 1, 1 )
+tracks/31/type = "transform"
+tracks/31/path = NodePath("Body/SophieSkeleton:LeftHandThumb3")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = PoolRealArray( 0, 1, 1.02445e-08, -4.65661e-10, 1.86265e-09, 0.520166, -0.0808148, -0.00600718, 0.850212, 1, 1, 1, 0.233333, 1, 1.02445e-08, -4.65661e-10, 1.86265e-09, 0.520166, -0.0808148, -0.00600718, 0.850212, 1, 1, 1 )
+tracks/32/type = "transform"
+tracks/32/path = NodePath("Body/SophieSkeleton:LeftHandThumb2")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = PoolRealArray( 0, 1, 2.04891e-08, -1.02445e-08, -1.02445e-08, 0.143987, 0.0985439, 0.0909067, 0.980455, 1, 1, 1, 0.233333, 1, 2.04891e-08, -1.02445e-08, -1.02445e-08, 0.143987, 0.0985439, 0.0909067, 0.980455, 1, 1, 1 )
+tracks/33/type = "transform"
+tracks/33/path = NodePath("Body/SophieSkeleton:LeftHandThumb1")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = PoolRealArray( 0, 1, 1.49012e-08, 5.21541e-08, 3.72529e-09, 0.0423667, -0.002111, -0.126036, 0.991118, 1, 1, 1, 0.233333, 1, 1.49012e-08, 5.21541e-08, 3.72529e-09, 0.0423667, -0.002111, -0.126036, 0.991118, 1, 1, 1 )
+tracks/34/type = "transform"
+tracks/34/path = NodePath("Body/SophieSkeleton:LeftHandRing3")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = PoolRealArray( 0, 1, 4.28408e-08, 4.92093e-08, -7.84593e-09, -0.00992233, 0.00410739, -0.598517, 0.801038, 1, 1, 1, 0.233333, 1, 4.28408e-08, 4.92093e-08, -7.84593e-09, -0.00992232, 0.00410739, -0.598517, 0.801038, 1, 1, 1 )
+tracks/35/type = "transform"
+tracks/35/path = NodePath("Body/SophieSkeleton:LeftHandRing2")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = PoolRealArray( 0, 1, -5.7742e-08, 4.39535e-08, 2.96515e-09, -0.00519723, -0.00970975, -0.517268, 0.855753, 1, 1, 1, 0.233333, 1, -5.7742e-08, 4.39535e-08, 2.96515e-09, -0.00519723, -0.00970975, -0.517268, 0.855753, 1, 1, 1 )
+tracks/36/type = "transform"
+tracks/36/path = NodePath("Body/SophieSkeleton:LeftHandRing1")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = PoolRealArray( 0, 1, 7.45058e-08, -1.44995e-07, 0, -0.0517789, -0.00319985, -0.709645, 0.702647, 1, 1, 1, 0.233333, 1, 7.45058e-08, -1.44995e-07, 0, -0.0517789, -0.00319985, -0.709645, 0.702647, 1, 1, 1 )
+tracks/37/type = "transform"
+tracks/37/path = NodePath("Body/SophieSkeleton:LeftHandPinky3")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = PoolRealArray( 0, 1, -9.12696e-08, 1.04744e-07, 8.06401e-09, 0.00559639, 0.0121976, -0.409103, 0.91239, 1, 1, 1, 0.233333, 1, -9.12696e-08, 1.04744e-07, 8.06401e-09, 0.00559639, 0.0121976, -0.409103, 0.91239, 1, 1, 1 )
+tracks/38/type = "transform"
+tracks/38/path = NodePath("Body/SophieSkeleton:LeftHandPinky2")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = PoolRealArray( 0, 1, 2.42144e-08, -6.07907e-08, 4.36103e-10, 6.76617e-05, -0.00029042, -0.602582, 0.798057, 1, 1, 1, 0.233333, 1, 2.42144e-08, -6.07907e-08, 4.36103e-10, 6.76617e-05, -0.00029042, -0.602582, 0.798057, 1, 1, 1 )
+tracks/39/type = "transform"
+tracks/39/path = NodePath("Body/SophieSkeleton:LeftHandPinky1")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = PoolRealArray( 0, 1, 5.21541e-08, -6.58911e-08, 3.72529e-09, -0.105452, 0.000604695, -0.680694, 0.724938, 1, 1, 1, 0.233333, 1, 5.21541e-08, -6.58911e-08, 3.72529e-09, -0.105452, 0.000604695, -0.680695, 0.724938, 1, 1, 1 )
+tracks/40/type = "transform"
+tracks/40/path = NodePath("Body/SophieSkeleton:LeftHandMiddle3")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = PoolRealArray( 0, 1, 3.72529e-08, 6.76279e-08, -3.75587e-09, 0.00838177, 0.0116066, -0.553615, 0.83265, 1, 1, 1, 0.233333, 1, 3.72529e-08, 6.76279e-08, -3.75587e-09, 0.00838149, 0.0116062, -0.553615, 0.83265, 1, 1, 1 )
+tracks/41/type = "transform"
+tracks/41/path = NodePath("Body/SophieSkeleton:LeftHandMiddle2")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = PoolRealArray( 0, 1, 1.86265e-09, -2.31628e-08, -1.75871e-09, 0.0260167, -0.0334731, -0.619282, 0.784023, 1, 1, 1, 0.233333, 1, 1.86265e-09, -2.31628e-08, -1.75871e-09, 0.0260167, -0.0334731, -0.619282, 0.784023, 1, 1, 1 )
+tracks/42/type = "transform"
+tracks/42/path = NodePath("Body/SophieSkeleton:LeftHandMiddle1")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = PoolRealArray( 0, 1, 4.47035e-08, -1.07628e-07, 2.76748e-09, -0.0492538, -0.0169621, -0.685939, 0.725792, 1, 1, 1, 0.233333, 1, 4.47035e-08, -1.07628e-07, 2.76748e-09, -0.0492538, -0.0169621, -0.685939, 0.725792, 1, 1, 1 )
+tracks/43/type = "transform"
+tracks/43/path = NodePath("Body/SophieSkeleton:LeftHandIndex3")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = PoolRealArray( 0, 1, 4.65661e-09, 1.31628e-08, -1.33275e-09, 0.000359635, 0.00152829, -0.593447, 0.804871, 1, 1, 1, 0.233333, 1, 4.65661e-09, 1.31628e-08, -1.33275e-09, 0.000359635, 0.00152829, -0.593447, 0.804871, 1, 1, 1 )
+tracks/44/type = "transform"
+tracks/44/path = NodePath("Body/SophieSkeleton:LeftHandIndex2")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = PoolRealArray( 0, 1, -5.58794e-09, -5.25574e-09, 1.15508e-08, 0.0213099, -0.0314089, -0.554876, 0.831067, 1, 1, 1, 0.233333, 1, -5.58794e-09, -5.25574e-09, 1.15508e-08, 0.0213099, -0.0314089, -0.554876, 0.831067, 1, 1, 1 )
+tracks/45/type = "transform"
+tracks/45/path = NodePath("Body/SophieSkeleton:LeftHandIndex1")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/keys = PoolRealArray( 0, 1, 5.96046e-08, -3.84171e-08, 3.72529e-09, 0.0205228, -0.0716953, -0.647779, 0.75817, 1, 1, 1, 0.233333, 1, 5.96046e-08, -3.84171e-08, 3.72529e-09, 0.0205228, -0.0716953, -0.647779, 0.75817, 1, 1, 1 )
+tracks/46/type = "transform"
+tracks/46/path = NodePath("Body/SophieSkeleton:LeftHand")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/keys = PoolRealArray( 0, 1, -2.98023e-08, 3.68372e-08, -2.54942e-09, -0.0114069, -0.208793, -0.073833, 0.975102, 1, 1, 1, 0.033333, 1, -2.98023e-08, 3.68372e-08, -2.54942e-09, -0.00877005, -0.153316, -0.143624, 0.977645, 1, 1, 1, 0.066667, 1, -2.98023e-08, 3.68372e-08, -2.54942e-09, -0.00989696, -0.186386, -0.126616, 0.974233, 0.999999, 1, 1, 0.1, 1, -2.98023e-08, 3.68372e-08, -2.54942e-09, -0.00518768, -0.223895, -0.0857201, 0.970822, 1, 1, 1, 0.133333, 1, -2.98023e-08, 3.68372e-08, -2.54942e-09, -0.000711508, -0.190191, -0.0674161, 0.979429, 1, 1, 1, 0.2, 1, -2.98023e-08, 3.68372e-08, -2.54942e-09, 1.51574e-05, -0.0198349, -0.0504092, 0.998532, 1, 1, 1, 0.233333, 1, -2.98023e-08, 3.68372e-08, -2.54942e-09, -0.00041526, -0.00143389, -0.0362565, 0.999341, 1, 1, 1 )
+tracks/47/type = "transform"
+tracks/47/path = NodePath("Body/SophieSkeleton:LeftForeArm")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/keys = PoolRealArray( 0, 1, -2.98023e-08, 1.18278e-07, 0, -0.0686578, -0.56617, -0.0516933, 0.819796, 1, 1, 1, 0.033333, 1, -2.98023e-08, 1.18278e-07, 0, -0.119651, -0.585001, -0.0919582, 0.79687, 0.999999, 1, 1, 0.1, 1, -2.98023e-08, 1.18278e-07, 0, -0.207873, -0.51906, -0.173232, 0.810775, 1, 1, 1, 0.133333, 1, -2.98023e-08, 1.18278e-07, 0, -0.221004, -0.543965, -0.19493, 0.78566, 1, 1, 1, 0.166667, 1, -2.98023e-08, 1.18278e-07, 0, -0.215386, -0.613895, -0.198668, 0.732989, 1, 1, 1, 0.2, 1, -2.98023e-08, 1.18278e-07, 0, -0.208462, -0.673305, -0.188008, 0.684001, 1, 1, 1, 0.233333, 1, -2.98023e-08, 1.18278e-07, 0, -0.205946, -0.68189, -0.174498, 0.679826, 1, 1, 1 )
+tracks/48/type = "transform"
+tracks/48/path = NodePath("Body/SophieSkeleton:LeftFoot")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/keys = PoolRealArray( 0, 1, 1.45519e-10, 0, 0, 0.132048, 0.00777141, -0.178494, 0.975009, 1, 1, 1, 0.066667, 1, 1.45519e-10, 0, 0, -0.00526688, 0.00779694, -0.145778, 0.989273, 1, 1, 1, 0.1, 1, 1.45519e-10, 0, 0, -0.0321927, 0.00569265, -0.133755, 0.990475, 1, 1, 1, 0.133333, 1, 1.45519e-10, 0, 0, 0.00857378, 0.00382754, -0.124126, 0.992222, 1, 1, 1, 0.166667, 1, 1.45519e-10, 0, 0, 0.0915844, 0.00368287, -0.107793, 0.989939, 1, 1, 1, 0.2, 1, 1.45519e-10, 0, 0, 0.135192, 0.00493751, -0.109506, 0.984737, 1, 1, 1, 0.233333, 1, 1.45519e-10, 0, 0, 0.0688432, 0.00460567, -0.101179, 0.992473, 1, 1, 1 )
+tracks/49/type = "transform"
+tracks/49/path = NodePath("Body/SophieSkeleton:LeftArm")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/keys = PoolRealArray( 0, 1, 7.45058e-09, 1.11759e-08, -1.17288e-08, -0.207049, -0.226378, -0.423706, 0.852266, 1, 1, 1, 0.033333, 1, 7.45058e-09, 1.11759e-08, -1.17288e-08, -0.200241, -0.246496, -0.415549, 0.852328, 1, 1, 1, 0.066667, 1, 7.45058e-09, 1.11759e-08, -1.17288e-08, -0.193054, -0.258313, -0.324812, 0.889101, 1, 1, 1, 0.1, 1, 7.45058e-09, 1.11759e-08, -1.17288e-08, -0.177344, -0.259876, -0.238104, 0.918869, 0.999999, 1, 1, 0.133333, 1, 7.45058e-09, 1.11759e-08, -1.17288e-08, -0.134901, -0.250399, -0.250695, 0.92534, 1, 1, 1, 0.166667, 1, 7.45058e-09, 1.11759e-08, -1.17288e-08, -0.0722256, -0.21909, -0.34159, 0.911098, 1, 1, 1, 0.2, 1, 7.45058e-09, 1.11759e-08, -1.17288e-08, -0.0231163, -0.178359, -0.419327, 0.889842, 1, 1, 1, 0.233333, 1, 7.45058e-09, 1.11759e-08, -1.17288e-08, -0.00277293, -0.166854, -0.413898, 0.894897, 1, 1, 1 )
+tracks/50/type = "transform"
+tracks/50/path = NodePath("Body/SophieSkeleton:Hips")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = PoolRealArray( 0, 1, -0.002, -0.67, -0.288, 0.0521863, -0.324688, 0.0882585, 0.940247, 1, 1, 1, 0.033333, 1, 0.016, -0.59, -0.23, 0.0523274, -0.327511, 0.0784694, 0.940128, 1, 1, 1, 0.066667, 1, 0.033, -0.505, -0.176, 0.0530146, -0.331656, 0.0681294, 0.939442, 1, 1, 1, 0.1, 1, 0.042, -0.408, -0.141, 0.0556272, -0.343079, 0.0573618, 0.935902, 1, 1, 1, 0.133333, 1, 0.046, -0.301, -0.123, 0.0596647, -0.360284, 0.0465614, 0.929767, 0.999999, 1, 1, 0.166667, 1, 0.044, -0.21, -0.101, 0.0641786, -0.380364, 0.0363418, 0.921891, 1, 1, 1, 0.2, 1, 0.04, -0.177, -0.061, 0.0672279, -0.394942, 0.0295459, 0.915766, 1, 1, 1, 0.233333, 1, 0.037, -0.18, -0.017, 0.0727593, -0.400148, 0.0264539, 0.913174, 1, 1, 1 )
+tracks/51/type = "transform"
+tracks/51/path = NodePath("Body/SophieSkeleton:Head")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = PoolRealArray( 0, 1, 0, 1.49012e-08, -1.86265e-09, -0.191234, 0.119404, -0.0466845, 0.973135, 1, 1, 1, 0.033333, 1, 0, 1.49012e-08, -1.86265e-09, -0.186028, 0.119822, -0.0267163, 0.974845, 1, 1, 1, 0.066667, 1, 0, 1.49012e-08, -1.86265e-09, -0.154788, 0.124464, -0.0210118, 0.979851, 1, 1, 1, 0.1, 1, 0, 1.49012e-08, -1.86265e-09, -0.115011, 0.131761, -0.0229081, 0.98432, 1, 1, 1, 0.133333, 1, 0, 1.49012e-08, -1.86265e-09, -0.0901926, 0.143847, -0.0268619, 0.985115, 1, 0.999999, 1, 0.166667, 1, 0, 1.49012e-08, -1.86265e-09, -0.08369, 0.162378, -0.0328193, 0.982625, 1, 1, 1, 0.2, 1, 0, 1.49012e-08, -1.86265e-09, -0.0750849, 0.180953, -0.0393636, 0.979831, 1, 1, 1, 0.233333, 1, 0, 1.49012e-08, -1.86265e-09, -0.0527541, 0.196085, -0.0458322, 0.978094, 1, 1, 1 )
+tracks/52/type = "value"
+tracks/52/path = NodePath("StandCollisionShape:disabled")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
+"times": PoolRealArray( 0, 0.08 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/53/type = "value"
+tracks/53/path = NodePath("CrouchCollisionShape:disabled")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/keys = {
+"times": PoolRealArray( 0, 0.08 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/54/type = "value"
+tracks/54/path = NodePath("AirCollisionShape:disabled")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/55/type = "value"
+tracks/55/path = NodePath("AirHurtTopCollisionShape:disabled")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/56/type = "value"
+tracks/56/path = NodePath("AirHurtBottomCollisionShape:disabled")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/57/type = "value"
+tracks/57/path = NodePath("HurtArea:monitoring")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/58/type = "value"
+tracks/58/path = NodePath("HurtArea:monitorable")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/59/type = "value"
+tracks/59/path = NodePath("HurtArea/StandCollisionShape:disabled")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/keys = {
+"times": PoolRealArray( 0, 0.08 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/60/type = "value"
+tracks/60/path = NodePath("HurtArea/CrouchCollisionShape:disabled")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0, 0.08 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("HurtArea/AirCollisionShape:disabled")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/62/type = "method"
+tracks/62/path = NodePath("Source/PlayerCharacterPhysicsObjects")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "SetDefaultGroundRayCastsPosition"
+} ]
+}

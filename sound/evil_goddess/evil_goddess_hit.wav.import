@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/evil_goddess_hit.wav-6eafe0e748bc6b44b4ab3ca19f61b41b.sample"
+
+[deps]
+
+source_file="res://sound/evil_goddess/evil_goddess_hit.wav"
+dest_files=[ "res://.import/evil_goddess_hit.wav-6eafe0e748bc6b44b4ab3ca19f61b41b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

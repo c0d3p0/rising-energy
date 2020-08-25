@@ -1,0 +1,26 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/mutant_tree_branch_diffuse.png-2aa44abca4876218c8532f2d0b0faf68.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/mutant_tree_branch_specular.png-7d1acab473ee0a08df3ab5c3927f0e01.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/mutant_tree_branch_normal.png-88bf1f12173d9216c98db553df682aef.stex"
+
+[resource]
+resource_name = "branch1Color.psd-diffuse-Material"
+flags_transparent = true
+params_cull_mode = 2
+params_depth_draw_mode = 3
+albedo_texture = SubResource( 1 )
+metallic = 0.2
+metallic_texture = SubResource( 2 )
+roughness = 0.8
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 3 )

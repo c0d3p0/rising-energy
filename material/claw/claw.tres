@@ -1,0 +1,33 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/claw_diffuse.png-a93664672659b05c9ae1d7b58ec6c3e1.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/claw_roughness.png-6262fb244290f43ffef670416c06ef4f.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/claw_specular.png-182966d01a5977170aefc6560ca6091f.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/claw_normal.png-54ded0b72c6a733c610126c745a12252.stex"
+
+[resource]
+resource_name = "skeletonZombie_Material"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 3 )
+roughness = 0.3
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 16.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = SubResource( 2 )
+normal_enabled = true
+normal_scale = 0.6
+normal_texture = SubResource( 4 )

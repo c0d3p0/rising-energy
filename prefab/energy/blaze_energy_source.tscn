@@ -1,0 +1,213 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://animation/energy/spawn_blaze.tres" type="Animation" id=1]
+[ext_resource path="res://prefab/weapon/blaze_sword.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/energy/EnergySource.cs" type="Script" id=3]
+[ext_resource path="res://source/energy/EnergySourceInitializer.cs" type="Script" id=4]
+[ext_resource path="res://source/energy/EnergySourceBoost.cs" type="Script" id=5]
+[ext_resource path="res://gui/status/yellow_gameplay_bar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://animation/energy/idle.tres" type="Animation" id=7]
+[ext_resource path="res://animation/energy/boost_energy_to_idle.tres" type="Animation" id=8]
+[ext_resource path="res://animation/energy/idle_to_boost_energy.tres" type="Animation" id=9]
+[ext_resource path="res://animation/energy/vanish_blaze.tres" type="Animation" id=10]
+[ext_resource path="res://animation/energy/hint_idle.tres" type="Animation" id=11]
+[ext_resource path="res://gui/font/black_chacery_18_o.tres" type="DynamicFont" id=12]
+[ext_resource path="res://source/gui/game/StatusBarManager.cs" type="Script" id=13]
+[ext_resource path="res://gui/font/black_chacery_14_o.tres" type="DynamicFont" id=14]
+[ext_resource path="res://model/energy/blaze_energy_source.tscn" type="PackedScene" id=15]
+[ext_resource path="res://.import/magic_circle_active.ogg-6e67524a0b9e5769963a0fdb2dab3f36.oggstr" type="AudioStream" id=16]
+[ext_resource path="res://.import/magic_circle_appear.wav-33b350ac8945b653d53c28fc365aab98.sample" type="AudioStream" id=17]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.05, 0.1, 0.5 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "boost_energy"
+length = 0.1
+loop = true
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "boost_energy"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "boost_energy_to_idle"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "idle_to_boost_energy"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "spawn"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "vanish"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=15]
+states/boost_energy/node = SubResource( 3 )
+states/boost_energy/position = Vector2( 453, 114 )
+states/boost_energy_to_idle/node = SubResource( 4 )
+states/boost_energy_to_idle/position = Vector2( 275, 194.257 )
+states/idle/node = SubResource( 5 )
+states/idle/position = Vector2( 99, 114 )
+states/idle_to_boost_energy/node = SubResource( 6 )
+states/idle_to_boost_energy/position = Vector2( 275, 28 )
+states/spawn/node = SubResource( 7 )
+states/spawn/position = Vector2( -71, 114 )
+states/vanish/node = SubResource( 8 )
+states/vanish/position = Vector2( 636, 114 )
+transitions = [ "idle_to_boost_energy", "boost_energy", SubResource( 9 ), "boost_energy", "boost_energy_to_idle", SubResource( 10 ), "boost_energy", "vanish", SubResource( 11 ), "boost_energy_to_idle", "idle", SubResource( 12 ), "idle", "idle_to_boost_energy", SubResource( 13 ), "spawn", "idle", SubResource( 14 ) ]
+start_node = "spawn"
+graph_offset = Vector2( -167, -19.0715 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+
+[node name="BlazeEnergySource" type="Spatial" groups=[
+"energy_source",
+]]
+script = ExtResource( 3 )
+energySourceBoostNP = NodePath("Source/EnergySourceBoost")
+energyBoostRate = 16.0
+energyRecoveryPerSecond = 130.0
+
+[node name="BlazeEnergySource" parent="." instance=ExtResource( 15 )]
+
+[node name="BlazeSword" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="BlazeShield" type="Spatial" parent="."]
+visible = false
+
+[node name="InteractArea" type="Area" parent="." groups=[
+"energy_source",
+"interaction",
+]]
+monitoring = false
+monitorable = false
+collision_layer = 1024
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="InteractArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
+shape = SubResource( 1 )
+
+[node name="HUDControl" type="Control" parent="."]
+margin_top = -200.0
+margin_right = 1280.0
+margin_bottom = 520.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyControl" type="Control" parent="HUDControl"]
+margin_left = 1040.0
+margin_top = 20.0
+margin_right = 1260.0
+margin_bottom = 70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YellowStatusBar" parent="HUDControl/EnergyControl" instance=ExtResource( 6 )]
+
+[node name="Label" type="Label" parent="HUDControl/EnergyControl"]
+margin_left = 5.0
+margin_top = 26.0
+margin_right = 132.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 14 )
+text = "Energy: 1000 / 1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HintControl" type="Control" parent="."]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HintLabel" type="Label" parent="HintControl"]
+margin_left = 480.0
+margin_top = 660.0
+margin_right = 710.0
+margin_bottom = 709.0
+custom_fonts/font = ExtResource( 12 )
+text = "Press ATTACK to interact
+Press JUMP to cancel"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/boost_energy = SubResource( 2 )
+anims/boost_energy_to_idle = ExtResource( 8 )
+anims/idle = ExtResource( 7 )
+anims/idle_to_boost_energy = ExtResource( 9 )
+anims/spawn = ExtResource( 1 )
+anims/vanish = ExtResource( 10 )
+
+[node name="HintAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hint_idle = ExtResource( 11 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 15 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 16 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 17 )
+unit_db = 14.0
+
+[node name="LoopAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 16 )
+unit_db = 14.0
+
+[node name="Source" type="Node" parent="."]
+
+[node name="EnergySourceBoost" type="Node" parent="Source"]
+script = ExtResource( 5 )
+energySourceNP = NodePath("../..")
+energySwordNP = NodePath("../../BlazeSword")
+energyShieldNP = NodePath("../../BlazeShield")
+energyStatusBarNP = NodePath("../../HUDControl/EnergyControl/YellowStatusBar")
+animationTreeNP = NodePath("../../AnimationTree")
+hintAnimationPlayerNP = NodePath("../../HintAnimationPlayer")
+
+[node name="EnergyStatusBarManager" type="Node" parent="Source"]
+script = ExtResource( 13 )
+statusBarNP = NodePath("../../HUDControl/EnergyControl/YellowStatusBar")
+statusBarLabelNP = NodePath("../../HUDControl/EnergyControl/Label")
+statusText = "Energy"
+
+[node name="EnergySourceInitializer" type="Node" parent="Source"]
+script = ExtResource( 4 )
+energySourceNP = NodePath("../..")
+energySourceBoostNP = NodePath("../EnergySourceBoost")
+energyStatusBarManagerNP = NodePath("../EnergyStatusBarManager")
+interactAreaNP = NodePath("../../InteractArea")
+[connection signal="area_entered" from="InteractArea" to="Source/EnergySourceBoost" method="OnAreaEntered"]
+[connection signal="area_exited" from="InteractArea" to="Source/EnergySourceBoost" method="OnAreaExited"]

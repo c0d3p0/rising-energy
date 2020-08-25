@@ -1,0 +1,23 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/warrior_spirit_diffuse.png-4142e8ff76dec25f493c5fc37e4e4a51.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/warrior_spirit_specular.png-68fafe8b7172d1742bc8e65e2d93f86f.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/warrior_spirit_normal.png-baab2251a6788b7ccda169fa6659649a.stex"
+
+[resource]
+resource_name = "maria_M"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 2 )
+roughness = 0.5
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 3 )

@@ -1,0 +1,577 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://model/energy/warrior_spirit_small_energy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://model/energy/warrior_spirit_energy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gui/font/black_chacery_18_o.tres" type="DynamicFont" id=3]
+[ext_resource path="res://animation/energy/hint_idle.tres" type="Animation" id=4]
+[ext_resource path="res://source/character/dialogue/AnimatedDialogue.cs" type="Script" id=5]
+[ext_resource path="res://animation/warrior_spirit/t_pose.tres" type="Animation" id=6]
+[ext_resource path="res://model/warrior_spirit/warrior_spirit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://animation/warrior_spirit/appear.tres" type="Animation" id=8]
+[ext_resource path="res://animation/warrior_spirit/relax.tres" type="Animation" id=9]
+[ext_resource path="res://animation/warrior_spirit/dialogue_1.tres" type="Animation" id=10]
+[ext_resource path="res://animation/warrior_spirit/dialogue_end.tres" type="Animation" id=11]
+[ext_resource path="res://animation/warrior_spirit/dialogue_start.tres" type="Animation" id=12]
+[ext_resource path="res://animation/warrior_spirit/disappear.tres" type="Animation" id=13]
+[ext_resource path="res://animation/warrior_spirit/idle.tres" type="Animation" id=14]
+[ext_resource path="res://.import/magic_circle_active.ogg-6e67524a0b9e5769963a0fdb2dab3f36.oggstr" type="AudioStream" id=15]
+[ext_resource path="res://.import/scale_teleport.wav-91f175e81a2addbf90eecb11af680eaa.sample" type="AudioStream" id=16]
+
+[sub_resource type="BoxShape" id=42]
+extents = Vector3( 0.05, 0.1, 0.5 )
+
+[sub_resource type="Animation" id=43]
+resource_name = "dialogue_2"
+length = 39.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DialogueControl/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6, 11, 17, 21, 24, 30, 33, 36 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Warrior Spirit: Perfect, I knew you could do it. You were able to control the \"Blaze Energy\".", "Warrior Spirit:  It manifested itself in you in the form of the \"Blaze Sword\".", "Warrior Spirit: I really believe you will save our planet, you just need to believe it too.", "Warrior Spirit: Also, you need to know about the \"Energy Gates\",", "Warrior Spirit: they block your access to some places,", "Warrior Spirit: you can only get rid of them if you are controlling the energy capable of canceling them.", "Sophie: I think I had to cancel one before.", "Warrior Spirit: So, you already know what to do.", "Sophie: I think I do." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DialogueControl:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=44]
+resource_name = "dialogue_3"
+length = 35.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DialogueControl/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6, 9, 13, 17, 22, 26, 31 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Warrior Spirit: You have so much potential, you are in full control of the \"Avenger Energy\".", "Warrior Spirit: I can feel you are more powerful now.", "Warrior Spirit: Do you remember what I said about the \"Energy Gates\"?", "Warrior Spirit: The one in your back is the \"Monarch Gate\",", "Warrior Spirit: you need to be in full control of the \"Monarch Energy\" to cancel it.", "Warrior Spirit: Of all the \"Energy Sources\" you found,", "Warrior Spirit: the \"Monarch Energy\" is the only one capable of defeating a god.", "Warrior Spirit: The \"Evil Goddess\" probably is hidding behind this gate." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DialogueControl:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=45]
+resource_name = "dialogue_4"
+length = 55.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DialogueControl/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 10, 15, 20, 25, 31, 34, 39, 44, 49 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Warrior Spirit: It is incredible, you are already controlling the \"Monarch Energy\",", "Warrior Spirit: I can feel the \"Monarch Energy\" rising inside you.", "Warrior Spirit: I am so proud of you, now you are a \"Monarch\", just like me.", "Warrior Spirit: Currently, you're the only \"Monarch\" that have a mortal body,", "Warrior Spirit: It makes you responsible for protecting the Earth.", "Warrior Spirit: It is official now, as the \"Monarch\", it is your mission to find and destroy the \"Evil Goddess\".", "Sophie: So, I had another option before?", "Warrior Spirit: Yes and no. Considering you were not a \"Monarch\", you could just run away.", "Warrior Spirit: Of course the result would be a destroyed Earth and you dead,", "Warrior Spirit: but now, it is your obligation to protect the Earth,", "Warrior Spirit: if you fail to do it, you, me and all \"Monarchs\" will suffer even more than the destroyed Earth." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DialogueControl:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "dialogue_5"
+length = 46.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DialogueControl/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6, 11, 16, 21, 26, 31, 36, 41 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Sophie: I won't lie, the moment of the truth is really close and I am a little bit scared.", "Warrior Spirit: I think it is a very common reaction, you're going to fight a goddess soon.", "Warrior Spirit: We are talking about a powerful creature that you have to defeat,", "Warrior Spirit: that is for sure the biggest challenge of your life.", "Warrior Spirit: Don't let it distract you, you are the only active \"Monarch\".", "Warrior Spirit: You will end up dying or defeating her, there are no other outcomes.", "Warrior Spirit: If you fail or give up, the Earth and all \"Monarchs\" will suffer the consequences.", "Warrior Spirit: Remember, I can see the energy inside every living being,", "Warrior Spirit: and I know you are powerful enough to do it, I believe you \"Monarch\"." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DialogueControl:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=47]
+resource_name = "dialogue_6"
+length = 101.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DialogueControl/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 11, 17, 22, 27, 33, 39, 44, 48, 52, 57, 62, 68, 74, 78, 82, 85, 91, 97 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Warrior Spirit: Excellent job \"Monarch\", you protected the Earth from the \"Evil Goddess\".", "Warrior Spirit: I didn't tell you before but, everyone that turns into a \"Monarch\" also becomes immortal.", "Warrior Spirit: You will be responsible for protecting the Earth until your human body dies,", "Warrior Spirit: and after that, you will become immortal just like me.", "Warrior Spirit: Once you are a \"Monarch\", you will be a \"Monarch\" for the whole eternity.", "Sophie: I feel so tired. Now that all of this is gone, I think I will sleep a whole week.", "Warrior Spirit: You're not adapted to the \"Monarch Energy\", so it is draining all your energy way too fast.", "Warrior Spirit: Rest hero, it will be a well deserved week of rest.", "Warrior Spirit: Rest because, ... you need to be ready,", "Warrior Spirit: now that you are the only active \"Monarch\",", "Warrior Spirit: you will have to protect the Earth from the upcoming challenges.", "Warrior Spirit: The next is the \"Genocide God\", he is at least one thousand times stronger.", "Warrior Spirit: You need to find the \"Energy Enhancer\" and learn how to use it to enhanced the \"Monarch Energy\",", "Warrior Spirit: After that, you will need to train really hard for a whole year without a single hour of sleep,", "Warrior Spirit: only then you will be ready to fight him,", "Warrior Spirit: That is the only way you can keep protecting the Earth.", "Sophie: Wait, what?", "Warrior Spirit: Hahahaha, I was just kidding, even I don't know if a new danger will appear or not.", "Warrior Spirit: When I was the active \"Monarch\", the \"Evil Goddess\" was the only danger I had to overcome.", "Warrior Spirit: I wish you good luck in your journey \"Monarch\"." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DialogueControl:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=48]
+resource_name = "dialogue_test"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DialogueControl/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Sophie: Starting a talk, just a test.", "Warrior Spirit: Ok sweety, so let's test." ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DialogueControl:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=49]
+resource_name = "pre_idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spirit/WarriorSpiritEnergy/AuraParticles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Spirit/WarriorSpiritEnergy/AuraBallParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Spirit/WarriorSpiritEnergy/CircleMeshInstance:material_override:shader_param/effect_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 2, 2, 2, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Spirit/WarriorSpiritEnergy/RingsMeshInstance:material_override:shader_param/effect_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 2, 2, 2, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Spirit/Body:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("DialogueControl:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("HintControl:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("DialogueControl/Label:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "" ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("InteractArea:monitoring")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("InteractArea:monitorable")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("LoopAudioStreamPlayer3D:unit_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 14.0 ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath("LoopAudioStreamPlayer3D")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "appear"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "dialogue_1"
+
+[sub_resource type="AnimationNodeAnimation" id=11]
+animation = "dialogue_2"
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "dialogue_3"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "dialogue_4"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "dialogue_5"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "dialogue_6"
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "dialogue_end"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "dialogue_start"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "dialogue_test"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "disappear"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "pre_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=41]
+states/appear/node = SubResource( 9 )
+states/appear/position = Vector2( 359, -40.1256 )
+states/dialogue_1/node = SubResource( 10 )
+states/dialogue_1/position = Vector2( 575, -64.1256 )
+states/dialogue_2/node = SubResource( 11 )
+states/dialogue_2/position = Vector2( 575, -9.9335 )
+states/dialogue_3/node = SubResource( 12 )
+states/dialogue_3/position = Vector2( 575, 45.002 )
+states/dialogue_4/node = SubResource( 13 )
+states/dialogue_4/position = Vector2( 575, 100 )
+states/dialogue_5/node = SubResource( 14 )
+states/dialogue_5/position = Vector2( 575, 153.874 )
+states/dialogue_6/node = SubResource( 15 )
+states/dialogue_6/position = Vector2( 575, 208.35 )
+states/dialogue_end/node = SubResource( 16 )
+states/dialogue_end/position = Vector2( 809, 100 )
+states/dialogue_start/node = SubResource( 17 )
+states/dialogue_start/position = Vector2( 359, 100 )
+states/dialogue_test/node = SubResource( 18 )
+states/dialogue_test/position = Vector2( 575, 261.81 )
+states/disappear/node = SubResource( 19 )
+states/disappear/position = Vector2( 575, 327 )
+states/idle/node = SubResource( 20 )
+states/idle/position = Vector2( 113, 100 )
+states/pre_idle/node = SubResource( 21 )
+states/pre_idle/position = Vector2( -51.1849, 100 )
+transitions = [ "idle", "appear", SubResource( 22 ), "disappear", "idle", SubResource( 23 ), "appear", "dialogue_start", SubResource( 24 ), "dialogue_end", "disappear", SubResource( 25 ), "dialogue_start", "dialogue_1", SubResource( 26 ), "dialogue_1", "dialogue_end", SubResource( 27 ), "dialogue_start", "dialogue_2", SubResource( 28 ), "dialogue_2", "dialogue_end", SubResource( 29 ), "dialogue_start", "dialogue_3", SubResource( 30 ), "dialogue_3", "dialogue_end", SubResource( 31 ), "dialogue_start", "dialogue_4", SubResource( 32 ), "dialogue_4", "dialogue_end", SubResource( 33 ), "dialogue_start", "dialogue_5", SubResource( 34 ), "dialogue_start", "dialogue_6", SubResource( 35 ), "dialogue_5", "dialogue_end", SubResource( 36 ), "dialogue_6", "dialogue_end", SubResource( 37 ), "pre_idle", "idle", SubResource( 38 ), "dialogue_start", "dialogue_test", SubResource( 39 ), "dialogue_test", "dialogue_end", SubResource( 40 ) ]
+start_node = "pre_idle"
+graph_offset = Vector2( 151.605, -59.7977 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=50]
+
+[node name="WarriorSpirit" type="Spatial" groups=[
+"warrior_spirit",
+]]
+script = ExtResource( 5 )
+spiritNP = NodePath("Spirit")
+animationTreeNP = NodePath("AnimationTree")
+hintAnimationPlayerNP = NodePath("HintAnimationPlayer")
+animationName = "dialogue_3"
+
+[node name="Spirit" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0 )
+
+[node name="Body" type="Spatial" parent="Spirit"]
+transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.15, 0.2, 0 )
+
+[node name="WarriorSpiritSkeleton" parent="Spirit/Body" instance=ExtResource( 7 )]
+transform = Transform( -1.95505e-07, 0, -1.2, 0, 1.2, 0, 1.2, 0, -1.95505e-07, 0.15, 0, 0 )
+
+[node name="WarriorSpiritEnergy" parent="Spirit" instance=ExtResource( 2 )]
+
+[node name="WarriorSpiritSmallEnergy" parent="." instance=ExtResource( 1 )]
+
+[node name="InteractArea" type="Area" parent="."]
+collision_layer = 1024
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="InteractArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
+shape = SubResource( 42 )
+
+[node name="DialogueControl" type="Control" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DialogueControl"]
+margin_top = 660.0
+margin_right = 1280.0
+margin_bottom = 674.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HintControl" type="Control" parent="."]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HintControl"]
+margin_top = 660.0
+margin_right = 1280.0
+margin_bottom = 674.0
+custom_fonts/font = ExtResource( 3 )
+text = "Press ATTACK to interact"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/appear = ExtResource( 8 )
+anims/dialogue_1 = ExtResource( 10 )
+anims/dialogue_2 = SubResource( 43 )
+anims/dialogue_3 = SubResource( 44 )
+anims/dialogue_4 = SubResource( 45 )
+anims/dialogue_5 = SubResource( 46 )
+anims/dialogue_6 = SubResource( 47 )
+anims/dialogue_end = ExtResource( 11 )
+anims/dialogue_start = ExtResource( 12 )
+anims/dialogue_test = SubResource( 48 )
+anims/disappear = ExtResource( 13 )
+anims/idle = ExtResource( 14 )
+anims/pre_idle = SubResource( 49 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 41 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 50 )
+
+[node name="HintAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hint_idle = ExtResource( 4 )
+
+[node name="WSAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/relax = ExtResource( 9 )
+anims/t_pose = ExtResource( 6 )
+
+[node name="LoopAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 15 )
+unit_db = 14.0
+
+[node name="EffectAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 16 )
+attenuation_model = 3
+unit_db = 20.0
+[connection signal="area_entered" from="InteractArea" to="." method="OnInteractAreaEntered"]
+[connection signal="area_exited" from="InteractArea" to="." method="OnInteractAreaExited"]

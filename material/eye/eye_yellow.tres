@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://shader/eye.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/resolution = Vector2( 1, 1 )
+shader_param/eye_color_1 = Color( 1.1, 0.9, 0.5, 1 )
+shader_param/eye_color_2 = Color( 1.1, 0.7, 0.3, 1 )
+shader_param/eye_color_3 = Color( 1.1, 1, 0.2, 1 )
+shader_param/eye_color_4 = Color( 1.2, 0.3, 0.1, 1 )
+shader_param/eye_color_5 = Color( 1.3, 0.6, 0, 1 )
+shader_param/eye_bg = Color( 1.25, 0.99, 0.98, 1 )
+shader_param/eye_scale = 1.5
+shader_param/speed = 3.0

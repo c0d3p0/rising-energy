@@ -1,0 +1,249 @@
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://source/character/enemy/BaseEnemyInitializer.cs" type="Script" id=1]
+[ext_resource path="res://model/behemoth/behemoth.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/character/CharacterMove.cs" type="Script" id=3]
+[ext_resource path="res://animation/behemoth/idle.tres" type="Animation" id=4]
+[ext_resource path="res://source/character/enemy/BaseEnemyCharacter.cs" type="Script" id=5]
+[ext_resource path="res://source/character/CharacterPhysics.cs" type="Script" id=6]
+[ext_resource path="res://animation/behemoth/t_pose.tres" type="Animation" id=7]
+[ext_resource path="res://animation/behemoth/walk.tres" type="Animation" id=8]
+[ext_resource path="res://animation/behemoth/die.tres" type="Animation" id=9]
+[ext_resource path="res://source/character/enemy/EnemyCharacterAction.cs" type="Script" id=10]
+[ext_resource path="res://animation/character/pre_spawn.tres" type="Animation" id=11]
+[ext_resource path="res://animation/behemoth/hit.tres" type="Animation" id=12]
+[ext_resource path="res://animation/behemoth/grow.tres" type="Animation" id=13]
+[ext_resource path="res://source/character/enemy/grower/GrowerEnemyBehavior.cs" type="Script" id=14]
+[ext_resource path="res://source/character/BaseCharacterVitality.cs" type="Script" id=15]
+[ext_resource path="res://animation/behemoth/spawn.tres" type="Animation" id=16]
+[ext_resource path="res://.import/hit.wav-935c1fcc4ceacc665e8cf31fe7e97318.sample" type="AudioStream" id=17]
+[ext_resource path="res://.import/behemoth_hit.wav-c91f5de77e04bdfca5cb30df5b681744.sample" type="AudioStream" id=18]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+height = 0.6
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.3
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.3
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "die"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "grow"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "hit"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "pre_spawn"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "spawn"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachine" id=22]
+states/die/node = SubResource( 4 )
+states/die/position = Vector2( 413.63, 263.496 )
+states/grow/node = SubResource( 5 )
+states/grow/position = Vector2( 641.63, 154.247 )
+states/hit/node = SubResource( 6 )
+states/hit/position = Vector2( 413.63, 48.044 )
+states/idle/node = SubResource( 7 )
+states/idle/position = Vector2( 338.63, 154.247 )
+states/pre_spawn/node = SubResource( 8 )
+states/pre_spawn/position = Vector2( 188.63, 64.5395 )
+states/spawn/node = SubResource( 9 )
+states/spawn/position = Vector2( 188.63, 154.247 )
+states/walk/node = SubResource( 10 )
+states/walk/position = Vector2( 486.63, 154.247 )
+transitions = [ "idle", "walk", SubResource( 11 ), "walk", "idle", SubResource( 12 ), "idle", "die", SubResource( 13 ), "walk", "die", SubResource( 14 ), "spawn", "idle", SubResource( 15 ), "grow", "walk", SubResource( 16 ), "walk", "grow", SubResource( 17 ), "walk", "hit", SubResource( 18 ), "idle", "hit", SubResource( 19 ), "hit", "idle", SubResource( 20 ), "pre_spawn", "spawn", SubResource( 21 ) ]
+start_node = "pre_spawn"
+graph_offset = Vector2( -9.75658, 1.53948 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
+
+[node name="Behemoth" type="KinematicBody"]
+collision_mask = 18
+script = ExtResource( 5 )
+enemyBehaviorNP = NodePath("Source/GrowerEnemyBehavior")
+enemyCharacterActionNP = NodePath("Source/EnemyCharacterAction")
+enemyCharacterVitalityNP = NodePath("Source/EnemyCharacterVitality")
+
+[node name="StandCollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.8, 0 )
+shape = SubResource( 1 )
+
+[node name="Body" type="Spatial" parent="."]
+transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="BehemothSkeleton" parent="Body" instance=ExtResource( 2 )]
+transform = Transform( -1.30337e-07, 0, 0.8, 0, 0.8, 0, -0.8, 0, -1.30337e-07, 0, 0, 0 )
+
+[node name="FrontRayCast" type="RayCast" parent="Body"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0.1, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 0.65 )
+collision_mask = 30
+
+[node name="DownRayCast" type="RayCast" parent="Body"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.5, 0.5, 0 )
+enabled = true
+cast_to = Vector3( 0, -0.55, 0 )
+collision_mask = 30
+
+[node name="StrikeArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
+monitoring = false
+monitorable = false
+collision_layer = 256
+collision_mask = 32
+
+[node name="CollisionShape" type="CollisionShape" parent="StrikeArea"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="HurtArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
+monitoring = false
+monitorable = false
+collision_layer = 64
+collision_mask = 640
+
+[node name="CollisionShape" type="CollisionShape" parent="HurtArea"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="DespawnVisibilityNotifier" type="VisibilityNotifier" parent="."]
+aabb = AABB( -0.5, 0, -0.5, 1, 2, 1 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
+stream = ExtResource( 18 )
+attenuation_model = 3
+
+[node name="EffectAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 17 )
+attenuation_model = 3
+unit_db = 20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/die = ExtResource( 9 )
+anims/grow = ExtResource( 13 )
+anims/hit = ExtResource( 12 )
+anims/idle = ExtResource( 4 )
+anims/pre_spawn = ExtResource( 11 )
+anims/spawn = ExtResource( 16 )
+anims/t_pose = ExtResource( 7 )
+anims/walk = ExtResource( 8 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 22 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 23 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="CharacterPhysics" type="Node" parent="Source"]
+script = ExtResource( 6 )
+gravityEnabled = false
+kinematicBodyNP = NodePath("../..")
+
+[node name="CharacterMove" type="Node" parent="Source"]
+script = ExtResource( 3 )
+moveSpeed = Vector3( 3, 0, 0 )
+acceleration = 22.0
+deacceleration = 30.0
+moveInYEnabled = false
+
+[node name="GrowerEnemyBehavior" type="Node" parent="Source"]
+script = ExtResource( 14 )
+enemyCharacterNP = NodePath("../..")
+frontRayCastNP = NodePath("../../Body/FrontRayCast")
+downRayCastNP = NodePath("../../Body/DownRayCast")
+growTriggerRng = 450
+
+[node name="EnemyCharacterAction" type="Node" parent="Source"]
+script = ExtResource( 10 )
+toAttackMap = {
+"walk": "grow"
+}
+toMoveMap = {
+"idle": "walk",
+"spawn": "walk",
+"walk": "walk"
+}
+bodyNP = NodePath("../../Body")
+animationTreeNP = NodePath("../../AnimationTree")
+enemyCharacterNP = NodePath("../..")
+despawnTimerNP = NodePath("../../DespawnTimer")
+despawnVisibilityNotifierNP = NodePath("../../DespawnVisibilityNotifier")
+
+[node name="EnemyCharacterVitality" type="Node" parent="Source"]
+script = ExtResource( 15 )
+strikeAreaNP = NodePath("../../StrikeArea")
+hurtAreaNP = NodePath("../../HurtArea")
+maxHealth = 205.0
+currentHealth = 205.0
+healthRecoverPerSecond = 1.0
+energyRecoverPerSecond = 0.0
+damageGivenMap = {
+"default": Vector3( 300, 300, 300 )
+}
+energyTakenMap = {
+
+}
+
+[node name="EnemyInitializer" type="Node" parent="Source"]
+script = ExtResource( 1 )
+enemyCharacterNP = NodePath("../..")
+characterPhysicsNP = NodePath("../CharacterPhysics")
+characterMoveNP = NodePath("../CharacterMove")
+enemyBehaviorNP = NodePath("../GrowerEnemyBehavior")
+enemyCharacterActionNP = NodePath("../EnemyCharacterAction")
+enemyCharacterVitalityNP = NodePath("../EnemyCharacterVitality")
+hurtAreaNP = NodePath("../../HurtArea")
+[connection signal="area_entered" from="StrikeArea" to="Source/EnemyCharacterVitality" method="OnStrikeAreaEntered"]
+[connection signal="area_entered" from="HurtArea" to="Source/EnemyCharacterVitality" method="OnHurtAreaEntered"]
+[connection signal="timeout" from="DespawnTimer" to="Source/EnemyCharacterAction" method="OnDespawnTimeout"]
+[connection signal="camera_entered" from="DespawnVisibilityNotifier" to="Source/EnemyCharacterAction" method="OnCameraEntered"]
+[connection signal="camera_exited" from="DespawnVisibilityNotifier" to="Source/EnemyCharacterAction" method="OnCameraExited"]

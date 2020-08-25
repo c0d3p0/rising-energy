@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/projectile_appear.wav-571b26d0d300195c46d8aae4bec818b9.sample"
+
+[deps]
+
+source_file="res://sound/effect/projectile/projectile_appear.wav"
+dest_files=[ "res://.import/projectile_appear.wav-571b26d0d300195c46d8aae4bec818b9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

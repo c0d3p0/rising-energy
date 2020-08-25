@@ -1,0 +1,164 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://prefab/block/mountain/mountain_block_8.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefab/level/enemy_spawn_spot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefab/level/death_pit.tscn" type="PackedScene" id=3]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( -0.5, 4, 1, 0.5, 4, 1, -0.5, 3, 1, 0.5, 4, 1, 0.5, 3, 1, -0.5, 3, 1, 0.5, 4, -1, -0.5, 4, -1, 0.5, 3, -1, -0.5, 4, -1, -0.5, 3, -1, 0.5, 3, -1, -0.5, 3, 1, 0.5, 3, 1, -0.5, 2, 1, 0.5, 3, 1, 0.5, 2, 1, -0.5, 2, 1, 0.5, 3, -1, -0.5, 3, -1, 0.5, 2, -1, -0.5, 3, -1, -0.5, 2, -1, 0.5, 2, -1, -0.5, 2, 1, 0.5, 2, 1, -0.5, 1, 1, 0.5, 2, 1, 0.5, 1, 1, -0.5, 1, 1, 0.5, 2, -1, -0.5, 2, -1, 0.5, 1, -1, -0.5, 2, -1, -0.5, 1, -1, 0.5, 1, -1, -0.5, 1, 1, 0.5, 1, 1, -0.5, 0, 1, 0.5, 1, 1, 0.5, 0, 1, -0.5, 0, 1, 0.5, 1, -1, -0.5, 1, -1, 0.5, 0, -1, -0.5, 1, -1, -0.5, 0, -1, 0.5, 0, -1, -0.5, 0, 1, 0.5, 0, 1, -0.5, -1, 1, 0.5, 0, 1, 0.5, -1, 1, -0.5, -1, 1, 0.5, 0, -1, -0.5, 0, -1, 0.5, -1, -1, -0.5, 0, -1, -0.5, -1, -1, 0.5, -1, -1, -0.5, -1, 1, 0.5, -1, 1, -0.5, -2, 1, 0.5, -1, 1, 0.5, -2, 1, -0.5, -2, 1, 0.5, -1, -1, -0.5, -1, -1, 0.5, -2, -1, -0.5, -1, -1, -0.5, -2, -1, 0.5, -2, -1, -0.5, -2, 1, 0.5, -2, 1, -0.5, -3, 1, 0.5, -2, 1, 0.5, -3, 1, -0.5, -3, 1, 0.5, -2, -1, -0.5, -2, -1, 0.5, -3, -1, -0.5, -2, -1, -0.5, -3, -1, 0.5, -3, -1, -0.5, -3, 1, 0.5, -3, 1, -0.5, -4, 1, 0.5, -3, 1, 0.5, -4, 1, -0.5, -4, 1, 0.5, -3, -1, -0.5, -3, -1, 0.5, -4, -1, -0.5, -3, -1, -0.5, -4, -1, 0.5, -4, -1, 0.5, 4, 1, 0.5, 4, 0, 0.5, 3, 1, 0.5, 4, 0, 0.5, 3, 0, 0.5, 3, 1, -0.5, 4, -1, -0.5, 4, 0, -0.5, 3, -1, -0.5, 4, 0, -0.5, 3, 0, -0.5, 3, -1, 0.5, 4, 0, 0.5, 4, -1, 0.5, 3, 0, 0.5, 4, -1, 0.5, 3, -1, 0.5, 3, 0, -0.5, 4, 0, -0.5, 4, 1, -0.5, 3, 0, -0.5, 4, 1, -0.5, 3, 1, -0.5, 3, 0, 0.5, 3, 1, 0.5, 3, 0, 0.5, 2, 1, 0.5, 3, 0, 0.5, 2, 0, 0.5, 2, 1, -0.5, 3, -1, -0.5, 3, 0, -0.5, 2, -1, -0.5, 3, 0, -0.5, 2, 0, -0.5, 2, -1, 0.5, 3, 0, 0.5, 3, -1, 0.5, 2, 0, 0.5, 3, -1, 0.5, 2, -1, 0.5, 2, 0, -0.5, 3, 0, -0.5, 3, 1, -0.5, 2, 0, -0.5, 3, 1, -0.5, 2, 1, -0.5, 2, 0, 0.5, 2, 1, 0.5, 2, 0, 0.5, 1, 1, 0.5, 2, 0, 0.5, 1, 0, 0.5, 1, 1, -0.5, 2, -1, -0.5, 2, 0, -0.5, 1, -1, -0.5, 2, 0, -0.5, 1, 0, -0.5, 1, -1, 0.5, 2, 0, 0.5, 2, -1, 0.5, 1, 0, 0.5, 2, -1, 0.5, 1, -1, 0.5, 1, 0, -0.5, 2, 0, -0.5, 2, 1, -0.5, 1, 0, -0.5, 2, 1, -0.5, 1, 1, -0.5, 1, 0, 0.5, 1, 1, 0.5, 1, 0, 0.5, 0, 1, 0.5, 1, 0, 0.5, 0, 0, 0.5, 0, 1, -0.5, 1, -1, -0.5, 1, 0, -0.5, 0, -1, -0.5, 1, 0, -0.5, 0, 0, -0.5, 0, -1, 0.5, 1, 0, 0.5, 1, -1, 0.5, 0, 0, 0.5, 1, -1, 0.5, 0, -1, 0.5, 0, 0, -0.5, 1, 0, -0.5, 1, 1, -0.5, 0, 0, -0.5, 1, 1, -0.5, 0, 1, -0.5, 0, 0, 0.5, 0, 1, 0.5, 0, 0, 0.5, -1, 1, 0.5, 0, 0, 0.5, -1, 0, 0.5, -1, 1, -0.5, 0, -1, -0.5, 0, 0, -0.5, -1, -1, -0.5, 0, 0, -0.5, -1, 0, -0.5, -1, -1, 0.5, 0, 0, 0.5, 0, -1, 0.5, -1, 0, 0.5, 0, -1, 0.5, -1, -1, 0.5, -1, 0, -0.5, 0, 0, -0.5, 0, 1, -0.5, -1, 0, -0.5, 0, 1, -0.5, -1, 1, -0.5, -1, 0, 0.5, -1, 1, 0.5, -1, 0, 0.5, -2, 1, 0.5, -1, 0, 0.5, -2, 0, 0.5, -2, 1, -0.5, -1, -1, -0.5, -1, 0, -0.5, -2, -1, -0.5, -1, 0, -0.5, -2, 0, -0.5, -2, -1, 0.5, -1, 0, 0.5, -1, -1, 0.5, -2, 0, 0.5, -1, -1, 0.5, -2, -1, 0.5, -2, 0, -0.5, -1, 0, -0.5, -1, 1, -0.5, -2, 0, -0.5, -1, 1, -0.5, -2, 1, -0.5, -2, 0, 0.5, -2, 1, 0.5, -2, 0, 0.5, -3, 1, 0.5, -2, 0, 0.5, -3, 0, 0.5, -3, 1, -0.5, -2, -1, -0.5, -2, 0, -0.5, -3, -1, -0.5, -2, 0, -0.5, -3, 0, -0.5, -3, -1, 0.5, -2, 0, 0.5, -2, -1, 0.5, -3, 0, 0.5, -2, -1, 0.5, -3, -1, 0.5, -3, 0, -0.5, -2, 0, -0.5, -2, 1, -0.5, -3, 0, -0.5, -2, 1, -0.5, -3, 1, -0.5, -3, 0, 0.5, -3, 1, 0.5, -3, 0, 0.5, -4, 1, 0.5, -3, 0, 0.5, -4, 0, 0.5, -4, 1, -0.5, -3, -1, -0.5, -3, 0, -0.5, -4, -1, -0.5, -3, 0, -0.5, -4, 0, -0.5, -4, -1, 0.5, -3, 0, 0.5, -3, -1, 0.5, -4, 0, 0.5, -3, -1, 0.5, -4, -1, 0.5, -4, 0, -0.5, -3, 0, -0.5, -3, 1, -0.5, -4, 0, -0.5, -3, 1, -0.5, -4, 1, -0.5, -4, 0, 0.5, 4, 1, -0.5, 4, 1, 0.5, 4, 0, -0.5, 4, 1, -0.5, 4, 0, 0.5, 4, 0, -0.5, -4, 1, 0.5, -4, 1, -0.5, -4, 0, 0.5, -4, 1, 0.5, -4, 0, -0.5, -4, 0, 0.5, 4, 0, -0.5, 4, 0, 0.5, 4, -1, -0.5, 4, 0, -0.5, 4, -1, 0.5, 4, -1, -0.5, -4, 0, 0.5, -4, 0, -0.5, -4, -1, 0.5, -4, 0, 0.5, -4, -1, -0.5, -4, -1 )
+
+[node name="MountainAreaOne" type="Spatial"]
+
+[node name="Border" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -104.5, 4, 0 )
+collision_layer = 16
+collision_mask = 15
+
+[node name="CollisionShape" type="CollisionShape" parent="Border"]
+shape = SubResource( 1 )
+
+[node name="MountainBlock8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -114, -4, -2.5 )
+
+[node name="MountainBlock8_2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -106, -4, -2.5 )
+
+[node name="MountainBlock8_3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -98, -4, -2.5 )
+
+[node name="MountainBlock8_4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -87, -5, -2.5 )
+
+[node name="MountainBlock8_5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79, -5, -2.5 )
+
+[node name="MountainBlock8_6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71, -5, -2.5 )
+
+[node name="MountainBlock8_7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -21, -2.5 )
+
+[node name="MountainBlock8_8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47, -21, -2.5 )
+
+[node name="MountainBlock8_9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39, -21, -2.5 )
+
+[node name="MountainBlock8_10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31, -21, -2.5 )
+
+[node name="MountainBlock8_11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, -29, -2.5 )
+
+[node name="MountainBlock8_12" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -29, -2.5 )
+
+[node name="MountainBlock8_13" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -28, -2.5 )
+
+[node name="MountainBlock8_14" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -27, -2.5 )
+
+[node name="MountainBlock8_Extra" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -39, -10.5 )
+
+[node name="MountainBlock8_15" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -39, -2.5 )
+
+[node name="MountainBlock8_16" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33, -39, -2.5 )
+
+[node name="MountainBlock8_Extra2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44, -38, -10.5 )
+
+[node name="MountainBlock8_17" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44, -38, -2.5 )
+
+[node name="MountainBlock8_Extra3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -37, -10.5 )
+
+[node name="MountainBlock8_18" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -37, -2.5 )
+
+[node name="MountainBlock8_19" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -37, -2.5 )
+
+[node name="MountainBlock8_20" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68, -37, -2.5 )
+
+[node name="MountainBlock8_21" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 76, -38, -2.5 )
+
+[node name="MountainBlock8_22" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 84, -38, -2.5 )
+
+[node name="MountainBlock8_23" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 89, -58, -2.5 )
+
+[node name="MountainBlock8_24" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 104, -67, -2.5 )
+
+[node name="MountainBlock8_25" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 112, -67, -2.5 )
+
+[node name="MountainBlock8_26" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 120, -67, -2.5 )
+
+[node name="MountainBlock8_27" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 128, -67, -2.5 )
+
+[node name="MountainBlock8_28" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 136, -67, -2.5 )
+
+[node name="DeathPit" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -92, -10, 0 )
+aabb = AABB( -3, -1, -1, 6, 2, 2 )
+
+[node name="DeathPit2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.522, -26, 0 )
+aabb = AABB( -5, -1, -1, 10, 2, 2 )
+
+[node name="DeathPit3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -34, 0 )
+aabb = AABB( -10, -1, -1, 30, 2, 2 )
+
+[node name="DeathPit4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -44, 0 )
+aabb = AABB( -15, -1, -1, 30, 2, 2 )
+
+[node name="DeathPit5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 110, -72, 0 )
+aabb = AABB( -40, -1, -1, 80, 2, 2 )
+
+[node name="EnemySpawnSpot" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 1, 0 )
+aabb = AABB( -7.5, -2, -1, 15, 4, 2 )
+
+[node name="EnemySpawnSpot2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43, -15, 0 )
+aabb = AABB( -15.5, -2, -1, 31, 4, 2 )
+
+[node name="EnemySpawnSpot3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -23, 0 )
+aabb = AABB( -7.5, -2, -1, 15, 4, 2 )
+
+[node name="EnemySpawnSpot4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -22, 0 )
+
+[node name="EnemySpawnSpot5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -21, 0 )
+
+[node name="EnemySpawnSpot6" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, -33, 0 )
+aabb = AABB( -7.5, -2, -1, 15, 4, 2 )
+
+[node name="EnemySpawnSpot7" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44, -32, 0 )
+
+[node name="EnemySpawnSpot8" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -31, 0 )
+aabb = AABB( -11.5, -2, -1, 23, 4, 2 )
+
+[node name="EnemySpawnSpot9" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80, -32, 0 )
+aabb = AABB( -7.5, -2, -1, 15, 4, 2 )

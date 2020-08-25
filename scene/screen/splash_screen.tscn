@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://source/screen/load/LoadResource.cs" type="Script" id=1]
+[ext_resource path="res://source/game/NodePreInstance.cs" type="Script" id=2]
+[ext_resource path="res://source/screen/load/LoadScreen.cs" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/godot logo.png-04ec37692bdff9e88e6c632e1cbc1dff.stex"
+
+[sub_resource type="Animation" id=3]
+resource_name = "splash"
+length = 2.0
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("LogoTextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="SplashScreenControl" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyContainer" type="Spatial" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LogoTextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 320.0
+margin_top = 230.0
+margin_right = 960.0
+margin_bottom = 489.0
+texture = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SplashScreenTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "splash"
+anims/splash = SubResource( 3 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="LoadResource" type="Node" parent="Source"]
+script = ExtResource( 1 )
+resourcePathList = [ "res://prefab/energy/evil_energy.tscn", "res://prefab/character/behemoth.tscn", "res://prefab/character/claw.tscn", "res://prefab/character/cranium.tscn", "res://prefab/character/cursed.tscn", "res://prefab/character/demon.tscn", "res://prefab/character/evil_goddess.tscn", "res://prefab/character/goblin.tscn", "res://prefab/character/head_bone.tscn", "res://prefab/character/mutant_tree.tscn", "res://prefab/character/skull.tscn", "res://prefab/character/zombie.tscn", "res://prefab/energy/avenger_energy_source.tscn", "res://prefab/energy/blaze_energy_source.tscn", "res://prefab/energy/monarch_energy_source.tscn", "res://prefab/level/checkpoint.tscn", "res://prefab/level/fight_area.tscn", "res://prefab/projectile/blue_eye.tscn", "res://prefab/projectile/blue_fluid_ball.tscn", "res://prefab/projectile/blue_geo_ball.tscn", "res://prefab/projectile/green_fluid_ball.tscn", "res://prefab/projectile/green_wave_ball.tscn", "res://prefab/projectile/h_red_ring.tscn", "res://prefab/projectile/magenta_geo_ball.tscn", "res://prefab/projectile/purple_eye.tscn", "res://prefab/projectile/red_wave_ball.tscn", "res://prefab/projectile/t_red_ring.tscn", "res://prefab/projectile/v_red_ring.tscn", "res://prefab/projectile/yellow_eye.tscn", "res://prefab/projectile/yellow_geo_ball.tscn", "res://prefab/projectile/yellow_wave_ball.tscn", "res://prefab/weapon/avenger_sword.tscn", "res://prefab/weapon/blaze_sword.tscn", "res://prefab/weapon/monarch_sword.tscn" ]
+nextNodeNP = NodePath("../NodePreInstance")
+splashScreenTimerNP = NodePath("../../SplashScreenTimer")
+
+[node name="NodePreInstance" type="Node" parent="Source"]
+script = ExtResource( 2 )
+loadScreenNP = NodePath("../LoadScreen")
+enemyContainerNP = NodePath("../../EnemyContainer")
+preInstanceKeyList = [ "evil_energy", "blaze_energy_source", "avenger_energy_source", "monarch_energy_source", "zombie", "goblin", "behemoth", "mutant_tree", "head_bone", "skull", "cranium", "claw", "cursed", "demon", "evil_goddess", "blue_eye", "blue_fluid_ball", "blue_geo_ball", "green_fluid_ball", "green_wave_ball", "h_red_ring", "magenta_geo_ball", "purple_eye", "red_wave_ball", "t_red_ring", "v_red_ring", "yellow_eye", "yellow_geo_ball", "yellow_wave_ball" ]
+
+[node name="LoadScreen" type="Node" parent="Source"]
+script = ExtResource( 3 )
+changeSceneAfterLoad = false

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/zombie_idle.wav-a402c201262c16e7f82a9a61ea4ff78b.sample"
+
+[deps]
+
+source_file="res://sound/zombie/zombie_idle.wav"
+dest_files=[ "res://.import/zombie_idle.wav-a402c201262c16e7f82a9a61ea4ff78b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

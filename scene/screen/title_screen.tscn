@@ -1,0 +1,518 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://gui/theme/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://gui/font/black_chacery_120_o.tres" type="DynamicFont" id=2]
+[ext_resource path="res://source/screen/title/TitleScreen.cs" type="Script" id=3]
+[ext_resource path="res://shader/isles.shader" type="Shader" id=4]
+[ext_resource path="res://prefab/screen/input_mapping_screen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefab/screen/gameplay_data_screen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefab/screen/gameplay_result_screen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://source/game/CheatCode.cs" type="Script" id=8]
+[ext_resource path="res://.import/adventure_alexander_nakarada.ogg-929b3e254a313b636de9678bd939d801.oggstr" type="AudioStream" id=9]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/resolution = Vector2( 1, 1 )
+shader_param/speed = 0.1
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "enable_menu"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ContentControl/GameTitleLabel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20, 20 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlinkPanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ContentControl/ActionControl:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ContentControl/ActionControl/NewGameButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ContentControl/ActionControl/SurvivalGameButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ContentControl/ActionControl/GameplayDataButton:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ContentControl/ActionControl/LastGameplayResultButton:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("ContentControl/ActionControl/InputMappingGameButton:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ContentControl/ActionControl/CreditsButton:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("ContentControl/ActionControl/QuitGameButton:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("ContentControl:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 3.5
+step = 0.04
+tracks/0/type = "value"
+tracks/0/path = NodePath("ContentControl/GameTitleLabel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 20, -200 ), Vector2( 20, 20 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlinkPanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ContentControl/ActionControl:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ContentControl/ActionControl/NewGameButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3.48 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ContentControl/ActionControl/SurvivalGameButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.48 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ContentControl/ActionControl/GameplayDataButton:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3.48 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("ContentControl/ActionControl/LastGameplayResultButton:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3.48 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("ContentControl/ActionControl/InputMappingGameButton:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 3.48 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ContentControl/ActionControl/CreditsButton:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 3.48 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("ContentControl/ActionControl/QuitGameButton:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 3.48 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("ContentControl:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "bg_music"
+length = 275.2
+loop = true
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGPanel" type="Panel" parent="."]
+show_behind_parent = true
+material = SubResource( 1 )
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 640, 360 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlinkPanel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.04 )
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 640, 360 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContentControl" type="Control" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameTitleLabel" type="Label" parent="ContentControl"]
+show_behind_parent = true
+margin_left = 20.0
+margin_top = -200.0
+margin_right = 744.0
+margin_bottom = -41.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.8, 0.25098, 1 )
+text = "Rising Energy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ActionControl" type="Control" parent="ContentControl"]
+show_behind_parent = true
+margin_left = 50.0
+margin_top = 350.0
+margin_right = 1230.0
+margin_bottom = 710.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGameButton" type="Button" parent="ContentControl/ActionControl"]
+margin_right = 12.0
+margin_bottom = 37.0
+disabled = true
+text = "New Game"
+
+[node name="SurvivalGameButton" type="Button" parent="ContentControl/ActionControl"]
+margin_top = 40.0
+margin_right = 161.0
+margin_bottom = 77.0
+disabled = true
+text = "Survival Mode"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameplayDataButton" type="Button" parent="ContentControl/ActionControl"]
+margin_top = 80.0
+margin_right = 161.0
+margin_bottom = 117.0
+disabled = true
+text = "Gameplay Data"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LastGameplayResultButton" type="Button" parent="ContentControl/ActionControl"]
+margin_top = 120.0
+margin_right = 166.0
+margin_bottom = 157.0
+disabled = true
+text = "Last Gameplay Result"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputMappingGameButton" type="Button" parent="ContentControl/ActionControl"]
+margin_top = 160.0
+margin_right = 156.0
+margin_bottom = 197.0
+disabled = true
+text = "Input Mapping"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsButton" type="Button" parent="ContentControl/ActionControl"]
+margin_top = 200.0
+margin_right = 81.0
+margin_bottom = 237.0
+disabled = true
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitGameButton" type="Button" parent="ContentControl/ActionControl"]
+margin_top = 240.0
+margin_right = 122.0
+margin_bottom = 277.0
+disabled = true
+text = "Quit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheatLabel" type="Label" parent="ContentControl/ActionControl"]
+margin_top = 320.0
+margin_right = 132.0
+margin_bottom = 357.0
+custom_colors/font_color = Color( 1, 0.8, 0.25098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VersionLabel" type="Label" parent="ContentControl/ActionControl"]
+margin_left = 930.0
+margin_top = 320.0
+margin_right = 1180.0
+margin_bottom = 357.0
+custom_colors/font_color = Color( 1, 0.8, 0.25098, 1 )
+text = "Version 1.0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameplayDataScreen" parent="." instance=ExtResource( 6 )]
+
+[node name="GameplayResultScreen" parent="." instance=ExtResource( 7 )]
+globalDataNodePath = "/root/GlobalData"
+
+[node name="InputMappingScreen" parent="." instance=ExtResource( 5 )]
+show_behind_parent = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/enable_menu = SubResource( 3 )
+anims/intro = SubResource( 4 )
+
+[node name="BGMusicAnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "bg_music"
+anims/bg_music = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Source" type="Node" parent="."]
+
+[node name="TitleScreen" type="Node" parent="Source"]
+script = ExtResource( 3 )
+gameplayDataScreenNP = NodePath("../../GameplayDataScreen")
+lastGameplayResultScreenNP = NodePath("../../GameplayResultScreen")
+inputMappingScreenNP = NodePath("../../InputMappingScreen")
+cheatCodeNP = NodePath("../CheatCode")
+contentControlNP = NodePath("../../ContentControl")
+cheatLabelNP = NodePath("../../ContentControl/ActionControl/CheatLabel")
+animationPlayerNP = NodePath("../../AnimationPlayer")
+firstLevelScenePath = "level/mountain_1_level"
+survivalScenePath = "level/survival_level"
+creditsScreenScenePath = "screen/credits_screen"
+loadScreenScenePath = "screen/load_screen"
+cheatCodeLabelMap = {
+"debug": "Debug Mode",
+"manualpause": "Manual Pause Only Active",
+"memtest": "Memory Test Active",
+"nodefactory": "Node Factory Test Level Active",
+"testlevel": "Test Level Active"
+}
+
+[node name="CheatCode" type="Node" parent="Source"]
+script = ExtResource( 8 )
+targetNP = NodePath("../TitleScreen")
+cheatCodeDataMap = {
+"debug": [ "debug", true ],
+"manualpause": [ "manual_pause", true ],
+"memtest": [ "load_screen", "res://scene/test/memory_test_screen.tscn" ],
+"nodefactory": [ "scene_to_load", "res://scene/test/node_factory_test_level.tscn" ],
+"testlevel": [ "scene_to_load", "res://scene/test/test_level.tscn" ]
+}
+[connection signal="visibility_changed" from="ContentControl" to="Source/TitleScreen" method="OnContentControlVisibilityChanged"]
+[connection signal="pressed" from="ContentControl/ActionControl/NewGameButton" to="Source/TitleScreen" method="OnNewGameButtonPressed"]
+[connection signal="pressed" from="ContentControl/ActionControl/SurvivalGameButton" to="Source/TitleScreen" method="OnSurvivalGameButtonPressed"]
+[connection signal="pressed" from="ContentControl/ActionControl/GameplayDataButton" to="Source/TitleScreen" method="OnGameplayDataButtonPressed"]
+[connection signal="pressed" from="ContentControl/ActionControl/LastGameplayResultButton" to="Source/TitleScreen" method="OnLastGameplayResultButtonPressed"]
+[connection signal="pressed" from="ContentControl/ActionControl/InputMappingGameButton" to="Source/TitleScreen" method="OnInputMappingButtonPressed"]
+[connection signal="pressed" from="ContentControl/ActionControl/CreditsButton" to="Source/TitleScreen" method="OnCreditsButtonPressed"]
+[connection signal="pressed" from="ContentControl/ActionControl/QuitGameButton" to="Source/TitleScreen" method="OnQuitButtonPressed"]

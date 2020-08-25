@@ -1,0 +1,6 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "wait"
+loop = true
+step = 1.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sophie_boost_energy_active.ogg-bb42b1f3f76ea28923a3398472aa3234.oggstr"
+
+[deps]
+
+source_file="res://sound/sophie/sophie_boost_energy_active.ogg"
+dest_files=[ "res://.import/sophie_boost_energy_active.ogg-bb42b1f3f76ea28923a3398472aa3234.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

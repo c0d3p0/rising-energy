@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://shader/color_smooth_blink.shader" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/resolution = Vector2( 1, 1 )
+shader_param/effect_color = Color( 2, 0.1, 0.1, 1 )
+shader_param/speed = 10.0
+shader_param/range = 9.0

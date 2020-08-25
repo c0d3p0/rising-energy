@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21843E4E-4055-4629-9FD9-A89633E617CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <OutputPath>.mono/temp/bin/$(Configuration)</OutputPath>
+    <RootNamespace>risingenergy</RootNamespace>
+    <AssemblyName>rising-energy</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <GodotProjectGeneratorVersion>1.0.0.0</GodotProjectGeneratorVersion>
+    <ProjectTypeGuids>{8F3E2DF0-C35C-4265-82FC-BEA011F4A7ED};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <BaseIntermediateOutputPath>.mono/temp/obj</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)/$(Configuration)</IntermediateOutputPath>
+    <ApiConfiguration Condition=" '$(Configuration)' != 'ExportRelease' ">Debug</ApiConfiguration>
+    <ApiConfiguration Condition=" '$(Configuration)' == 'ExportRelease' ">Release</ApiConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ExportDebug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>$(GodotDefineConstants);GODOT;DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ExportRelease|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>$(GodotDefineConstants);GODOT;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>$(GodotDefineConstants);GODOT;DEBUG;TOOLS;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies">
+      <Version>1.0.0</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <Reference Include="GodotSharp">
+      <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GodotSharpEditor" Condition=" '$(Configuration)' == 'Debug' ">
+      <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharpEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <!--			-->
+    <Compile Include="source\character\BaseCharacterAction.cs" />
+    <Compile Include="source\character\BaseCharacterVitality.cs" />
+    <Compile Include="source\character\CharacterGround.cs" />
+    <Compile Include="source\character\CharacterMove.cs" />
+    <Compile Include="source\character\CharacterJump.cs" />
+    <Compile Include="source\character\CharacterPhysics.cs" />
+    <Compile Include="source\character\StatusCharacterVitality.cs" />
+    <!--			-->
+    <Compile Include="source\character\debug\PlayerCharacterDebug.cs" />
+    <!--			-->
+    <Compile Include="source\character\dialogue\AnimatedDialogue.cs" />
+    <!--			-->
+    <Compile Include="source\character\enemy\BaseEnemyBehavior.cs" />
+    <Compile Include="source\character\enemy\BaseEnemyCharacter.cs" />
+    <Compile Include="source\character\enemy\BaseEnemyCharacterAction.cs" />
+    <Compile Include="source\character\enemy\BaseEnemyInitializer.cs" />
+    <Compile Include="source\character\enemy\EnemyCharacterAction.cs" />
+    <!--			-->
+    <Compile Include="source\character\enemy\boss\BaseBossCharacter.cs" />
+    <Compile Include="source\character\enemy\boss\BaseBossBehavior.cs" />
+    <Compile Include="source\character\enemy\boss\BaseBossInitializer.cs" />
+    <Compile Include="source\character\enemy\boss\BaseBossVitality.cs" />
+    <Compile Include="source\character\enemy\boss\StandardBossBehavior.cs" />
+    <Compile Include="source\character\enemy\boss\TeleportBossBehavior.cs" />
+    <!--			-->
+    <Compile Include="source\character\enemy\floater\FloaterEnemyBehavior.cs" />
+    <Compile Include="source\character\enemy\follower\FollowerEnemyBehavior.cs" />
+    <Compile Include="source\character\enemy\grower\GrowerEnemyBehavior.cs" />
+    <Compile Include="source\character\enemy\speller\AirSpellerEnemyBehavior.cs" />
+    <Compile Include="source\character\enemy\speller\SpellerEnemyBehavior.cs" />
+    <Compile Include="source\character\enemy\walker\WalkerEnemyBehavior.cs" />
+    <Compile Include="source\character\enemy\waver\WaverEnemyBehavior.cs" />
+    <!--			-->
+    <Compile Include="source\character\player\PlayerCharacter.cs" />
+    <Compile Include="source\character\player\PlayerCharacterAction.cs" />
+    <Compile Include="source\character\player\PlayerCharacterInitializer.cs" />
+    <Compile Include="source\character\player\PlayerCharacterPhysicsObjects.cs" />
+    <Compile Include="source\character\player\PlayerCharacterVitality.cs" />
+    <Compile Include="source\character\player\PlayerInputInterpreter.cs" />
+    <!--			-->
+    <Compile Include="source\character\StrikeDispatcher.cs" />
+    <Compile Include="source\energy\EnergyGate.cs" />
+    <Compile Include="source\energy\EnergySource.cs" />
+    <Compile Include="source\energy\EnergySourceBoost.cs" />
+    <Compile Include="source\energy\EnergySourceInitializer.cs" />
+    <!--			-->
+    <Compile Include="source\game\CheatCode.cs" />
+    <Compile Include="source\game\GameNodeExtension.cs" />
+    <Compile Include="source\game\GlobalData.cs" />
+    <Compile Include="source\game\AnimationRandomizer.cs" />
+    <Compile Include="source\game\JsonSerializer.cs" />
+    <Compile Include="source\game\MemoryDrainer.cs" />
+    <Compile Include="source\game\NodeFactory.cs" />
+    <Compile Include="source\game\NodePreInstance.cs" />
+    <Compile Include="source\game\TaskRunner.cs" />
+    <Compile Include="source\game\WindowManager.cs" />
+    <!--			-->
+    <Compile Include="source\game\signal\CharacterSignalExtension.cs" />
+    <Compile Include="source\game\signal\LevelSignalExtension.cs" />
+    <Compile Include="source\game\signal\GameSignalExtension.cs" />
+    <Compile Include="source\game\signal\NativeSignalExtension.cs" />
+    <Compile Include="source\game\signal\ScreenSignalExtension.cs" />
+    <!--			-->
+    <Compile Include="source\game\method\CharacterMethodExtension.cs" />
+    <Compile Include="source\game\method\GameMethodExtension.cs" />
+    <Compile Include="source\game\method\GUIMethodExtension.cs" />
+    <Compile Include="source\game\method\LevelMethodExtension.cs" />
+    <Compile Include="source\game\method\NativeMethodExtension.cs" />
+    <Compile Include="source\game\method\ScreenMethodExtension.cs" />
+    <!--			-->
+    <Compile Include="source\godot\NodeExtension.cs" />
+    <Compile Include="source\godot\ObjectExtension.cs" />
+    <Compile Include="source\godot\SignalData.cs" />
+    <Compile Include="source\godot\SignalDataExtension.cs" />
+    <!--			-->
+    <Compile Include="source\gui\game\StatusBarManager.cs" />
+    <!--			-->
+    <Compile Include="source\level\CameraManager.cs" />
+    <Compile Include="source\level\Checkpoint.cs" />
+    <Compile Include="source\level\DeathPit.cs" />
+    <Compile Include="source\level\EnemySpawer.cs" />
+    <Compile Include="source\level\EnemySpawnSpot.cs" />
+    <Compile Include="source\level\FightArea.cs" />
+    <Compile Include="source\level\LevelProgress.cs" />
+    <Compile Include="source\level\LevelManager.cs" />
+    <Compile Include="source\level\LevelManagerInitializer.cs" />
+    <Compile Include="source\level\SurvivalLevelManager.cs" />
+    <Compile Include="source\level\SurvivalLevelProgress.cs" />
+    <Compile Include="source\level\SurvivalLevelManagerInitializer.cs" />
+    <!--			-->
+    <Compile Include="source\projectile\BaseAreaProjectileBehavior.cs" />
+    <Compile Include="source\projectile\BaseAreaProjectile.cs" />
+    <Compile Include="source\projectile\BaseAreaProjectileInitializer.cs" />
+    <Compile Include="source\projectile\BoomerangProjetileBehavior.cs" />
+    <Compile Include="source\projectile\ClassicProjectileBehavior.cs" />
+    <Compile Include="source\projectile\RhombusProjectileBehavior.cs" />
+    <Compile Include="source\projectile\SelfParkingProjectileBehavior.cs" />
+    <!--			-->
+    <Compile Include="source\screen\gameplay_data\GameplayDataGUI.cs" />
+    <Compile Include="source\screen\gameplay_data\GameplayDataRank.cs" />
+    <Compile Include="source\screen\gameplay_data\GameplayDataScreen.cs" />
+    <Compile Include="source\screen\gameplay_data\GameplayDataScreenInitializer.cs" />
+    <!--			-->
+    <Compile Include="source\screen\gameplay_result\GameplayResultGUI.cs" />
+    <Compile Include="source\screen\gameplay_result\GameplayResultScreen.cs" />
+    <Compile Include="source\screen\gameplay_result\GameplayResultScreenInitializer.cs" />
+    <!--			-->
+    <Compile Include="source\screen\input\InputMappingGUI.cs" />
+    <Compile Include="source\screen\input\InputMappingScreen.cs" />
+    <Compile Include="source\screen\input\InputMappingScreenInitializer.cs" />
+    <!--			-->
+    <Compile Include="source\screen\credits\CreditsScreen.cs" />
+    <Compile Include="source\screen\load\LoadResource.cs" />
+    <Compile Include="source\screen\load\LoadScreen.cs" />
+    <Compile Include="source\screen\pause\PauseScreen.cs" />
+    <Compile Include="source\screen\title\TitleScreen.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

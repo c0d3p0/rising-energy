@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://animation/credits/character/skull_move.tres" type="Animation" id=1]
+[ext_resource path="res://material/skull/skull_yellow.tres" type="Material" id=2]
+[ext_resource path="res://model/skull/skull.tscn" type="PackedScene" id=3]
+
+[node name="Cranium" type="Spatial"]
+
+[node name="Body" type="Spatial" parent="."]
+
+[node name="Skull" parent="Body" instance=ExtResource( 3 )]
+transform = Transform( 1.02606, 0, 2.81908, 0, 3, 0, -2.81908, 0, 1.02606, 0, 0.65, 0 )
+
+[node name="SkullMeshInstance" parent="Body/Skull/Top" index="0"]
+material_override = ExtResource( 2 )
+
+[node name="TeethTopMeshInstance" parent="Body/Skull/Top" index="1"]
+material_override = ExtResource( 2 )
+
+[node name="TeethBottomMeshInstance" parent="Body/Skull/Bottom" index="0"]
+material_override = ExtResource( 2 )
+
+[node name="JawMeshInstance" parent="Body/Skull/Bottom" index="1"]
+material_override = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "skull_move"
+anims/skull_move = ExtResource( 1 )
+
+[editable path="Body/Skull"]

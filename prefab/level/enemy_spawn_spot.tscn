@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://source/level/EnemySpawnSpot.cs" type="Script" id=1]
+
+[node name="EnemySpawnSpot" type="VisibilityNotifier"]
+aabb = AABB( -3.5, -2, -1, 7, 4, 2 )
+script = ExtResource( 1 )
+[connection signal="camera_entered" from="." to="." method="OnCameraEntered"]
+[connection signal="camera_exited" from="." to="." method="OnCameraExited"]

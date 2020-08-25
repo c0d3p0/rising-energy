@@ -1,0 +1,72 @@
+[gd_resource type="Animation" load_steps=2 format=2]
+
+[ext_resource path="res://.import/level_started.wav-7b8720e278ca8835fc40b4e340f790b9.sample" type="AudioStream" id=1]
+
+[resource]
+resource_name = "intro"
+length = 2.84
+step = 0.04
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadePanel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("LevelNameLabel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.16, 1.2, 1.24, 1.28, 2.16, 2.2, 2.24, 2.28, 2.44, 2.84 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1280, 200 ), Vector2( 1280, 200 ), Vector2( -200, 200 ), Vector2( 0, 200 ), Vector2( 200, 200 ), Vector2( 0, 200 ), Vector2( 0, 200 ), Vector2( -200, 200 ), Vector2( 0, 200 ), Vector2( 200, 200 ), Vector2( -1280, 200 ), Vector2( -1280, 200 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Source/LevelProgress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ true ],
+"method": "ActivateLevel"
+} ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 1 )
+} ],
+"times": PoolRealArray( 1 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.84 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 4.0, 4.0 ]
+}

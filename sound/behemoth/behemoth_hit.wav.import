@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/behemoth_hit.wav-c91f5de77e04bdfca5cb30df5b681744.sample"
+
+[deps]
+
+source_file="res://sound/behemoth/behemoth_hit.wav"
+dest_files=[ "res://.import/behemoth_hit.wav-c91f5de77e04bdfca5cb30df5b681744.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

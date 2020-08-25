@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://model/goblin/goblin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://animation/credits/character/goblin_run.tres" type="Animation" id=2]
+
+[node name="Goblin" type="Spatial"]
+
+[node name="Body" type="Spatial" parent="."]
+
+[node name="GoblinSkeleton" parent="Body" instance=ExtResource( 1 )]
+transform = Transform( -1.14044e-07, 0, -0.7, 0, 0.7, 0, 0.7, 0, -1.14044e-07, 0, 0, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "goblin_run"
+anims/goblin_run = ExtResource( 2 )

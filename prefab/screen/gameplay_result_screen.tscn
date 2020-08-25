@@ -1,0 +1,161 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://gui/font/black_chacery_60_o.tres" type="DynamicFont" id=1]
+[ext_resource path="res://gui/theme/main_theme.tres" type="Theme" id=2]
+[ext_resource path="res://source/screen/gameplay_data/GameplayDataRank.cs" type="Script" id=3]
+[ext_resource path="res://source/game/JsonSerializer.cs" type="Script" id=4]
+[ext_resource path="res://source/screen/gameplay_result/GameplayResultScreenInitializer.cs" type="Script" id=5]
+[ext_resource path="res://source/screen/gameplay_result/GameplayResultGUI.cs" type="Script" id=6]
+[ext_resource path="res://source/screen/gameplay_result/GameplayResultScreen.cs" type="Script" id=7]
+
+[node name="GameplayResultScreen" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+gameplayResultGUINP = NodePath("Source/GameplayResultGUI")
+gameplayDataRankNP = NodePath("Source/GameplayDataRank")
+jsonSerializerNP = NodePath("Source/JsonSerializer")
+
+[node name="TitleLabel" type="Label" parent="."]
+margin_top = 50.0
+margin_right = 1280.0
+margin_bottom = 134.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.8, 0.25098, 1 )
+text = "Gameplay Result"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NormalGameControl" type="Control" parent="."]
+margin_left = 515.0
+margin_top = 200.0
+margin_right = 765.0
+margin_bottom = 380.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="NormalGameControl"]
+margin_right = 250.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 250, 0 )
+custom_colors/font_color = Color( 1, 0.8, 0.25098, 1 )
+text = "Normal Game"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RankLabel" type="Label" parent="NormalGameControl"]
+margin_top = 60.0
+margin_right = 85.0
+margin_bottom = 97.0
+text = "Rank S"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalTimeLabel" type="Label" parent="NormalGameControl"]
+margin_top = 100.0
+margin_right = 247.0
+margin_bottom = 137.0
+text = "Total Time: 00:30:00.000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeathsLabel" type="Label" parent="NormalGameControl"]
+margin_top = 140.0
+margin_right = 100.0
+margin_bottom = 177.0
+text = "Deaths: 0"
+
+[node name="SurvivalGameControl" type="Control" parent="."]
+visible = false
+margin_left = 455.0
+margin_top = 200.0
+margin_right = 825.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 370, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="SurvivalGameControl"]
+margin_right = 370.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 370, 0 )
+custom_colors/font_color = Color( 1, 0.8, 0.25098, 1 )
+text = "Survival Game"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="SurvivalGameControl"]
+margin_top = 100.0
+margin_right = 370.0
+margin_bottom = 137.0
+rect_min_size = Vector2( 370, 0 )
+text = "Score: 999999999999999999"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoDataLabel" type="Label" parent="."]
+visible = false
+margin_top = 300.0
+margin_right = 1280.0
+margin_bottom = 337.0
+rect_min_size = Vector2( 1280, 0 )
+text = "No data"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReturnButton" type="Button" parent="."]
+margin_left = 599.0
+margin_top = 400.0
+margin_right = 681.0
+margin_bottom = 437.0
+text = "Return"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Source" type="Node" parent="."]
+
+[node name="GameplayResultGUI" type="Node" parent="Source"]
+script = ExtResource( 6 )
+gameplayResultScreenNP = NodePath("../..")
+normalGameControlNP = NodePath("../../NormalGameControl")
+survivalGameControlNP = NodePath("../../SurvivalGameControl")
+noDataLabelNP = NodePath("../../NoDataLabel")
+gameplayResultFolderPath = "data"
+gameplayResultFilePath = "gameplay_result_data"
+
+[node name="GameplayDataRank" type="Node" parent="Source"]
+script = ExtResource( 3 )
+gameplayDataFolderName = "data"
+normalGameDataFileName = "normal_game_rank_data"
+survivalGameDataFileName = "survival_game_rank_data"
+
+[node name="JsonSerializer" type="Node" parent="Source"]
+script = ExtResource( 4 )
+
+[node name="GameplayResultScreenInitializer" type="Node" parent="Source"]
+script = ExtResource( 5 )
+gameplayResultScreenNP = NodePath("../..")
+gameplayResultGUINP = NodePath("../GameplayResultGUI")
+gameplayDataRankNP = NodePath("../GameplayDataRank")
+jsonSerializerNP = NodePath("../JsonSerializer")
+[connection signal="pressed" from="ReturnButton" to="Source/GameplayResultGUI" method="OnReturnButtonPressed"]

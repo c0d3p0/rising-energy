@@ -1,0 +1,33 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/demon_diffuse.png-3694a89da9997d5263bb18464dc40a1e.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/demon_glow.png-13d3f40f05d4bd10599f81939fb3eea2.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/demon_specular.png-93d78326e62e6499c58319ee81d2c588.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/demon_normal.png-6df25b5fb23882c483f6cf054e77cfdf.stex"
+
+[resource]
+resource_name = "Demon_MAT"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 3 )
+roughness = 0.45
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 16.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = SubResource( 2 )
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = SubResource( 4 )

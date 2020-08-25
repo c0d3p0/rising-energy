@@ -1,0 +1,1284 @@
+[gd_scene load_steps=114 format=2]
+
+[ext_resource path="res://source/screen/credits/CreditsScreen.cs" type="Script" id=1]
+[ext_resource path="res://gui/font/black_chacery_30_o.tres" type="DynamicFont" id=2]
+[ext_resource path="res://gui/font/black_chacery_40_o.tres" type="DynamicFont" id=3]
+[ext_resource path="res://prefab/credits/mutant_tree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gui/font/black_chacery_120_o.tres" type="DynamicFont" id=5]
+[ext_resource path="res://prefab/credits/goblin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefab/credits/behemoth.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefab/credits/evil_goddess.tscn" type="PackedScene" id=8]
+[ext_resource path="res://animation/credits/next_character.tres" type="Animation" id=9]
+[ext_resource path="res://prefab/credits/demon.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefab/credits/zombie.tscn" type="PackedScene" id=11]
+[ext_resource path="res://prefab/credits/warrior_spirit.tscn" type="PackedScene" id=12]
+[ext_resource path="res://prefab/credits/head_bone.tscn" type="PackedScene" id=13]
+[ext_resource path="res://prefab/credits/cursed.tscn" type="PackedScene" id=14]
+[ext_resource path="res://prefab/credits/claw.tscn" type="PackedScene" id=15]
+[ext_resource path="res://prefab/credits/sophie.tscn" type="PackedScene" id=16]
+[ext_resource path="res://prefab/credits/skull.tscn" type="PackedScene" id=17]
+[ext_resource path="res://prefab/credits/cranium.tscn" type="PackedScene" id=18]
+[ext_resource path="res://animation/credits/game_title.tres" type="Animation" id=19]
+[ext_resource path="res://animation/credits/3d_model_page_1.tres" type="Animation" id=20]
+[ext_resource path="res://animation/credits/character_from_right.tres" type="Animation" id=21]
+[ext_resource path="res://animation/credits/3d_model_page_5.tres" type="Animation" id=22]
+[ext_resource path="res://animation/credits/3d_model_page_4.tres" type="Animation" id=23]
+[ext_resource path="res://animation/credits/3d_model_page_3.tres" type="Animation" id=24]
+[ext_resource path="res://animation/credits/start_game_producer.tres" type="Animation" id=25]
+[ext_resource path="res://animation/credits/character_from_left.tres" type="Animation" id=26]
+[ext_resource path="res://animation/credits/start_3d_model.tres" type="Animation" id=27]
+[ext_resource path="res://animation/credits/start_game_developer.tres" type="Animation" id=28]
+[ext_resource path="res://animation/credits/3d_model_page_2.tres" type="Animation" id=29]
+[ext_resource path="res://animation/credits/start_cast.tres" type="Animation" id=30]
+[ext_resource path="res://animation/credits/3d_model_page_6.tres" type="Animation" id=31]
+[ext_resource path="res://animation/credits/start_3d_animation.tres" type="Animation" id=32]
+[ext_resource path="res://animation/credits/start_thank_you.tres" type="Animation" id=33]
+[ext_resource path="res://gui/font/black_chacery_30_e.tres" type="DynamicFont" id=34]
+[ext_resource path="res://.import/megaepic_alexander_nakarada.ogg-ca2dedc480049125f9c150783e43323d.oggstr" type="AudioStream" id=35]
+
+[sub_resource type="ProceduralSky" id=1]
+radiance_size = 4
+sky_energy = 0.2
+sun_latitude = 6.0
+sun_longitude = 40.0
+sun_angle_min = 2.0
+sun_angle_max = 20.0
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+glow_enabled = true
+glow_bloom = 0.02
+glow_blend_mode = 1
+glow_hdr_luminance_cap = 7.0
+
+[sub_resource type="GIProbeData" id=3]
+bounds = AABB( -12, -12, -1, 24, 24, 2 )
+cell_size = 0.1875
+to_cell_xform = Transform( 5.33333, 0, 0, 0, 5.33333, 0, 0, 0, 5.33333, 64, 64, 5.33333 )
+dynamic_data = PoolIntArray( 0, 8, 128, 128, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1065353216, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 4
+bias = 1.5
+normal_bias = 0.0
+propagation = 0.7
+
+[sub_resource type="PlaneMesh" id=4]
+size = Vector2( 13, 13 )
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_unshaded = true
+albedo_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "bg_music_page_1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/AssetsControl/AssetLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/AssetsControl/CreatorLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUIControl/AssetsControl/AssetLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Mountain
+
+
+Cave
+
+
+Boss Fight" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUIControl/AssetsControl/CreatorLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Celebration by Alexander Nakarada (www.serpentsoundstudios.com)
+Licensed under Creative Commons BY Attribution 4.0 License
+https://creativecommons.org/licenses/by/4.0/
+Wintersong by Alexander Nakarada (www.serpentsoundstudios.com)
+Licensed under Creative Commons BY Attribution 4.0 License
+https://creativecommons.org/licenses/by/4.0/
+Tap by Alexander Nakarada (www.serpentsoundstudios.com)
+Licensed under Creative Commons BY Attribution 4.0 License
+https://creativecommons.org/licenses/by/4.0/" ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "bg_music_page_2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/AssetsControl/AssetLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/AssetsControl/CreatorLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUIControl/AssetsControl/AssetLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Survival Mode
+
+
+Title Screen
+
+
+Credits Screen" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUIControl/AssetsControl/CreatorLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Escape by Alexander Nakarada (www.serpentsoundstudios.com)
+Licensed under Creative Commons BY Attribution 4.0 License
+https://creativecommons.org/licenses/by/4.0/
+Adventure by Alexander Nakarada (www.serpentsoundstudios.com)
+Licensed under Creative Commons BY Attribution 4.0 License
+https://creativecommons.org/licenses/by/4.0/
+Megaepic by Alexander Nakarada (www.serpentsoundstudios.com)
+Licensed under Creative Commons BY Attribution 4.0 License
+https://creativecommons.org/licenses/by/4.0/" ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/AssetsControl/AssetLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/AssetsControl/CreatorLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUIControl/AssetsControl/AssetLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Sophie Hunter" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUIControl/AssetsControl/CreatorLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "AmeAngelofSin
+https://freesound.org/people/AmeAngelofSin/" ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "character_sound_page_2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/AssetsControl/AssetLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/AssetsControl/CreatorLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUIControl/AssetsControl/AssetLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Zombie
+
+
+Goblin
+
+
+Behemoth
+
+" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUIControl/AssetsControl/CreatorLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Little Robot Sound Factory
+(https://opengameart.org/users/little-robot-sound-factory)
+
+Little Robot Sound Factory
+(https://opengameart.org/users/little-robot-sound-factory)
+
+Little Robot Sound Factory
+(https://opengameart.org/users/little-robot-sound-factory)" ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "character_sound_page_3"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/AssetsControl/AssetLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/AssetsControl/CreatorLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUIControl/AssetsControl/AssetLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Skull
+
+
+Cranium
+
+
+Head Bone
+
+" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUIControl/AssetsControl/CreatorLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Little Robot Sound Factory
+(https://opengameart.org/users/little-robot-sound-factory)
+
+Little Robot Sound Factory
+(https://opengameart.org/users/little-robot-sound-factory)
+
+Little Robot Sound Factory
+(https://opengameart.org/users/little-robot-sound-factory)" ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "character_sound_page_4"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/AssetsControl/AssetLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/AssetsControl/CreatorLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUIControl/AssetsControl/AssetLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Mutant Tree
+
+
+Claw
+
+" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUIControl/AssetsControl/CreatorLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Little Robot Sound Factory
+(https://opengameart.org/users/little-robot-sound-factory)
+
+Little Robot Sound Factory
+(https://opengameart.org/users/little-robot-sound-factory)" ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "character_sound_page_5"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/AssetsControl/AssetLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/AssetsControl/CreatorLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUIControl/AssetsControl/AssetLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Cursed
+
+
+Demon
+
+
+Evil Goddess
+
+" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUIControl/AssetsControl/CreatorLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Little Robot Sound Factory
+(https://opengameart.org/users/little-robot-sound-factory)
+
+Little Robot Sound Factory
+(https://opengameart.org/users/little-robot-sound-factory)
+
+drotzruhn
+https://freesound.org/people/drotzruhn/" ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/TitleLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/SubTitleLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUIControl/SubTitleLabel:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUIControl/CastControl/Label:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("GUIControl/AssetsControl/AssetLabel:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("GUIControl/AssetsControl/CreatorLabel:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("GUIControl/ProjectControl/Label:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("Source/CreditScreen")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "Start"
+} ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "start_bg_music"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/SubTitleLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/SubTitleLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Background Music" ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/SubTitleLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 6.3, 6.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/SubTitleLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Game Project" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("GUIControl/ProjectControl/Label:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1, 1.3, 5.7, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GUIControl/ProjectControl/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Open source and available at
+github.com/c0d3p0" ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "start_voice_actor"
+tracks/0/type = "value"
+tracks/0/path = NodePath("GUIControl/SubTitleLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GUIControl/SubTitleLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Voice Actors" ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "3d_model_page_1"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "3d_model_page_2"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "3d_model_page_3"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "3d_model_page_4"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "3d_model_page_5"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "3d_model_page_6"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "bg_music_page_1"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "bg_music_page_2"
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "character_from_left"
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "character_from_right"
+
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "character_sound_page_1"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "character_sound_page_2"
+
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "character_sound_page_3"
+
+[sub_resource type="AnimationNodeAnimation" id=30]
+animation = "character_sound_page_4"
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "character_sound_page_5"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "game_title"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "game_title"
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "next_character"
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "start"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "start_3d_animation"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "start_3d_model"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "start_bg_music"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "start_cast"
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "start_game_developer"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "start_game_producer"
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "start_game_project"
+
+[sub_resource type="AnimationNodeAnimation" id=43]
+animation = "start_thank_you"
+
+[sub_resource type="AnimationNodeAnimation" id=44]
+animation = "start_voice_actor"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=52]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=53]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=57]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=58]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=59]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=60]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=61]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=62]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=63]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=64]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=65]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=66]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=67]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=68]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=69]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=70]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=71]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=72]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=73]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=74]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=75]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=76]
+states/3d_model_page_1/node = SubResource( 17 )
+states/3d_model_page_1/position = Vector2( 905.429, -71 )
+states/3d_model_page_2/node = SubResource( 18 )
+states/3d_model_page_2/position = Vector2( 905.429, 14 )
+states/3d_model_page_3/node = SubResource( 19 )
+states/3d_model_page_3/position = Vector2( 905.429, 97 )
+states/3d_model_page_4/node = SubResource( 20 )
+states/3d_model_page_4/position = Vector2( 1140.84, 97 )
+states/3d_model_page_5/node = SubResource( 21 )
+states/3d_model_page_5/position = Vector2( 1140.84, 14 )
+states/3d_model_page_6/node = SubResource( 22 )
+states/3d_model_page_6/position = Vector2( 1140.84, -71 )
+states/bg_music_page_1/node = SubResource( 23 )
+states/bg_music_page_1/position = Vector2( 2473.97, 14 )
+states/bg_music_page_2/node = SubResource( 24 )
+states/bg_music_page_2/position = Vector2( 2473.97, 97 )
+states/character_from_left/node = SubResource( 25 )
+states/character_from_left/position = Vector2( 488, -71 )
+states/character_from_right/node = SubResource( 26 )
+states/character_from_right/position = Vector2( 488, 97 )
+states/character_sound_page_1/node = SubResource( 27 )
+states/character_sound_page_1/position = Vector2( 1924.69, -71 )
+states/character_sound_page_2/node = SubResource( 28 )
+states/character_sound_page_2/position = Vector2( 1924.69, 14 )
+states/character_sound_page_3/node = SubResource( 29 )
+states/character_sound_page_3/position = Vector2( 1924.69, 97 )
+states/character_sound_page_4/node = SubResource( 30 )
+states/character_sound_page_4/position = Vector2( 2216.59, -71 )
+states/character_sound_page_5/node = SubResource( 31 )
+states/character_sound_page_5/position = Vector2( 2216.59, 14 )
+states/game_title/node = SubResource( 33 )
+states/game_title/position = Vector2( 75, 14 )
+"states/game_title 2/node" = SubResource( 32 )
+"states/game_title 2/position" = Vector2( 699, 97 )
+states/next_character/node = SubResource( 34 )
+states/next_character/position = Vector2( 488, 14 )
+states/start/node = SubResource( 35 )
+states/start/position = Vector2( 699, 247.948 )
+states/start_3d_animation/node = SubResource( 36 )
+states/start_3d_animation/position = Vector2( 1388.43, 14 )
+states/start_3d_model/node = SubResource( 37 )
+states/start_3d_model/position = Vector2( 699, 14 )
+states/start_bg_music/node = SubResource( 38 )
+states/start_bg_music/position = Vector2( 2473.97, -71 )
+states/start_cast/node = SubResource( 39 )
+states/start_cast/position = Vector2( 286, 14 )
+states/start_game_developer/node = SubResource( 40 )
+states/start_game_developer/position = Vector2( 2732.43, 14 )
+states/start_game_producer/node = SubResource( 41 )
+states/start_game_producer/position = Vector2( 2915.43, -84 )
+states/start_game_project/node = SubResource( 42 )
+states/start_game_project/position = Vector2( 2915.43, 97 )
+states/start_thank_you/node = SubResource( 43 )
+states/start_thank_you/position = Vector2( 3133.37, 14 )
+states/start_voice_actor/node = SubResource( 44 )
+states/start_voice_actor/position = Vector2( 1644.82, 14 )
+transitions = [ "game_title", "start_cast", SubResource( 45 ), "start_cast", "game_title", SubResource( 46 ), "character_from_left", "next_character", SubResource( 47 ), "next_character", "character_from_left", SubResource( 48 ), "start_cast", "next_character", SubResource( 49 ), "next_character", "character_from_right", SubResource( 50 ), "character_from_right", "next_character", SubResource( 51 ), "next_character", "start_3d_model", SubResource( 52 ), "start_3d_model", "3d_model_page_1", SubResource( 53 ), "3d_model_page_1", "3d_model_page_2", SubResource( 54 ), "3d_model_page_2", "3d_model_page_3", SubResource( 55 ), "3d_model_page_3", "3d_model_page_4", SubResource( 56 ), "3d_model_page_4", "3d_model_page_5", SubResource( 57 ), "3d_model_page_5", "3d_model_page_6", SubResource( 58 ), "3d_model_page_6", "start_3d_animation", SubResource( 59 ), "start_game_developer", "start_game_producer", SubResource( 60 ), "start_game_producer", "start_game_project", SubResource( 61 ), "start_game_project", "start_thank_you", SubResource( 62 ), "start", "game_title", SubResource( 63 ), "start", "game_title 2", SubResource( 64 ), "game_title 2", "start_3d_model", SubResource( 65 ), "character_sound_page_1", "character_sound_page_2", SubResource( 66 ), "character_sound_page_2", "character_sound_page_3", SubResource( 67 ), "start_3d_animation", "start_voice_actor", SubResource( 68 ), "start_voice_actor", "character_sound_page_1", SubResource( 69 ), "character_sound_page_4", "character_sound_page_5", SubResource( 70 ), "character_sound_page_3", "character_sound_page_4", SubResource( 71 ), "character_sound_page_5", "start_bg_music", SubResource( 72 ), "start_bg_music", "bg_music_page_1", SubResource( 73 ), "bg_music_page_1", "bg_music_page_2", SubResource( 74 ), "bg_music_page_2", "start_game_developer", SubResource( 75 ) ]
+start_node = "start"
+graph_offset = Vector2( 2243.19, -94.52 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=77]
+
+[sub_resource type="Animation" id=78]
+length = 63.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 35 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+} ],
+"times": PoolRealArray( 1.1, 62.8 )
+}
+
+[node name="CreditsScreenWorldEnvironment" type="WorldEnvironment"]
+environment = SubResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.75544 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 8.5 )
+fov = 40.0
+
+[node name="GIProbe" type="GIProbe" parent="."]
+extents = Vector3( 12, 12, 1 )
+data = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, -1 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="CharacterContainer" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0 )
+
+[node name="Sophie" parent="CharacterContainer" instance=ExtResource( 16 )]
+visible = false
+
+[node name="WarriorSpirit" parent="CharacterContainer" instance=ExtResource( 12 )]
+visible = false
+
+[node name="Zombie" parent="CharacterContainer" instance=ExtResource( 11 )]
+visible = false
+
+[node name="Goblin" parent="CharacterContainer" instance=ExtResource( 6 )]
+visible = false
+
+[node name="Behemoth" parent="CharacterContainer" instance=ExtResource( 7 )]
+visible = false
+
+[node name="MutantTree" parent="CharacterContainer" instance=ExtResource( 4 )]
+visible = false
+
+[node name="Cranium" parent="CharacterContainer" instance=ExtResource( 18 )]
+visible = false
+
+[node name="Skull" parent="CharacterContainer" instance=ExtResource( 17 )]
+visible = false
+
+[node name="HeadBone" parent="CharacterContainer" instance=ExtResource( 13 )]
+visible = false
+
+[node name="Claw" parent="CharacterContainer" instance=ExtResource( 15 )]
+visible = false
+
+[node name="Cursed" parent="CharacterContainer" instance=ExtResource( 14 )]
+visible = false
+
+[node name="Demon" parent="CharacterContainer" instance=ExtResource( 10 )]
+visible = false
+
+[node name="EvilGoddess" parent="CharacterContainer" instance=ExtResource( 8 )]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/3d_model_page_1 = ExtResource( 20 )
+anims/3d_model_page_2 = ExtResource( 29 )
+anims/3d_model_page_3 = ExtResource( 24 )
+anims/3d_model_page_4 = ExtResource( 23 )
+anims/3d_model_page_5 = ExtResource( 22 )
+anims/3d_model_page_6 = ExtResource( 31 )
+anims/bg_music_page_1 = SubResource( 6 )
+anims/bg_music_page_2 = SubResource( 7 )
+anims/character_from_left = ExtResource( 26 )
+anims/character_from_right = ExtResource( 21 )
+anims/character_sound_page_1 = SubResource( 8 )
+anims/character_sound_page_2 = SubResource( 9 )
+anims/character_sound_page_3 = SubResource( 10 )
+anims/character_sound_page_4 = SubResource( 11 )
+anims/character_sound_page_5 = SubResource( 12 )
+anims/game_title = ExtResource( 19 )
+anims/next_character = ExtResource( 9 )
+anims/start = SubResource( 13 )
+anims/start_3d_animation = ExtResource( 32 )
+anims/start_3d_model = ExtResource( 27 )
+anims/start_bg_music = SubResource( 14 )
+anims/start_cast = ExtResource( 30 )
+anims/start_game_developer = ExtResource( 28 )
+anims/start_game_producer = ExtResource( 25 )
+anims/start_game_project = SubResource( 15 )
+anims/start_thank_you = ExtResource( 33 )
+anims/start_voice_actor = SubResource( 16 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 76 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 77 )
+
+[node name="BGMAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/bgm = SubResource( 78 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 35 )
+volume_db = -4.0
+
+[node name="GUIControl" type="Control" parent="."]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="GUIControl"]
+self_modulate = Color( 1, 1, 1, 0 )
+show_behind_parent = true
+margin_top = 20.0
+margin_right = 1280.0
+margin_bottom = 179.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0.8, 0.25, 1 )
+text = "Rising Energy"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubTitleLabel" type="Label" parent="GUIControl"]
+self_modulate = Color( 1, 1, 1, 0 )
+show_behind_parent = true
+margin_top = 220.0
+margin_right = 1280.0
+margin_bottom = 271.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0.8, 0.25, 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CastControl" type="Control" parent="GUIControl"]
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUIControl/CastControl"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 662.0
+margin_right = 1280.0
+margin_bottom = 700.0
+custom_fonts/font = ExtResource( 2 )
+text = "Please Wait"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AssetsControl" type="Control" parent="GUIControl"]
+margin_top = 320.0
+margin_right = 1280.0
+margin_bottom = 690.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AssetLabel" type="Label" parent="GUIControl/AssetsControl"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 40.0
+margin_right = 360.0
+margin_bottom = 366.0
+custom_fonts/font = ExtResource( 2 )
+text = "Sophie Hunter
+
+
+Warrior Spirit
+
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreatorLabel" type="Label" parent="GUIControl/AssetsControl"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 370.0
+margin_right = 1236.0
+margin_bottom = 366.0
+custom_fonts/font = ExtResource( 2 )
+text = "Mixamo
+(https://www.mixamo.com)
+
+Mixamo
+(https://www.mixamo.com)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProjectControl" type="Control" parent="GUIControl"]
+margin_top = 320.0
+margin_right = 1280.0
+margin_bottom = 700.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUIControl/ProjectControl"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 1280.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 0, 160 )
+custom_fonts/font = ExtResource( 34 )
+text = "Special Thanks for all free content creators and everyone that helped this game turn into reality.
+
+Thank you for playing.
+"
+align = 1
+valign = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Source" type="Node" parent="."]
+
+[node name="CreditScreen" type="Node" parent="Source"]
+script = ExtResource( 1 )
+characterContainerNP = NodePath("../../CharacterContainer")
+characterNameLabelNP = NodePath("../../GUIControl/CastControl/Label")
+animationTreeNP = NodePath("../../AnimationTree")
+globalDataNodePath = "/root/GlobalData"
+loadScreenScenePath = "screen/load_screen"
+nextScreenScenePath = "screen/title_screen"
+characterNPMap = {
+0: NodePath("../../CharacterContainer/Sophie"),
+1: NodePath("../../CharacterContainer/WarriorSpirit"),
+2: NodePath("../../CharacterContainer/Zombie"),
+3: NodePath("../../CharacterContainer/Goblin"),
+4: NodePath("../../CharacterContainer/Behemoth"),
+5: NodePath("../../CharacterContainer/MutantTree"),
+6: NodePath("../../CharacterContainer/Cranium"),
+7: NodePath("../../CharacterContainer/Skull"),
+8: NodePath("../../CharacterContainer/HeadBone"),
+9: NodePath("../../CharacterContainer/Claw"),
+10: NodePath("../../CharacterContainer/Cursed"),
+11: NodePath("../../CharacterContainer/Demon"),
+12: NodePath("../../CharacterContainer/EvilGoddess")
+}
+characterNameMap = {
+0: "Sophie Hunter",
+1: "Warrior Spirit",
+2: "Zombie",
+3: "Goblin",
+4: "Behemoth",
+5: "Mutant Tree",
+6: "Cranium",
+7: "Skull",
+8: "Head Bone",
+9: "Claw",
+10: "Cursed",
+11: "Demon",
+12: "Evil Goddess"
+}
+characterPositionLeftMap = {
+0: true,
+1: true,
+2: true,
+3: false,
+4: false,
+5: false,
+6: true,
+7: false,
+8: true,
+9: true,
+10: false,
+11: false,
+12: false
+}

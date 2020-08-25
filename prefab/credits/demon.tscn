@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://model/demon/demon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://animation/credits/character/demon_idle.tres" type="Animation" id=2]
+
+[node name="Demon" type="Spatial"]
+
+[node name="Body" type="Spatial" parent="."]
+
+[node name="DemonSkeleton" parent="Body" instance=ExtResource( 1 )]
+transform = Transform( -1.40112e-07, 0, -0.86, 0, 0.86, 0, 0.86, 0, -1.40112e-07, 0, 0, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "demon_idle"
+anims/demon_idle = ExtResource( 2 )

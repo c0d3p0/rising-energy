@@ -1,0 +1,68 @@
+[gd_resource type="Animation" load_steps=2 format=2]
+
+[ext_resource path="res://.import/scale_teleport.wav-91f175e81a2addbf90eecb11af680eaa.sample" type="AudioStream" id=1]
+
+[resource]
+resource_name = "spell"
+step = 0.04
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Skull/Bottom:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.24, 0.52, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 40, 0, 0 ), Vector3( 40, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Source/AirSpellerEnemyBehavior")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.24, 0.88, 0.92, 0.96 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "Spell"
+}, {
+"args": [ true ],
+"method": "SetProcessBehavior"
+}, {
+"args": [ true ],
+"method": "SetProcessBehavior"
+}, {
+"args": [ true ],
+"method": "SetProcessBehavior"
+} ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("EffectAudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 1 )
+} ],
+"times": PoolRealArray( 0.24 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EffectAudioStreamPlayer3D:unit_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.24 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 20.0 ]
+}

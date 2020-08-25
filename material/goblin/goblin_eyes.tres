@@ -1,0 +1,23 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/goblin_diffuse.png-b9abd2f44343d39266f8b1ca4f7e6a95.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/goblin_specular.png-e3119234f0108dede436a14abdc1b3ff.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/goblin_normal.png-53f3714065019cb1bb1a8db05d56532a.stex"
+
+[resource]
+resource_name = "eyes_eyes_lambert"
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 2 )
+roughness = 0.0764706
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = SubResource( 3 )

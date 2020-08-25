@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cranium_move.wav-c3dccb5d943a3c0840698f824db7195b.sample"
+
+[deps]
+
+source_file="res://sound/skull/cranium_move.wav"
+dest_files=[ "res://.import/cranium_move.wav-c3dccb5d943a3c0840698f824db7195b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

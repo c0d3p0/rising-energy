@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/megaepic_alexander_nakarada.ogg-ca2dedc480049125f9c150783e43323d.oggstr"
+
+[deps]
+
+source_file="res://sound/bg/megaepic_alexander_nakarada.ogg"
+dest_files=[ "res://.import/megaepic_alexander_nakarada.ogg-ca2dedc480049125f9c150783e43323d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
