@@ -1,0 +1,21 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/cave_block_diffuse.png-7bbc577f2492cb76dc7329c10a5a5a85.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/cave_block_normal.png-668719c41d3a40e792c24e41e7098209.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/cave_block_roughness.png-0b3bbbcc6aa278a1824362851f6cc32a.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+roughness = 0.9
+roughness_texture = SubResource( 3 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 2 )

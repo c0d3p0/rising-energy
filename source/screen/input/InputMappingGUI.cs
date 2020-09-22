@@ -9,11 +9,7 @@ public class InputMappingGUI : Node
 {
 	public void Interact(Control hideControl)
 	{
-		this.CreateFolder(inputMappingFolderName);
-		keyboardInputMapping = this.EmitSignal<Dictionary>(this,
-				this.GetSignalLoad(), GetFilePath(keyboardMappingFileName), true);
-		controllerInputMapping = this.EmitSignal<Dictionary>(this,
-				this.GetSignalLoad(), GetFilePath(controllerMappingFileName), true);
+		LoadConfiguredMappings();
 		this.hideControl = hideControl;
 		currentInputMapping = keyboardInputMapping;
 		currentInputName = null;
@@ -53,10 +49,7 @@ public class InputMappingGUI : Node
 		EmitSignal(this.GetSignalSave(), controllerInputMapping,
 				GetFilePath(controllerMappingFileName));
 		ShowScreen(false);
-		AddKeyboardInputsToGameMapping();
-		AddControllerInputsToGameMapping();
-		keyboardInputMapping.Dispose();
-		controllerInputMapping.Dispose();
+		ApplyConfiguredMappings();
 	}
 
 	public void OnIgnoreButtonPressed()
@@ -217,6 +210,23 @@ public class InputMappingGUI : Node
 			currentInputMapping.Add(inputName, value.ToString());
 	}
 
+	private void LoadConfiguredMappings()
+	{
+		this.CreateFolder(inputMappingFolderName);
+		keyboardInputMapping = this.EmitSignal<Dictionary>(this,
+				this.GetSignalLoad(), GetFilePath(keyboardMappingFileName), true);
+		controllerInputMapping = this.EmitSignal<Dictionary>(this,
+				this.GetSignalLoad(), GetFilePath(controllerMappingFileName), true);
+	}
+
+	private void ApplyConfiguredMappings()
+	{
+		AddKeyboardInputsToGameMapping();
+		AddControllerInputsToGameMapping();
+		keyboardInputMapping.Dispose();
+		controllerInputMapping.Dispose();
+	}
+
 	private string ConvertJoystickAxisInputcode(int axis, float axisValue)
 	{
 		return axis + "_" + axisValue;
@@ -254,6 +264,8 @@ public class InputMappingGUI : Node
 
 	public override void _Ready()
 	{
+		LoadConfiguredMappings();
+		ApplyConfiguredMappings();
 		this.SetProcessInput(false);
 	}
 

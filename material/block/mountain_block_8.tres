@@ -1,0 +1,21 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/mountain_block_diffuse.png-5142f741ee4ef00b482edc973736e5ee.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/mountain_block_normal.png-551c12cb94f689dcd782424186ff1b96.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/mountain_block_roughness.png-3827061e0a3d7cfb56f593d26d9a5c7e.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+roughness = 0.95
+roughness_texture = SubResource( 3 )
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = SubResource( 2 )
