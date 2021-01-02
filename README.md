@@ -6,5 +6,5 @@ A young lady called Sophie Hunter is training at the top of the mountain when sh
 
 Help Sophie Hunter in this adventure to find the "Energy Sources" so she can be able to defeat the goddess and save our beloved planet.
 
-Obs:<br/>
+Note:<br/>
 There are binaries available for Linux x64 and Windows x64 [here](https://biorobot.itch.io/rising-energy#download).
