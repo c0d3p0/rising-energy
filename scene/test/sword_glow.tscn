@@ -21,10 +21,10 @@ glow_bloom = 0.3
 glow_blend_mode = 1
 
 [sub_resource type="GIProbeData" id=3]
-bounds = AABB( -5, -1, -5, 10, 2, 10 )
+bounds = AABB( -5, -2, -5, 10, 4, 10 )
 cell_size = 0.0195312
-to_cell_xform = Transform( 51.2, 0, 0, 0, 51.2, 0, 0, 0, 51.2, 256, 51.2, 256 )
-dynamic_data = PoolIntArray( 0, 10, 512, 128, 512, 1, 0, 0, 2, 11, 0, 0, 8, 0, 713713600, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+to_cell_xform = Transform( 51.2, 0, 0, 0, 51.2, 0, 0, 0, 51.2, 256, 102.4, 256 )
+dynamic_data = PoolIntArray( 0, 10, 512, 256, 512, 1, 0, 1058336723, 904477184, 0, 807200432, 0, 797675600, 0, 807675344, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
@@ -45,7 +45,7 @@ light_color = Color( 0.117647, 0.156863, 0.313726, 1 )
 
 [node name="GIProbe" type="GIProbe" parent="."]
 subdiv = 3
-extents = Vector3( 5, 1, 5 )
+extents = Vector3( 5, 2, 5 )
 data = SubResource( 3 )
 
 [node name="AvengerSword" parent="." instance=ExtResource( 1 )]

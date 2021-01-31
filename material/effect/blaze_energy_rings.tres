@@ -3,12 +3,13 @@
 [ext_resource path="res://shader/border_aura.shader" type="Shader" id=1]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/resolution = Vector2( 1, 1 )
-shader_param/effect_color = Color( 5.7, 3, 0.3, 1 )
+shader_param/effect_color = Color( 5, 3, 0.2, 1 )
 shader_param/alpha_tolerance = 0.7
 shader_param/speed = 2.0
 shader_param/ring_amount = 3
-shader_param/size = 1.9
+shader_param/size = 1.6
 shader_param/ring_thickness = 1.0
 shader_param/border_thickness = 1.0

@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://shader/magic_circle.shader" type="Shader" id=1]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/resolution = Vector2( 1, 1 )
+shader_param/bg_color = Color( 0, 0, 0, 1 )
+shader_param/effect_color = Color( 2.9, 0.5, 0.7, 0 )
+shader_param/alpha_factor = 6.0
+shader_param/effect_scale = 0.95
+shader_param/alpha_enabled = true

@@ -1,10 +1,13 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
-
-[ext_resource path="res://shader/color_smooth_blink.shader" type="Shader" id=1]
+[gd_resource type="SpatialMaterial" format=2]
 
 [resource]
-shader = ExtResource( 1 )
-shader_param/resolution = Vector2( 1, 1 )
-shader_param/effect_color = Color( 2, 0.1, 0.1, 1 )
-shader_param/speed = 10.0
-shader_param/range = 9.0
+resource_local_to_scene = true
+albedo_color = Color( 1, 0.1, 0.1, 1 )
+emission_enabled = true
+emission = Color( 2.8, 0.1, 0.1, 1 )
+emission_energy = 0.0
+emission_operator = 0
+emission_on_uv2 = false
+rim_enabled = true
+rim = 1.0
+rim_tint = 1.0

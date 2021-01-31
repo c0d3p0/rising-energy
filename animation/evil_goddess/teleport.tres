@@ -381,7 +381,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0.48, 0.68, 1.16, 1.36 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 1, 1, 1 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 1, 1, 1 ) ]
+"values": [ Vector3( 1, 1, 1 ), Vector3( 0.001, 0.001, 0.001 ), Vector3( 0.001, 0.001, 0.001 ), Vector3( 1, 1, 1 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("HurtArea:monitoring")

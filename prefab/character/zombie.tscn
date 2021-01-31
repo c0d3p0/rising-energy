@@ -12,11 +12,11 @@
 [ext_resource path="res://source/character/enemy/EnemyCharacterAction.cs" type="Script" id=10]
 [ext_resource path="res://animation/character/pre_spawn.tres" type="Animation" id=11]
 [ext_resource path="res://animation/zombie/idle.tres" type="Animation" id=12]
-[ext_resource path="res://.import/zombie_hit.wav-eae38e50abfc40f370dd6fff5a43fd46.sample" type="AudioStream" id=13]
+[ext_resource path="res://.import/scale_teleport.wav-91f175e81a2addbf90eecb11af680eaa.sample" type="AudioStream" id=13]
 [ext_resource path="res://source/character/enemy/walker/WalkerEnemyBehavior.cs" type="Script" id=14]
 [ext_resource path="res://source/character/BaseCharacterVitality.cs" type="Script" id=15]
 [ext_resource path="res://animation/zombie/hit.tres" type="Animation" id=16]
-[ext_resource path="res://.import/hit.wav-935c1fcc4ceacc665e8cf31fe7e97318.sample" type="AudioStream" id=17]
+[ext_resource path="res://.import/zombie_idle.wav-a402c201262c16e7f82a9a61ea4ff78b.sample" type="AudioStream" id=17]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -24,11 +24,11 @@ height = 0.8
 
 [sub_resource type="CapsuleShape" id=2]
 radius = 0.3
-height = 1.2
+height = 1.1
 
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.3
-height = 1.2
+height = 1.1
 
 [sub_resource type="AnimationNodeAnimation" id=4]
 animation = "die"
@@ -76,8 +76,6 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
 
@@ -87,20 +85,22 @@ states/die/position = Vector2( 413.63, 236.496 )
 states/hit/node = SubResource( 7 )
 states/hit/position = Vector2( 413.63, 34.044 )
 states/idle/node = SubResource( 8 )
-states/idle/position = Vector2( 306.63, 154.247 )
+states/idle/position = Vector2( 306.63, 154.281 )
 states/pre_spawn/node = SubResource( 9 )
 states/pre_spawn/position = Vector2( 145.63, 34.044 )
 states/spawn/node = SubResource( 10 )
-states/spawn/position = Vector2( 145.63, 154.247 )
+states/spawn/position = Vector2( 145.971, 154.389 )
 states/walk/node = SubResource( 11 )
 states/walk/position = Vector2( 535.63, 154.247 )
-transitions = [ "idle", "walk", SubResource( 12 ), "walk", "idle", SubResource( 13 ), "idle", "die", SubResource( 14 ), "walk", "die", SubResource( 15 ), "hit", "idle", SubResource( 16 ), "idle", "hit", SubResource( 17 ), "walk", "hit", SubResource( 18 ), "spawn", "idle", SubResource( 19 ), "pre_spawn", "spawn", SubResource( 20 ) ]
+transitions = [ "idle", "walk", SubResource( 12 ), "walk", "idle", SubResource( 13 ), "idle", "die", SubResource( 14 ), "walk", "die", SubResource( 15 ), "hit", "idle", SubResource( 16 ), "idle", "hit", SubResource( 17 ), "walk", "hit", SubResource( 18 ), "pre_spawn", "spawn", SubResource( 19 ), "spawn", "idle", SubResource( 20 ) ]
 start_node = "pre_spawn"
 graph_offset = Vector2( -77.3317, -12.476 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
-[node name="Zombie" type="KinematicBody"]
+[node name="Zombie" type="KinematicBody" groups=[
+"Z",
+]]
 collision_mask = 18
 script = ExtResource( 5 )
 enemyBehaviorNP = NodePath("Source/WalkerEnemyBehavior")
@@ -112,7 +112,7 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.9,
 shape = SubResource( 1 )
 
 [node name="Body" type="Spatial" parent="."]
-transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+transform = Transform( 0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0 )
 
 [node name="ZombieSkeleton" parent="Body" instance=ExtResource( 2 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.05, 0, 0 )
@@ -130,7 +130,7 @@ cast_to = Vector3( 0, -0.55, 0 )
 collision_mask = 30
 
 [node name="StrikeArea" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0 )
 monitoring = false
 monitorable = false
 collision_layer = 256
@@ -141,7 +141,7 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0
 shape = SubResource( 2 )
 
 [node name="HurtArea" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0 )
 monitoring = false
 monitorable = false
 collision_layer = 64
@@ -163,11 +163,11 @@ aabb = AABB( -0.5, 0, -0.5, 1, 2, 1 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
-stream = ExtResource( 13 )
+stream = ExtResource( 17 )
 attenuation_model = 3
 
 [node name="EffectAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 17 )
+stream = ExtResource( 13 )
 attenuation_model = 3
 unit_db = 20.0
 
@@ -191,7 +191,7 @@ parameters/hit/TimeScale/scale = 2.0
 
 [node name="CharacterPhysics" type="Node" parent="Source"]
 script = ExtResource( 6 )
-gravityEnabled = false
+gravityEnabled = true
 kinematicBodyNP = NodePath("../..")
 
 [node name="CharacterMove" type="Node" parent="Source"]
@@ -241,6 +241,7 @@ enemyBehaviorNP = NodePath("../WalkerEnemyBehavior")
 enemyCharacterActionNP = NodePath("../EnemyCharacterAction")
 enemyCharacterVitalityNP = NodePath("../EnemyCharacterVitality")
 hurtAreaNP = NodePath("../../HurtArea")
+
 [connection signal="area_entered" from="StrikeArea" to="Source/EnemyCharacterVitality" method="OnStrikeAreaEntered"]
 [connection signal="area_entered" from="HurtArea" to="Source/EnemyCharacterVitality" method="OnHurtAreaEntered"]
 [connection signal="timeout" from="MoveTimer" to="Source/WalkerEnemyBehavior" method="OnMoveTimerTimeout"]

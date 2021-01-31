@@ -161,8 +161,8 @@ public class SurvivalLevelProgress : EnemySpawer
 				(scoreFromEnemies % bossSpawnScoreFromEnemyInterval);
 		this.EmitSignal(this.GetSignalPlayerScoreChanged(),
 				"Score: " + totalScore.ToString());
-		this.EmitSignal(this.GetSignalNextBossScoreChanged(), "Next Boss: " +
-				((ShouldSpawnBoss() || currentBoss != null) ? "Active" : nextBoss.ToString()));
+		this.EmitSignal(this.GetSignalNextBossScoreChanged(),
+				GetNextBossLabelText(nextBoss));
 	}
 
 	protected override bool ShouldSpawnEnemy()
@@ -214,6 +214,13 @@ public class SurvivalLevelProgress : EnemySpawer
 		return null;
 	}
 
+	private string GetNextBossLabelText(int nextBossPoints)
+	{
+		return this.CreateString("Next Boss: ", requestedBoss ||
+				(scoreFromEnemies / bossSpawnScoreFromEnemyInterval) > bossSpawned ?
+				"Active" : nextBossPoints.ToString());
+	}
+	
 	private void InitializeLevel()
 	{
 		nodeFactory.Call(this.GetMethodSetActive(), true);

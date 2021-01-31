@@ -72,7 +72,7 @@ public class BaseEnemyCharacterAction : BaseCharacterAction
 	public void OnCameraExited(Camera camera) // Used to control the character despawn
 	{
 		if(despawn)
-			despawnTimer.Start();
+			despawnTimer.Start(despawnTimeTolerance > 0 ? despawnTimeTolerance : -1f);
 	}
 
 	public void OnDespawnTimeout() // Used to control the character despawn

@@ -202,8 +202,7 @@ margin_top = 240.0
 margin_right = 220.0
 margin_bottom = 277.0
 rect_min_size = Vector2( 220, 0 )
-disabled = true
-text = "Pause Break"
+text = "Not mapped"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -253,7 +252,8 @@ buttonNPMap = {
 "p1_jump": NodePath("../../MappedControl/JumpButton"),
 "p1_left": NodePath("../../MappedControl/LeftButton"),
 "p1_right": NodePath("../../MappedControl/RightButton"),
-"p1_up": NodePath("../../MappedControl/UpButton")
+"p1_up": NodePath("../../MappedControl/UpButton"),
+"pause_game": NodePath("../../MappedControl/PauseButton")
 }
 ignoreKeyMap = {
 16777217: null,
@@ -296,7 +296,7 @@ jsonSerializerNP = NodePath("../JsonSerializer")
 [connection signal="pressed" from="MappedControl/RightButton" to="Source/InputMappingGUI" method="OnInputButtonPressed" binds= [ "p1_right" ]]
 [connection signal="pressed" from="MappedControl/AttackButton" to="Source/InputMappingGUI" method="OnInputButtonPressed" binds= [ "p1_attack" ]]
 [connection signal="pressed" from="MappedControl/JumpButton" to="Source/InputMappingGUI" method="OnInputButtonPressed" binds= [ "p1_jump" ]]
-[connection signal="pressed" from="MappedControl/PauseButton" to="Source/InputMappingGUI" method="OnInputButtonPressed" binds= [ "p1_jump" ]]
+[connection signal="pressed" from="MappedControl/PauseButton" to="Source/InputMappingGUI" method="OnInputButtonPressed" binds= [ "pause_game" ]]
 [connection signal="pressed" from="MappedControl/BlockButton" to="Source/InputMappingGUI" method="OnInputButtonPressed" binds= [ "p1_block" ]]
 [connection signal="pressed" from="ActionControl/IgnoreButton" to="Source/InputMappingGUI" method="OnIgnoreButtonPressed"]
 [connection signal="pressed" from="ActionControl/SaveButton" to="Source/InputMappingGUI" method="OnSaveButtonPressed"]

@@ -23,7 +23,10 @@ public static class GameNodeExtension
 			}
 		}
 		else
-			GD.PushWarning("ResourceKeyList called by '" + caller.Name + "' is null");
+		{
+			if(OS.IsDebugBuild())
+				GD.PushWarning("ResourceKeyList called by '" + caller.Name + "' is null");
+		}
 		
 		return resourceMap;
 	}
@@ -45,7 +48,10 @@ public static class GameNodeExtension
 			}
 		}
 		else
-			GD.PushWarning("ResourceKeyList called by " + caller.Name + " is null");
+		{
+			if(OS.IsDebugBuild())
+				GD.PushWarning("ResourceKeyList called by " + caller.Name + " is null");
+		}
 		
 		return resourceList;
 	}

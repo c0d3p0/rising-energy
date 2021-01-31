@@ -96,28 +96,28 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -10, -2.5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5, -11, -2.5 )
 
 [node name="MountainBlock8_22" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 51, -12, -2.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5, -12, -2.5 )
 
 [node name="MountainBlock8_23" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59, -12, -2.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5, -12, -2.5 )
 
 [node name="MountainBlock8_24" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67, -13, -2.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67.5, -13, -2.5 )
 
 [node name="MountainBlock8_25" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 79, -13, -2.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 79.5, -13, -2.5 )
 
 [node name="MountainBlock8_26" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87, -13, -2.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, -13, -2.5 )
 
 [node name="MountainBlock8_27" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 95, -14, -2.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 95.5, -14, -2.5 )
 
 [node name="MountainBlock8_28" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103, -14, -2.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103.5, -14, -2.5 )
 
 [node name="MountainBlock8_29" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111, -14, -2.5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 111.5, -14, -2.5 )
 
 [node name="DeathPit" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70, -12, 0 )
@@ -165,16 +165,16 @@ aabb = AABB( -7.5, -2, -1, 15, 4, 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5, -5, 0 )
 
 [node name="EnemySpawnSpot11" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -6, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.5, -6, 0 )
 aabb = AABB( -7.5, -2, -1, 15, 4, 2 )
 
 [node name="EnemySpawnSpot12" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67, -7, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67.5, -7, 0 )
 
 [node name="EnemySpawnSpot13" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 83, -7, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 83.5, -7, 0 )
 aabb = AABB( -7.5, -2, -1, 15, 4, 2 )
 
 [node name="EnemySpawnSpot14" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103, -8, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 103.5, -8, 0 )
 aabb = AABB( -11.5, -2, -1, 23, 4, 2 )

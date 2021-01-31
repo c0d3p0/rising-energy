@@ -3,6 +3,7 @@
 [ext_resource path="res://shader/border_aura.shader" type="Shader" id=1]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/resolution = Vector2( 1, 1 )
 shader_param/effect_color = Color( 3.4, 3.4, 3.4, 1 )

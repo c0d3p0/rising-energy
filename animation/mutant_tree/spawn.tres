@@ -261,7 +261,7 @@ tracks/35/keys = {
 "times": PoolRealArray( 0, 0.4, 0.6, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ) ]
+"values": [ Vector3( 0.001, 0.001, 0.001 ), Vector3( 0.001, 0.001, 0.001 ), Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ) ]
 }
 tracks/36/type = "value"
 tracks/36/path = NodePath("HurtArea:monitoring")
@@ -287,39 +287,25 @@ tracks/37/keys = {
 "update": 1,
 "values": [ false, true ]
 }
-tracks/38/type = "method"
-tracks/38/path = NodePath("Source/SpellerEnemyBehavior")
+tracks/38/type = "value"
+tracks/38/path = NodePath("Source/CharacterPhysics:gravityEnabled")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/imported = false
 tracks/38/enabled = true
 tracks/38/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ true ],
-"method": "SetProcessBehavior"
-} ]
-}
-tracks/39/type = "value"
-tracks/39/path = NodePath("Source/CharacterPhysics:gravityEnabled")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/keys = {
 "times": PoolRealArray( 0, 0.92, 0.96, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, true, true ]
 }
-tracks/40/type = "audio"
-tracks/40/path = NodePath("EffectAudioStreamPlayer3D")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/keys = {
+tracks/39/type = "audio"
+tracks/39/path = NodePath("EffectAudioStreamPlayer3D")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -327,8 +313,20 @@ tracks/40/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/41/type = "value"
-tracks/41/path = NodePath("EffectAudioStreamPlayer3D:unit_db")
+tracks/40/type = "value"
+tracks/40/path = NodePath("EffectAudioStreamPlayer3D:unit_db")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 20.0 ]
+}
+tracks/41/type = "method"
+tracks/41/path = NodePath("Source/EnemyCharacterAction")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/imported = false
@@ -336,20 +334,22 @@ tracks/41/enabled = true
 tracks/41/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 20.0 ]
+"values": [ {
+"args": [  ],
+"method": "StartDespawnTimer"
+} ]
 }
 tracks/42/type = "method"
-tracks/42/path = NodePath("Source/EnemyCharacterAction")
+tracks/42/path = NodePath("Source/SpellerEnemyBehavior")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/imported = false
 tracks/42/enabled = true
 tracks/42/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [  ],
-"method": "StartDespawnTimer"
+"args": [ true ],
+"method": "SetProcessBehavior"
 } ]
 }

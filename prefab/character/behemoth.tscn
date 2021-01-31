@@ -97,7 +97,9 @@ graph_offset = Vector2( -9.75658, 1.53948 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
-[node name="Behemoth" type="KinematicBody"]
+[node name="Behemoth" type="KinematicBody" groups=[
+"B",
+]]
 collision_mask = 18
 script = ExtResource( 5 )
 enemyBehaviorNP = NodePath("Source/GrowerEnemyBehavior")
@@ -109,7 +111,7 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.8,
 shape = SubResource( 1 )
 
 [node name="Body" type="Spatial" parent="."]
-transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+transform = Transform( 0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0 )
 
 [node name="BehemothSkeleton" parent="Body" instance=ExtResource( 2 )]
 transform = Transform( -1.30337e-07, 0, 0.8, 0, 0.8, 0, -0.8, 0, -1.30337e-07, 0, 0, 0 )
@@ -185,7 +187,6 @@ parameters/playback = SubResource( 23 )
 
 [node name="CharacterPhysics" type="Node" parent="Source"]
 script = ExtResource( 6 )
-gravityEnabled = false
 kinematicBodyNP = NodePath("../..")
 
 [node name="CharacterMove" type="Node" parent="Source"]
@@ -222,15 +223,14 @@ despawnVisibilityNotifierNP = NodePath("../../DespawnVisibilityNotifier")
 script = ExtResource( 15 )
 strikeAreaNP = NodePath("../../StrikeArea")
 hurtAreaNP = NodePath("../../HurtArea")
-maxHealth = 205.0
-currentHealth = 205.0
+maxHealth = 185.0
+currentHealth = 185.0
 healthRecoverPerSecond = 1.0
 energyRecoverPerSecond = 0.0
 damageGivenMap = {
 "default": Vector3( 300, 300, 300 )
 }
 energyTakenMap = {
-
 }
 
 [node name="EnemyInitializer" type="Node" parent="Source"]
@@ -242,6 +242,7 @@ enemyBehaviorNP = NodePath("../GrowerEnemyBehavior")
 enemyCharacterActionNP = NodePath("../EnemyCharacterAction")
 enemyCharacterVitalityNP = NodePath("../EnemyCharacterVitality")
 hurtAreaNP = NodePath("../../HurtArea")
+
 [connection signal="area_entered" from="StrikeArea" to="Source/EnemyCharacterVitality" method="OnStrikeAreaEntered"]
 [connection signal="area_entered" from="HurtArea" to="Source/EnemyCharacterVitality" method="OnHurtAreaEntered"]
 [connection signal="timeout" from="DespawnTimer" to="Source/EnemyCharacterAction" method="OnDespawnTimeout"]

@@ -1,23 +1,23 @@
-=========================================================
-		3D Models
-=========================================================
+====================================================
+					3D Models
+====================================================
 
 Sophie Hunter		Mixamo (https://www.mixamo.com)
 Warrior Spirit		Mixamo (https://www.mixamo.com)
 
-Zombie			Mixamo (https://www.mixamo.com)
-Goblin			Mixamo (https://www.mixamo.com)
-Behemoth		Mixamo (https://www.mixamo.com)
+Zombie				Mixamo (https://www.mixamo.com)
+Goblin				Mixamo (https://www.mixamo.com)
+Behemoth			Mixamo (https://www.mixamo.com)
 
-Skull			annzep (https://sketchfab.com/annzep)
-Cranium			annzep (https://sketchfab.com/annzep)
-Head Bone		annzep (https://sketchfab.com/annzep)
+Skull				annzep (https://sketchfab.com/annzep)
+Cranium				annzep (https://sketchfab.com/annzep)
+Head Bone			annzep (https://sketchfab.com/annzep)
 
-Mutant Tree		3DMaesen (https://sketchfab.com/bumstrum)
-Claw			Mixamo (https://www.mixamo.com)
+Mutant Tree			3DMaesen (https://sketchfab.com/bumstrum)
+Claw				Mixamo (https://www.mixamo.com)
 
-Cursed			Mixamo (https://www.mixamo.com)
-Demon			Mixamo (https://www.mixamo.com)
+Cursed				Mixamo (https://www.mixamo.com)
+Demon				Mixamo (https://www.mixamo.com)
 Evil Goddess		Mixamo (https://www.mixamo.com)
 
 
@@ -25,70 +25,70 @@ Blaze Sword 		argwin (https://free3d.com/user/argwin)
 Avenger Sword		Hernando Mora (https://free3d.com/user/apocalypse_67)
 Monarch Sword		Mohammad Alizadeh (https://free3d.com/user/mohammadalizadeh)
 
-=========================================================
-		Voice Actors
-=========================================================
+====================================================
+				Voice Actors
+====================================================
 
 Sophie Hunter		AmeAngelofSin (https://freesound.org/people/AmeAngelofSin)
 
-Zombie 			Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
-Goblin			Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
-Behemoth		Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
+Zombie 				Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
+Goblin				Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
+Behemoth			Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
 
-Skull			Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
-Cranium			Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
-Head Bone		Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
+Skull				Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
+Cranium				Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
+Head Bone			Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
 
-Mutant Tree		Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
-Claw			Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
+Mutant Tree			Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
+Claw				Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
 
-Cursed			Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
-Demon			Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
+Cursed				Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
+Demon				Little Robot Sound Factory (https://opengameart.org/users/little-robot-sound-factory)
 Evil Goddess		drotzruhn (https://freesound.org/people/drotzruhn)
 
-=========================================================
-		Background Music
-=========================================================
+====================================================
+				Background Music
+====================================================
 
 Mountain			Celebration by Alexander Nakarada (www.serpentsoundstudios.com)
-				Licensed under Creative Commons BY Attribution 4.0 License
-				https://creativecommons.org/licenses/by/4.0/
+					Licensed under Creative Commons BY Attribution 4.0 License
+					https://creativecommons.org/licenses/by/4.0/
 
 Cave				Wintersong by Alexander Nakarada (www.serpentsoundstudios.com)
-				Licensed under Creative Commons BY Attribution 4.0 License
-				https://creativecommons.org/licenses/by/4.0/
+					Licensed under Creative Commons BY Attribution 4.0 License
+					https://creativecommons.org/licenses/by/4.0/
 
 Boss Fight			Tap by Alexander Nakarada (www.serpentsoundstudios.com)
-				Licensed under Creative Commons BY Attribution 4.0 License
-				https://creativecommons.org/licenses/by/4.0/
+					Licensed under Creative Commons BY Attribution 4.0 License
+					https://creativecommons.org/licenses/by/4.0/
 
-Survival Mode			Escape by Alexander Nakarada (www.serpentsoundstudios.com)
-				Licensed under Creative Commons BY Attribution 4.0 License
-				https://creativecommons.org/licenses/by/4.0/
+Survival Mode		Escape by Alexander Nakarada (www.serpentsoundstudios.com)
+					Licensed under Creative Commons BY Attribution 4.0 License
+					https://creativecommons.org/licenses/by/4.0/
 
-Title Screen			Adventure by Alexander Nakarada (www.serpentsoundstudios.com)
-				Licensed under Creative Commons BY Attribution 4.0 License
-				https://creativecommons.org/licenses/by/4.0/
+Title Screen		Adventure by Alexander Nakarada (www.serpentsoundstudios.com)
+					Licensed under Creative Commons BY Attribution 4.0 License
+					https://creativecommons.org/licenses/by/4.0/
 
-Credits Screen			Megaepic by Alexander Nakarada (www.serpentsoundstudios.com)
-				Licensed under Creative Commons BY Attribution 4.0 License
-				https://creativecommons.org/licenses/by/4.0/
+Credits Screen		Megaepic by Alexander Nakarada (www.serpentsoundstudios.com)
+					Licensed under Creative Commons BY Attribution 4.0 License
+					https://creativecommons.org/licenses/by/4.0/
 
-=========================================================
-		Game Developer
-=========================================================
-
-Ednilson Pereira Oliveira
-
-=========================================================
-		Game Producer
-=========================================================
+====================================================
+				Game Developer
+====================================================
 
 Ednilson Pereira Oliveira
 
-=========================================================
-		Game Project
-=========================================================
+====================================================
+				Game Producer
+====================================================
+
+Ednilson Pereira Oliveira
+
+====================================================
+				Game Project
+====================================================
 
 Open Source and a at github.com/c0d3p0
 

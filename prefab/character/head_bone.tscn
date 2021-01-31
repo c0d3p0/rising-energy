@@ -3,7 +3,7 @@
 [ext_resource path="res://source/character/enemy/BaseEnemyCharacter.cs" type="Script" id=1]
 [ext_resource path="res://model/skull/skull.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/character/CharacterMove.cs" type="Script" id=3]
-[ext_resource path="res://animation/skull/spawn.tres" type="Animation" id=4]
+[ext_resource path="res://animation/head_bone/spawn.tres" type="Animation" id=4]
 [ext_resource path="res://source/character/enemy/BaseEnemyCharacterAction.cs" type="Script" id=5]
 [ext_resource path="res://source/character/CharacterPhysics.cs" type="Script" id=6]
 [ext_resource path="res://.import/head_bone_move.wav-e8efcb153e6da0030b37773d9d478776.sample" type="AudioStream" id=7]
@@ -62,7 +62,9 @@ graph_offset = Vector2( -80.365, 41.1534 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
-[node name="HeadBone" type="KinematicBody"]
+[node name="HeadBone" type="KinematicBody" groups=[
+"H",
+]]
 collision_mask = 18
 script = ExtResource( 1 )
 enemyBehaviorNP = NodePath("Source/AirSpellerEnemyBehavior")
@@ -144,7 +146,6 @@ parameters/playback = SubResource( 12 )
 
 [node name="CharacterPhysics" type="Node" parent="Source"]
 script = ExtResource( 6 )
-gravityEnabled = false
 kinematicBodyNP = NodePath("../..")
 
 [node name="CharacterMove" type="Node" parent="Source"]

@@ -48,7 +48,7 @@ public class NodeFactory : Node
 		}
 	}
 
-	public void DisposeAllNodeInstances()
+	private void DisposeAllNodeInstances()
 	{
 		Node n;
 		SCG.IEnumerator<SCG.KeyValuePair<ulong, Node>> it =
@@ -65,13 +65,16 @@ public class NodeFactory : Node
 			}
 			catch(System.Exception e)
 			{
-				GD.PushWarning(this.CreateString("Problems trying to dispose a Node: ",
-						e.Message, e.StackTrace));
+				if(OS.IsDebugBuild())
+				{
+					GD.PushWarning(this.CreateString("Problems trying to dispose a Node: ",
+							e.Message, e.StackTrace));
+				}
 			}
 		}
 	}
 
-	public void ProcessCreateInstance()
+	private void ProcessCreateInstance()
 	{
 		while(!IsQueuedForDeletion() && IsInsideTree())
 		{
@@ -108,18 +111,22 @@ public class NodeFactory : Node
 					}
 					else
 					{
-						GD.PushWarning(this.CreateString(
-								"GlobalResources couldn't return a PackedScene with the key nodeKey '",
-								nodeKey, "'"));
+						if(OS.IsDebugBuild())
+						{
+							GD.PushWarning(this.CreateString(
+									"GlobalResources couldn't return a PackedScene with the key nodeKey '",
+									nodeKey, "'"));
+						}
 					}
 				}
 			}
 			catch(System.Exception e)
 			{
-				GD.PushWarning(GetErrorMessage(r, callbackMethod, nodeKey, e));
-
 				if(n != null && !nodeInstanceMap.ContainsKey(n.GetInstanceId()))
 					n.QueueFree();
+					
+				if(OS.IsDebugBuild())
+					GD.PushWarning(GetErrorMessage(r, callbackMethod, nodeKey, e));
 			}
 		}	
 	}
@@ -156,7 +163,7 @@ public class NodeFactory : Node
 		{
 			object[] data = requestDataList.First.Value;
 
-			if((bool)data[REQUEST_FINISHED])
+			if((bool) data[REQUEST_FINISHED])
 				requestDataList.RemoveFirst();
 		}
 	}

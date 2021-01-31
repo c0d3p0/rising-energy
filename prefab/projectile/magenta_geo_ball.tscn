@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://source/character/CharacterMove.cs" type="Script" id=1]
 [ext_resource path="res://source/character/enemy/BaseEnemyCharacter.cs" type="Script" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://source/character/enemy/BaseEnemyCharacterAction.cs" type="Script" id=5]
 [ext_resource path="res://source/character/BaseCharacterVitality.cs" type="Script" id=6]
 [ext_resource path="res://source/projectile/BoomerangProjetileBehavior.cs" type="Script" id=7]
-[ext_resource path="res://shader/geo_effect_1.shader" type="Shader" id=8]
+[ext_resource path="res://material/projectile/magenta_geo_ball.tres" type="Material" id=8]
 [ext_resource path="res://animation/projectile/spawn.tres" type="Animation" id=9]
 [ext_resource path="res://animation/projectile/move.tres" type="Animation" id=10]
 [ext_resource path="res://animation/projectile/pre_spawn.tres" type="Animation" id=11]
@@ -21,56 +21,45 @@ radius = 0.41
 radius = 0.4
 height = 0.8
 
-[sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 8 )
-shader_param/resolution = Vector2( 1, 1 )
-shader_param/color_1 = Color( 0.6, 0.1, 1.8, 1 )
-shader_param/color_2 = Color( 2.2, 0.3, 0.9, 1 )
-shader_param/color_3 = Color( 0.501961, 0, 0.301961, 1 )
-shader_param/color_4 = Color( 0, 0, 0, 1 )
-shader_param/color_override = Color( 0, 0, 0, 1 )
-shader_param/speed = 0.2
-shader_param/effect_alpha = 0
-
-[sub_resource type="SphereShape" id=4]
+[sub_resource type="SphereShape" id=3]
 radius = 0.41
 
-[sub_resource type="AnimationNodeAnimation" id=5]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "move"
 
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "pre_spawn"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "spawn"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "wait"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
 switch_mode = 2
 auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=12]
-states/move/node = SubResource( 5 )
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/move/node = SubResource( 4 )
 states/move/position = Vector2( 608.668, 152.89 )
-states/pre_spawn/node = SubResource( 6 )
+states/pre_spawn/node = SubResource( 5 )
 states/pre_spawn/position = Vector2( 76.668, 152.89 )
-states/spawn/node = SubResource( 7 )
+states/spawn/node = SubResource( 6 )
 states/spawn/position = Vector2( 431.668, 152.89 )
-states/wait/node = SubResource( 8 )
+states/wait/node = SubResource( 7 )
 states/wait/position = Vector2( 262.668, 152.89 )
-transitions = [ "spawn", "move", SubResource( 9 ), "wait", "spawn", SubResource( 10 ), "pre_spawn", "wait", SubResource( 11 ) ]
+transitions = [ "spawn", "move", SubResource( 8 ), "wait", "spawn", SubResource( 9 ), "pre_spawn", "wait", SubResource( 10 ) ]
 start_node = "pre_spawn"
 graph_offset = Vector2( -77.3317, 24.2791 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=13]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [node name="MagentaGeoBall" type="KinematicBody"]
 collision_mask = 18
@@ -91,7 +80,7 @@ transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.45, 0 )
 [node name="MeshInstance" type="MeshInstance" parent="Body"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0, 0 )
 mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+material/0 = ExtResource( 8 )
 
 [node name="StrikeArea" type="Area" parent="." groups=[
 "strike_all",
@@ -104,7 +93,7 @@ collision_mask = 32
 
 [node name="CollisionShape" type="CollisionShape" parent="StrikeArea"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="DespawnTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -120,10 +109,10 @@ anims/spawn = ExtResource( 9 )
 anims/wait = ExtResource( 12 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 12 )
+tree_root = SubResource( 11 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 13 )
+parameters/playback = SubResource( 12 )
 
 [node name="LoopAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0 )

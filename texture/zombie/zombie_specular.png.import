@@ -2,26 +2,24 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/zombie_specular.png-684fffbda38732c601b9f7e4585cba27.s3tc.stex"
-path.etc2="res://.import/zombie_specular.png-684fffbda38732c601b9f7e4585cba27.etc2.stex"
+path="res://.import/zombie_specular.png-684fffbda38732c601b9f7e4585cba27.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://texture/zombie/zombie_specular.png"
-dest_files=[ "res://.import/zombie_specular.png-684fffbda38732c601b9f7e4585cba27.s3tc.stex", "res://.import/zombie_specular.png-684fffbda38732c601b9f7e4585cba27.etc2.stex" ]
+dest_files=[ "res://.import/zombie_specular.png-684fffbda38732c601b9f7e4585cba27.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false

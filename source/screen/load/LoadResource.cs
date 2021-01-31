@@ -21,6 +21,9 @@ public class LoadResource : Node
 				globalResource.Call(this.GetMethodPut(),
 						split[index].Split(".")[0], ResourceLoader.Load(it.Current));			
 			}
+
+			if(OS.IsDebugBuild())
+				GD.PushWarning("Resources stored inside GlobalResources!");
 		}
 
 		loaded = true;
@@ -30,7 +33,10 @@ public class LoadResource : Node
 	{
 		if(loaded && splashScreenTimer.IsStopped())
 		{
-			nextNode.Call(this.GetMethodSetActive());
+			if(OS.IsDebugBuild())
+				GD.PushWarning("Resources Loaded!");
+
+			nextNode.SetProcess(true);
 			SetProcess(false);
 		}
 	}
@@ -59,6 +65,7 @@ public class LoadResource : Node
 
 	public override void _Ready()
 	{
+		SetProcess(active);
 		StartRequest();
 	}
 
@@ -88,6 +95,10 @@ public class LoadResource : Node
 
 	[Export]
 	public NodePath splashScreenTimerNP;
+
+	[Export]
+	public bool active = true;
+
 
 	private Node globalResource;
 	private Node nextNode;

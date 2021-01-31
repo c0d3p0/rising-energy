@@ -49,7 +49,9 @@ graph_offset = Vector2( -272.365, 5.1534 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=9]
 
-[node name="Skull" type="KinematicBody"]
+[node name="Skull" type="KinematicBody" groups=[
+"K",
+]]
 collision_mask = 18
 script = ExtResource( 1 )
 enemyBehaviorNP = NodePath("Source/WaverEnemyBehavior")
@@ -91,7 +93,6 @@ aabb = AABB( -0.5, -0.6, -0.5, 1, 1.2, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
 stream = ExtResource( 7 )
 attenuation_model = 3
-unit_db = 20.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/pre_spawn_immortal = ExtResource( 10 )
@@ -108,7 +109,6 @@ parameters/playback = SubResource( 9 )
 
 [node name="CharacterPhysics" type="Node" parent="Source"]
 script = ExtResource( 6 )
-gravityEnabled = false
 kinematicBodyNP = NodePath("../..")
 
 [node name="CharacterMove" type="Node" parent="Source"]

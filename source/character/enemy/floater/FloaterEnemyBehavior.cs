@@ -3,7 +3,13 @@ using Godot;
 
 public class FloaterEnemyBehavior : BaseEnemyBehavior
 {
-	public void PrepareMove()
+	public void OnSpawn()	// Called by an animation
+	{
+		SetDirectionToTarget();
+		enemyCharacter.Call(this.GetMethodFixBodyDirection(), direction);
+	}
+
+	public void PrepareMove()	// Called by an animation
 	{
 		Vector3 position = enemyCharacter.GlobalTransform.origin;
 

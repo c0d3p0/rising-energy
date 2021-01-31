@@ -6,7 +6,7 @@
 
 [resource]
 resource_name = "default"
-length = 3.68
+length = 3.8
 step = 0.04
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Body/CursedSkeleton:Head")
@@ -379,10 +379,10 @@ tracks/52/loop_wrap = true
 tracks/52/imported = false
 tracks/52/enabled = true
 tracks/52/keys = {
-"times": PoolRealArray( 0, 3.4, 3.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 3.4, 3.6, 3.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ), Vector3( 0.001, 0.001, 0.001 ), Vector3( 0.001, 0.001, 0.001 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("StrikeArea:monitorable")
@@ -420,27 +420,13 @@ tracks/55/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, -200 ) ]
 }
-tracks/56/type = "method"
-tracks/56/path = NodePath("Source/EnemyCharacterAction")
+tracks/56/type = "audio"
+tracks/56/path = NodePath("AudioStreamPlayer3D")
 tracks/56/interp = 1
 tracks/56/loop_wrap = true
 tracks/56/imported = false
 tracks/56/enabled = true
 tracks/56/keys = {
-"times": PoolRealArray( 3.64 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "SelfDestroy"
-} ]
-}
-tracks/57/type = "audio"
-tracks/57/path = NodePath("AudioStreamPlayer3D")
-tracks/57/interp = 1
-tracks/57/loop_wrap = true
-tracks/57/imported = false
-tracks/57/enabled = true
-tracks/57/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -448,13 +434,13 @@ tracks/57/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/58/type = "audio"
-tracks/58/path = NodePath("EffectAudioStreamPlayer3D")
-tracks/58/interp = 1
-tracks/58/loop_wrap = true
-tracks/58/imported = false
-tracks/58/enabled = true
-tracks/58/keys = {
+tracks/57/type = "audio"
+tracks/57/path = NodePath("EffectAudioStreamPlayer3D")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -466,15 +452,29 @@ tracks/58/keys = {
 } ],
 "times": PoolRealArray( 0, 3.08 )
 }
-tracks/59/type = "value"
-tracks/59/path = NodePath("EffectAudioStreamPlayer3D:unit_db")
+tracks/58/type = "value"
+tracks/58/path = NodePath("EffectAudioStreamPlayer3D:unit_db")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/keys = {
+"times": PoolRealArray( 0, 3.08 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 4.0, 20.0 ]
+}
+tracks/59/type = "method"
+tracks/59/path = NodePath("Source/EnemyCharacterAction")
 tracks/59/interp = 1
 tracks/59/loop_wrap = true
 tracks/59/imported = false
 tracks/59/enabled = true
 tracks/59/keys = {
-"times": PoolRealArray( 0, 3.08 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 4.0, 20.0 ]
+"times": PoolRealArray( 3.64 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "SelfDestroy"
+} ]
 }

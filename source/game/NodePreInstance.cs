@@ -4,8 +4,7 @@ using Godot;
 using Godot.Collections;
 
 
-// Class created to help to reduce the frame drop that happens when
-// the level creates the first enemy instance and add it to the tree.
+// NOTE: Unused
 public class NodePreInstance : Node
 {
 	public void SetKinSpawnData(Node node, Dictionary paramMap)

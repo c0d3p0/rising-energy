@@ -23,6 +23,30 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -4, -2.5 )
 [node name="TestBlock8_6" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 4, -2.5 )
 
+[node name="TestBlock8_7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 4, -2.5 )
+
+[node name="TestBlock8_8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -4, -2.5 )
+
+[node name="TestBlock8_9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -4, -2.5 )
+
+[node name="TestBlock8_10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 58, -4, -2.5 )
+
+[node name="TestBlock8_11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 66, -4, -2.5 )
+
+[node name="TestBlock8_12" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 74, -4, -2.5 )
+
+[node name="TestBlock8_13" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 82, -4, -2.5 )
+
+[node name="TestBlock8_14" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 4, -2.5 )
+
 [node name="EnemySpawnSpot" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 aabb = AABB( -7.5, -2, -1, 15, 4, 2 )

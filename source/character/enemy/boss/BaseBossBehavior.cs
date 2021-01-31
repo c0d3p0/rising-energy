@@ -31,10 +31,10 @@ public abstract class BaseBossBehavior : BaseEnemyBehavior
 
 	public virtual void SetDefaultSpawnData(Node kin, Dictionary paramMap)
 	{
-		if(IsInsideTree() && ! IsQueuedForDeletion())
+		if(IsInsideTree() && !IsQueuedForDeletion())
 		{
 			Spatial s = kin as Spatial;
-			s.Translation = new Vector3(0f, 0f, -1000f);
+			s.Translation = new Vector3(-10000f, -10000f, -5f);
 			s.Call(this.GetMethodSetTarget(), target);
 			s.Connect(this.GetGDSignalTreeExited(), this,
 					this.GetMethodOnKinDestroyed(), this.CreateSingleBind(s));

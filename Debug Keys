@@ -1,0 +1,16 @@
+KeyPad 7 = Decreases health by 100.
+KeyPad 8 = Increases health by 100.
+KeyPad 9 = Decreases maximum health by 100.
+KeyPad + = Increases maximum health by 100.
+
+KeyPad 4 = Decreases energy by 100.
+KeyPad 5 = Increases energy by 100.
+KeyPad 6 = Decreases maximum energy by 100.
+KeyPad . = Increases maximum energy by 100.
+
+KeyPad / = Set energy name to "blaze".
+KeyPad * = Set energy name to "avenger".
+KeyPad - = Set energy name to "monarch".
+
+KeyPad 0 = Toggle God Mode.
+KeyPad , = Suicide.

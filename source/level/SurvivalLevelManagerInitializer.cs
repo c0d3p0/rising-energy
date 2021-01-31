@@ -71,6 +71,8 @@ public class SurvivalLevelManagerInitializer : Node
 				this.GetGDMethodSetText());
 		levelProgress.Connect(this.GetSignalNextBossScoreChanged(),
 				nextBossScoreLabel, this.GetGDMethodSetText());
+		levelProgress.Connect(this.GetGDSignalReady(), animationStateMachine,
+				this.GetGDMethodTravel(), this.CreateSingleBind("intro"));
 	}
 
 	private void InitializePlayerCharacter()

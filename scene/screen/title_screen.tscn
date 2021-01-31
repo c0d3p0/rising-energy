@@ -451,7 +451,7 @@ margin_top = 320.0
 margin_right = 1180.0
 margin_bottom = 357.0
 custom_colors/font_color = Color( 1, 0.8, 0.25098, 1 )
-text = "Version 1.1"
+text = "Version 1.2"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -491,9 +491,22 @@ survivalScenePath = "level/survival_level"
 creditsScreenScenePath = "screen/credits_screen"
 loadScreenScenePath = "screen/load_screen"
 cheatCodeLabelMap = {
-"debug": "Debug Mode",
+"aenergy": "Avenger Energy Active",
+"benergy": "Blaze Energy Active",
+"bosstest": "Boss Test Level Active",
+"cave1": "Cave 1 Level Active",
+"cave2": "Cave 2 Level Active",
+"cave2r": "Cave 2 Reverse Level Active",
+"cave3": "Cave 3 Level Active",
+"cave3fb": "Cave 3 Final Boss Checkpoint Active",
+"check1": "Level Checkpoint 1 Active",
+"check2": "Level Checkpoint 2 Active",
+"check3": "Level Checkpoint 3 Active",
+"enemytest": "Enemy Test Level Active",
 "manualpause": "Manual Pause Only Active",
 "memtest": "Memory Test Active",
+"menergy": "Monarch Energy Active",
+"mnt2": "Mountain 2 Level Active",
 "nodefactory": "Node Factory Test Level Active",
 "testlevel": "Test Level Active"
 }
@@ -502,9 +515,22 @@ cheatCodeLabelMap = {
 script = ExtResource( 8 )
 targetNP = NodePath("../TitleScreen")
 cheatCodeDataMap = {
-"debug": [ "debug", true ],
+"aenergy": [ "sword_id", 1 ],
+"benergy": [ "sword_id", 0 ],
+"bosstest": [ "scene_to_load", "res://scene/test/boss_test_level.tscn" ],
+"cave1": [ "load_screen", "res://scene/level/cave_1_level.tscn" ],
+"cave2": [ "load_screen", "res://scene/level/cave_2_level.tscn" ],
+"cave2r": [ "load_screen", "res://scene/level/cave_2r_level.tscn" ],
+"cave3": [ "load_screen", "res://scene/level/cave_3_level.tscn" ],
+"cave3fb": [ "spawn_point", Vector3( 80, 9, 0 ) ],
+"check1": [ "level_progress", 1 ],
+"check2": [ "level_progress", 2 ],
+"check3": [ "level_progress", 3 ],
+"enemytest": [ "scene_to_load", "res://scene/test/enemy_test_level.tscn" ],
 "manualpause": [ "manual_pause", true ],
 "memtest": [ "load_screen", "res://scene/test/memory_test_screen.tscn" ],
+"menergy": [ "sword_id", 2 ],
+"mnt2": [ "load_screen", "res://scene/level/mountain_2_level.tscn" ],
 "nodefactory": [ "scene_to_load", "res://scene/test/node_factory_test_level.tscn" ],
 "testlevel": [ "scene_to_load", "res://scene/test/test_level.tscn" ]
 }

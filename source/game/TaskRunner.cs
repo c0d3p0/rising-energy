@@ -29,7 +29,7 @@ public class TaskRunner : Node
 		}
 	}
 	
-	public void ProcessRequests()
+	private void ProcessRequests()
 	{
 		while(!IsQueuedForDeletion() && IsInsideTree())
 		{
@@ -54,7 +54,8 @@ public class TaskRunner : Node
 			}
 			catch(System.Exception e)
 			{
-				GD.PushWarning(GetErrorMessage(r, callbackMethod, e));
+				if(OS.IsDebugBuild())
+					GD.PushWarning(GetErrorMessage(r, callbackMethod, e));
 			}
 		}
 	}
@@ -86,11 +87,11 @@ public class TaskRunner : Node
 
 	private void RemoveFirstProcessedRequest()
 	{
-		if(requestDataList.Count > 3)
+		if(requestDataList.Count > 4)
 		{
 			object[] data = requestDataList.First.Value;
 
-			if((bool)data[REQUEST_FINISHED])
+			if((bool) data[REQUEST_FINISHED])
 				requestDataList.RemoveFirst();
 		}
 	}

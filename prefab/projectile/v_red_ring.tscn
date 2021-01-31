@@ -13,61 +13,50 @@
 [ext_resource path="res://.import/projectile_active.ogg-7e2f742888f93463255fc28083b9c625.oggstr" type="AudioStream" id=11]
 [ext_resource path="res://animation/projectile/pre_spawn.tres" type="Animation" id=12]
 [ext_resource path="res://animation/projectile/wait.tres" type="Animation" id=13]
+[ext_resource path="res://material/projectile/red_ring.tres" type="Material" id=14]
 
 [sub_resource type="CylinderShape" id=1]
 height = 0.03
 
-[sub_resource type="SpatialMaterial" id=2]
-resource_local_to_scene = true
-albedo_color = Color( 1, 0.1, 0.1, 1 )
-emission_enabled = true
-emission = Color( 2.8, 0.1, 0.1, 1 )
-emission_energy = 0.0
-emission_operator = 0
-emission_on_uv2 = false
-rim_enabled = true
-rim = 1.0
-rim_tint = 1.0
-
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.02, 1, 0.08 )
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "move"
 
-[sub_resource type="AnimationNodeAnimation" id=5]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "pre_spawn"
 
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "spawn"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "wait"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
 switch_mode = 2
 auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=11]
-states/move/node = SubResource( 4 )
+[sub_resource type="AnimationNodeStateMachine" id=10]
+states/move/node = SubResource( 3 )
 states/move/position = Vector2( 397.668, 88.2791 )
-states/pre_spawn/node = SubResource( 5 )
+states/pre_spawn/node = SubResource( 4 )
 states/pre_spawn/position = Vector2( -120.592, 88.2791 )
-states/spawn/node = SubResource( 6 )
+states/spawn/node = SubResource( 5 )
 states/spawn/position = Vector2( 225.668, 88.2791 )
-states/wait/node = SubResource( 7 )
+states/wait/node = SubResource( 6 )
 states/wait/position = Vector2( 58.673, 88.2791 )
-transitions = [ "spawn", "move", SubResource( 8 ), "wait", "spawn", SubResource( 9 ), "pre_spawn", "wait", SubResource( 10 ) ]
+transitions = [ "spawn", "move", SubResource( 7 ), "wait", "spawn", SubResource( 8 ), "pre_spawn", "wait", SubResource( 9 ) ]
 start_node = "pre_spawn"
 graph_offset = Vector2( -281.327, -67.1609 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=11]
 
 [node name="VRedRing" type="KinematicBody"]
 collision_mask = 18
@@ -87,7 +76,7 @@ transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Body"]
 transform = Transform( -2.52527e-07, -1, 0, 1.55, -1.62921e-07, 0, 0, 0, 1, 0, 0, 0 )
-material_override = SubResource( 2 )
+material_override = ExtResource( 14 )
 mesh = ExtResource( 8 )
 material/0 = null
 
@@ -101,11 +90,11 @@ collision_mask = 32
 
 [node name="TopCollisionShape" type="CollisionShape" parent="StrikeArea"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.81, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="BottomCollisionShape" type="CollisionShape" parent="StrikeArea"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -1.81, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="DespawnTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -121,10 +110,10 @@ anims/spawn = ExtResource( 9 )
 anims/wait = ExtResource( 13 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 11 )
+tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 12 )
+parameters/playback = SubResource( 11 )
 
 [node name="LoopAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 11 )

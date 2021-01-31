@@ -24,7 +24,9 @@ public static class ObjectExtension
 			StringBuilder msg = new StringBuilder(methodName).Append("() called by ");
 			msg.Append(caller.GetType().ToString()).Append(" from ");
 			msg.Append(gdobj.GetType().ToString()).Append(" could not return a value!");
-			GD.PushWarning(msg.ToString());
+
+			if(OS.IsDebugBuild())
+				GD.PushWarning(msg.ToString());
 		}
 		else
 			response = sd.Get<T>();
@@ -49,7 +51,9 @@ public static class ObjectExtension
 		{
 			StringBuilder msg = new StringBuilder(signal).Append(" emitted by ");
 			msg.Append(emitter.Name).Append(" could not return a value!");
-			GD.PushWarning(msg.ToString());
+
+			if(OS.IsDebugBuild())
+				GD.PushWarning(msg.ToString());
 		}
 		else
 			response = sd.Get<T>();
@@ -64,7 +68,9 @@ public static class ObjectExtension
 	{
 		if(emitter == null)
 		{
-			GD.PushWarning("Emmiter is null!");
+			if(OS.IsDebugBuild())
+				GD.PushWarning("Emmiter is null!");
+
 			return defaultResponse;
 		}
 		else

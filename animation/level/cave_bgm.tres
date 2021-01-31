@@ -1,0 +1,33 @@
+[gd_resource type="Animation" load_steps=2 format=2]
+
+[ext_resource path="res://.import/wintersong_alexander_nakarada.ogg-4109d6d1c84a265716bf235d003ab0d2.oggstr" type="AudioStream" id=1]
+
+[resource]
+resource_name = "cave_bgm"
+length = 156.3
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 1 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 156.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -2.0, -2.0 ]
+}

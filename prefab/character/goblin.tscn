@@ -112,7 +112,9 @@ graph_offset = Vector2( 0.000481602, 6.08799 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=26]
 
-[node name="Goblin" type="KinematicBody"]
+[node name="Goblin" type="KinematicBody" groups=[
+"G",
+]]
 collision_mask = 18
 script = ExtResource( 5 )
 enemyBehaviorNP = NodePath("Source/FollowerEnemyBehavior")
@@ -124,7 +126,7 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.7,
 shape = SubResource( 1 )
 
 [node name="Body" type="Spatial" parent="."]
-transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+transform = Transform( 0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0 )
 
 [node name="GoblinSkeleton" parent="Body" instance=ExtResource( 2 )]
 transform = Transform( -1.14044e-07, 0, 0.7, 0, 0.7, 0, -0.7, 0, -1.14044e-07, 0, 0.013, 0 )

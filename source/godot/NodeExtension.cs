@@ -56,7 +56,10 @@ public static class NodeExtension
 				nodeMap.Add(it.Current.Key, caller.GetNode<TV>(it.Current.Value));
 		}
 		else
-			GD.PushWarning("NodePathMap called by '" + caller.Name + "' is null");
+		{
+			if(OS.IsDebugBuild())
+				GD.PushWarning("NodePathMap called by '" + caller.Name + "' is null");
+		}
 		
 		return nodeMap;
 	}

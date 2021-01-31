@@ -83,3 +83,17 @@ tracks/5/keys = {
 "method": "ActivateInput"
 } ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("Source/WaverEnemyBehavior")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "OnSpawn"
+} ]
+}

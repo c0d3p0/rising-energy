@@ -1,28 +1,13 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://shader/aura_circle.shader" type="Shader" id=1]
+[ext_resource path="res://shader/shati_lune.shader" type="Shader" id=1]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource( 1 )
 shader_param/resolution = Vector2( 1, 1 )
-shader_param/effect_color = Color( 0.1, 1.4, 1.9, 1 )
 shader_param/bg_color = Color( 0, 0, 0, 1 )
-shader_param/triangleInnerCircleSize = 0.6
-shader_param/triangleOuterCircleSize = 0.4
-shader_param/effect_scale = 1.08
-shader_param/line_width_1 = 0.2
-shader_param/line_width_2 = 0.2
-shader_param/symbol_width_1 = 0.5
-shader_param/symbol_width_2 = 0.5
-shader_param/symbol_circle_1_scale = 2.25
-shader_param/symbol_circle_2_scale = 2.05
-shader_param/symbol_circle_3_scale = 1.8
-shader_param/symbol_circle_4_scale = 1.47
-shader_param/symbol_circle_5_scale = 1.25
-shader_param/symbol_circle_6_scale = 1.15
-shader_param/symbol_circle_7_scale = 1.04
-shader_param/symbol_circle_8_scale = 0.76
-shader_param/speed = 0.5
-shader_param/color_multiplier = 3.0
-shader_param/alpha_factor = 0.001
+shader_param/effect_color = Color( 0.1, 3.2, 3.9, 1 )
+shader_param/speed = 1.0
+shader_param/rotation_factor = 1.0
 shader_param/alpha_enabled = true

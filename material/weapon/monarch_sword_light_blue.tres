@@ -1,10 +1,10 @@
 [gd_resource type="SpatialMaterial" format=2]
 
 [resource]
-albedo_color = Color( 0.1, 0.2, 0.8, 1 )
+albedo_color = Color( 0.101961, 0.2, 0.8, 1 )
 emission_enabled = true
-emission = Color( 0.2, 0.4, 1.8, 1 )
-emission_energy = 8.0
+emission = Color( 0.501961, 0.752941, 1, 1 )
+emission_energy = 2.0
 emission_operator = 0
 emission_on_uv2 = false
 rim_enabled = true

@@ -33,6 +33,11 @@ public class BaseEnemyCharacter : KinematicBody
 				enemyCharacterAction.Attack(direction));
 	}
 
+	public void FixBodyDirection(Vector3 direction)
+	{
+		enemyCharacterAction.FixBodyDirection(direction);
+	}
+
 	public void TransitTo(string actionName)
 	{
 		enemyCharacterAction.TransitTo(actionName);

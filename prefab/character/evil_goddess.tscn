@@ -41,7 +41,7 @@ flags = 4
 load_path = "res://.import/evil_goddess_profile.png-94c6e231bf9832d95992682a0b8703ba.stex"
 
 [sub_resource type="StreamTexture" id=5]
-flags = 4
+flags = 7
 load_path = "res://.import/profile_image_border.png-4da1582b73dae9e47679e588dd845f72.stex"
 
 [sub_resource type="StreamTexture" id=6]
@@ -148,7 +148,9 @@ graph_offset = Vector2( -9.75658, 71.4251 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=32]
 
-[node name="EvilGoddess" type="KinematicBody"]
+[node name="EvilGoddess" type="KinematicBody" groups=[
+"E",
+]]
 collision_mask = 18
 script = ExtResource( 1 )
 enemyBehaviorNP = NodePath("Source/TeleportBossBehavior")
@@ -160,7 +162,6 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.9,
 shape = SubResource( 1 )
 
 [node name="Body" type="Spatial" parent="."]
-transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 
 [node name="EvilGoddessSkeleton" parent="Body" instance=ExtResource( 13 )]
 transform = Transform( -1.46629e-07, 0, 0.9, 0, 0.9, 0, -0.9, 0, -1.46629e-07, 0, 0, 0 )
@@ -174,7 +175,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, 0 )
 [node name="StrikeArea" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
 monitoring = false
-monitorable = false
 collision_layer = 256
 collision_mask = 32
 
@@ -214,8 +214,9 @@ __meta__ = {
 [node name="BorderTextureRect" type="TextureRect" parent="HUDControl"]
 margin_left = 1175.0
 margin_top = 2.0
-margin_right = 1656.0
-margin_bottom = 483.0
+margin_right = 1658.0
+margin_bottom = 485.0
+rect_min_size = Vector2( 101, 101 )
 rect_scale = Vector2( 0.208, 0.208 )
 texture = SubResource( 5 )
 __meta__ = {
@@ -297,7 +298,7 @@ attenuation_model = 3
 [node name="EffectAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 23 )
 attenuation_model = 3
-unit_db = 4.0
+unit_db = 20.0
 
 [node name="EffectAudioStreamPlayer3D_2" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 23 )
@@ -325,7 +326,7 @@ parameters/hit/TimeScale/scale = 2.1
 
 [node name="CharacterPhysics" type="Node" parent="Source"]
 script = ExtResource( 2 )
-gravityEnabled = false
+gravityEnabled = true
 kinematicBodyNP = NodePath("../..")
 
 [node name="CharacterMove" type="Node" parent="Source"]

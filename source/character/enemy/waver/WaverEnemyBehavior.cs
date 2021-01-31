@@ -3,6 +3,13 @@ using Godot;
 
 public class WaverEnemyBehavior : BaseEnemyBehavior
 {
+	public void OnSpawn()	// Called by an animation
+	{
+		SetDirectionToTarget();
+		UpdateMovementValues();
+		enemyCharacter.Call(this.GetMethodFixBodyDirection(), direction);
+	}
+
 	private void Move()
 	{
 		FixDirection();
@@ -55,12 +62,6 @@ public class WaverEnemyBehavior : BaseEnemyBehavior
 	protected override void DecideWhatToDo()
 	{
 		Move();
-	}
-
-	public override void _Ready()
-	{
-		SetDirectionToTarget();
-		UpdateMovementValues();
 	}
 
 

@@ -1,16 +1,20 @@
-[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
 
 [sub_resource type="StreamTexture" id=1]
-flags = 5
-load_path = "res://.import/zombie_diffuse.png-67ef48749783bc96ba39bd95a92bd3a6.s3tc.stex"
+flags = 6
+load_path = "res://.import/zombie_albedo.png-fee8d3575238d920cd54c762a38a54b6.stex"
 
 [sub_resource type="StreamTexture" id=2]
-flags = 5
-load_path = "res://.import/zombie_specular.png-684fffbda38732c601b9f7e4585cba27.s3tc.stex"
+flags = 7
+load_path = "res://.import/zombie_specular.png-684fffbda38732c601b9f7e4585cba27.stex"
 
 [sub_resource type="StreamTexture" id=3]
-flags = 5
-load_path = "res://.import/zombie_normal.png-45191b8ab8d3c6864bc3ab5ac6a67fce.s3tc.stex"
+flags = 7
+load_path = "res://.import/zombie_normal.png-45191b8ab8d3c6864bc3ab5ac6a67fce.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 6
+load_path = "res://.import/zombie_roughness.png-364597b3fdb9b0f1b9a70ac3bf961ab3.stex"
 
 [resource]
 resource_name = "Prisoner_material"
@@ -18,6 +22,7 @@ params_cull_mode = 2
 albedo_texture = SubResource( 1 )
 metallic_texture = SubResource( 2 )
 roughness = 0.6
+roughness_texture = SubResource( 4 )
 normal_enabled = true
 normal_scale = 1.0
 normal_texture = SubResource( 3 )

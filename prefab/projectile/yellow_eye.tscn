@@ -7,7 +7,7 @@
 [ext_resource path="res://source/character/enemy/BaseEnemyCharacterAction.cs" type="Script" id=5]
 [ext_resource path="res://source/character/CharacterPhysics.cs" type="Script" id=6]
 [ext_resource path="res://source/character/enemy/BaseEnemyInitializer.cs" type="Script" id=7]
-[ext_resource path="res://animation/eye/spawn.tres" type="Animation" id=8]
+[ext_resource path="res://animation/projectile/spawn.tres" type="Animation" id=8]
 [ext_resource path="res://material/eye/eye_yellow.tres" type="Material" id=9]
 [ext_resource path="res://animation/eye/move.tres" type="Animation" id=10]
 [ext_resource path="res://animation/projectile/pre_spawn.tres" type="Animation" id=11]
@@ -101,7 +101,7 @@ shape = SubResource( 1 )
 disabled = true
 
 [node name="Body" type="Spatial" parent="."]
-transform = Transform( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.45, 0 )
+transform = Transform( 0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0.45, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Body"]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
@@ -113,7 +113,6 @@ material/0 = ExtResource( 9 )
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0 )
 monitoring = false
-monitorable = false
 collision_layer = 256
 collision_mask = 32
 

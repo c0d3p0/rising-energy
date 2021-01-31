@@ -1,6 +1,6 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rising-energy", "rising-energy.csproj", "{21843E4E-4055-4629-9FD9-A89633E617CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rising-energy", "rising-energy.csproj", "{09613ECA-DD10-4C25-A038-68BD703888A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{21843E4E-4055-4629-9FD9-A89633E617CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21843E4E-4055-4629-9FD9-A89633E617CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21843E4E-4055-4629-9FD9-A89633E617CA}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{21843E4E-4055-4629-9FD9-A89633E617CA}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{21843E4E-4055-4629-9FD9-A89633E617CA}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{21843E4E-4055-4629-9FD9-A89633E617CA}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{09613ECA-DD10-4C25-A038-68BD703888A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09613ECA-DD10-4C25-A038-68BD703888A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09613ECA-DD10-4C25-A038-68BD703888A2}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{09613ECA-DD10-4C25-A038-68BD703888A2}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{09613ECA-DD10-4C25-A038-68BD703888A2}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{09613ECA-DD10-4C25-A038-68BD703888A2}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal

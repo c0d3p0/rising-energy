@@ -380,7 +380,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0, 0.4, 0.6, 5.34 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ) ]
+"values": [ Vector3( 0.001, 0.001, 0.001 ), Vector3( 0.001, 0.001, 0.001 ), Vector3( 1, 1, 1 ), Vector3( 1, 1, 1 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("HurtArea:monitoring")
@@ -406,39 +406,25 @@ tracks/54/keys = {
 "update": 1,
 "values": [ false, true ]
 }
-tracks/55/type = "method"
-tracks/55/path = NodePath("Source/GrowerEnemyBehavior")
+tracks/55/type = "value"
+tracks/55/path = NodePath("Source/CharacterPhysics:gravityEnabled")
 tracks/55/interp = 1
 tracks/55/loop_wrap = true
 tracks/55/imported = false
 tracks/55/enabled = true
 tracks/55/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ true ],
-"method": "SetProcessBehavior"
-} ]
-}
-tracks/56/type = "value"
-tracks/56/path = NodePath("Source/CharacterPhysics:gravityEnabled")
-tracks/56/interp = 1
-tracks/56/loop_wrap = true
-tracks/56/imported = false
-tracks/56/enabled = true
-tracks/56/keys = {
 "times": PoolRealArray( 0, 0.92, 0.96, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, true, true ]
 }
-tracks/57/type = "audio"
-tracks/57/path = NodePath("EffectAudioStreamPlayer3D")
-tracks/57/interp = 1
-tracks/57/loop_wrap = true
-tracks/57/imported = false
-tracks/57/enabled = true
-tracks/57/keys = {
+tracks/56/type = "audio"
+tracks/56/path = NodePath("EffectAudioStreamPlayer3D")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -446,8 +432,20 @@ tracks/57/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/58/type = "value"
-tracks/58/path = NodePath("EffectAudioStreamPlayer3D:unit_db")
+tracks/57/type = "value"
+tracks/57/path = NodePath("EffectAudioStreamPlayer3D:unit_db")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 20.0 ]
+}
+tracks/58/type = "method"
+tracks/58/path = NodePath("Source/EnemyCharacterAction")
 tracks/58/interp = 1
 tracks/58/loop_wrap = true
 tracks/58/imported = false
@@ -455,20 +453,22 @@ tracks/58/enabled = true
 tracks/58/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 20.0 ]
+"values": [ {
+"args": [  ],
+"method": "StartDespawnTimer"
+} ]
 }
 tracks/59/type = "method"
-tracks/59/path = NodePath("Source/EnemyCharacterAction")
+tracks/59/path = NodePath("Source/GrowerEnemyBehavior")
 tracks/59/interp = 1
 tracks/59/loop_wrap = true
 tracks/59/imported = false
 tracks/59/enabled = true
 tracks/59/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
-"args": [  ],
-"method": "StartDespawnTimer"
+"args": [ true ],
+"method": "SetProcessBehavior"
 } ]
 }

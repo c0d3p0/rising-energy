@@ -46,9 +46,9 @@ public class LevelProgress : Node
 		SpawnLevelManagedObjects();
 	}
 
-	public void ActivateLevel(bool active)
+	public void ActivateLevel(bool inputActive)
 	{
-		target.Call(this.GetMethodActivateInput(), active);
+		target.Call(this.GetMethodActivateInput(), inputActive);
 		EmitSignal(this.GetSignalOnIntroFinished());
 	}
 

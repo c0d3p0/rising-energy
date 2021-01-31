@@ -63,7 +63,7 @@ public class CheatCode : Node
 
 	public override void _Ready()
 	{
-		SetProcessInput(active);
+		SetProcessInput(OS.IsDebugBuild());
 	}
 
 	public override void _Input(InputEvent inputEvent)
@@ -77,10 +77,7 @@ public class CheatCode : Node
 
 	[Export]
 	public Dictionary<string, Array> cheatCodeDataMap;
-
-	[Export]
-	public bool active = false;
-
+	
 	
 	private Dictionary activeCheatCodeMap;
 	private Node target;

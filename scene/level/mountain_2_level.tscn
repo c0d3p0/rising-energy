@@ -108,7 +108,7 @@ mesh = SubResource( 4 )
 material/0 = SubResource( 9 )
 
 [node name="MountainAreaFour" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -83, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -83.5, 0, 0 )
 
 [node name="MountainAreaTwo" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 130, -11, 0 )

@@ -80,7 +80,7 @@ flags = 4
 load_path = "res://.import/sophie_profile.png-399c884afc8145d4026797c28bef0098.stex"
 
 [sub_resource type="StreamTexture" id=11]
-flags = 4
+flags = 7
 load_path = "res://.import/profile_image_border.png-4da1582b73dae9e47679e588dd845f72.stex"
 
 [sub_resource type="Animation" id=12]
@@ -3009,11 +3009,13 @@ states/trigger_hit/node = SubResource( 55 )
 states/trigger_hit/position = Vector2( 50.209, 6 )
 transitions = [ "default_idle", "run", SubResource( 56 ), "run", "default_idle", SubResource( 57 ), "default_idle", "stand_to_jump", SubResource( 58 ), "stand_to_jump", "jump", SubResource( 59 ), "jump", "falling", SubResource( 60 ), "landing", "default_idle", SubResource( 61 ), "landing", "run", SubResource( 62 ), "falling", "landing", SubResource( 63 ), "crouch_idle", "crouch_to_stand", SubResource( 64 ), "crouch_to_stand", "default_idle", SubResource( 65 ), "stand_to_crouch", "crouch_idle", SubResource( 66 ), "default_idle", "stand_to_crouch", SubResource( 67 ), "default_idle", "stand_slash", SubResource( 68 ), "stand_slash", "default_idle", SubResource( 69 ), "boost_energy_to_stand", "default_idle", SubResource( 70 ), "default_idle", "stand_to_boost_energy", SubResource( 71 ), "default_idle", "falling", SubResource( 72 ), "jump", "landing", SubResource( 73 ), "stand_to_boost_energy", "boost_energy", SubResource( 74 ), "boost_energy", "boost_energy_to_stand", SubResource( 75 ), "crouch_idle", "crouch_slash", SubResource( 76 ), "crouch_slash", "crouch_idle", SubResource( 77 ), "hit_falling", "hit_landing", SubResource( 78 ), "hit_landing", "get_up", SubResource( 79 ), "get_up", "default_idle", SubResource( 80 ), "hit_landing", "die", SubResource( 81 ), "hit", "hit_falling", SubResource( 82 ), "trigger_hit", "hit", SubResource( 83 ), "default_idle", "pre_cheer", SubResource( 84 ), "pre_cheer", "cheer", SubResource( 85 ), "pre_immortal_idle", "immortal_idle", SubResource( 86 ), "immortal_idle", "immortal_idle_to_idle", SubResource( 87 ), "immortal_idle_to_idle", "default_idle", SubResource( 88 ) ]
 start_node = "default_idle"
-graph_offset = Vector2( 225.313, -148.673 )
+graph_offset = Vector2( 122.301, -282.189 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=90]
 
-[node name="SophieHunter" type="KinematicBody"]
+[node name="SophieHunter" type="KinematicBody" groups=[
+"S",
+]]
 collision_mask = 16
 script = ExtResource( 16 )
 characterGroundNP = NodePath("Source/CharacterGround")
@@ -3113,9 +3115,10 @@ __meta__ = {
 
 [node name="PictureTextureRect" type="TextureRect" parent="HUDControl"]
 margin_left = 5.0
+margin_top = 2.0
 margin_right = 305.0
-margin_bottom = 300.0
-rect_scale = Vector2( 0.334, 0.334 )
+margin_bottom = 302.0
+rect_scale = Vector2( 0.33, 0.33 )
 texture = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -3124,8 +3127,9 @@ __meta__ = {
 [node name="BorderTextureRect" type="TextureRect" parent="HUDControl"]
 margin_left = 5.0
 margin_top = 2.0
-margin_right = 486.0
-margin_bottom = 483.0
+margin_right = 488.0
+margin_bottom = 485.0
+rect_min_size = Vector2( 101, 101 )
 rect_scale = Vector2( 0.208, 0.208 )
 texture = SubResource( 11 )
 __meta__ = {
@@ -3256,6 +3260,7 @@ unit_db = 4.0
 
 [node name="CharacterPhysics" type="Node" parent="Source"]
 script = ExtResource( 15 )
+gravityEnabled = true
 kinematicBodyNP = NodePath("../..")
 
 [node name="CharacterGround" type="Node" parent="Source"]

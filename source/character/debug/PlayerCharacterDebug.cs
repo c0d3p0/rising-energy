@@ -7,7 +7,7 @@ public class PlayerCharacterDebug : Node
 	{
 		InputEventKey iek = inputEvent as InputEventKey;
 
-		if(debug && iek != null && iek.Pressed)
+		if(iek != null && iek.Pressed)
 		{
 			uint kc = iek.Scancode;
 
@@ -31,16 +31,16 @@ public class PlayerCharacterDebug : Node
 			else if(kc == (uint) KeyList.KpPeriod)
 				IncreaseMaxEnergy(100f);
 
-			else if(kc == (uint) KeyList.Kp1)
+			else if(kc == (uint) KeyList.KpDivide)
 				SetEnergyName("blaze");
-			else if(kc == (uint) KeyList.Kp2)
+			else if(kc == (uint) KeyList.KpMultiply)
 				SetEnergyName("avenger");
-			else if(kc == (uint) KeyList.Kp3)
-				SetEnergyName("monarch");
-			else if(kc == (uint) KeyList.Kp0)
-				ToggleGodMode();
-			
 			else if(kc == (uint) KeyList.KpSubtract)
+				SetEnergyName("monarch");
+
+			else if(kc == (uint) KeyList.Kp1)
+				ToggleGodMode();
+			else if(kc == (uint) KeyList.Kp0)
 				Suicide();
 		}
 	}
@@ -105,12 +105,16 @@ public class PlayerCharacterDebug : Node
 				playerCharacterActionNP);
 		playerCharacterVitality = GetNode<PlayerCharacterVitality>(
 				playerCharacterVitalityNP);
-		debug = this.Call<bool>(globalData, this.GetMethodGet(), "debug");
 	}
 
 	public override void _EnterTree()
 	{
 		Initialize();
+	}
+
+	public override void _Ready()
+	{
+		SetProcessInput(OS.IsDebugBuild());
 	}
 
 
@@ -128,9 +132,6 @@ public class PlayerCharacterDebug : Node
 
 	[Export]
 	public string globalDataNodePath;
-
-	[Export]
-	public bool debug;
 
 
 	private Node globalData;

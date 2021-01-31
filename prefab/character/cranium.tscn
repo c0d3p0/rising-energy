@@ -60,7 +60,9 @@ graph_offset = Vector2( -248.531, 37.421 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
-[node name="Cranium" type="KinematicBody"]
+[node name="Cranium" type="KinematicBody" groups=[
+"R",
+]]
 collision_mask = 18
 script = ExtResource( 1 )
 enemyBehaviorNP = NodePath("Source/FloaterEnemyBehavior")
@@ -135,7 +137,6 @@ parameters/playback = SubResource( 12 )
 
 [node name="CharacterPhysics" type="Node" parent="Source"]
 script = ExtResource( 6 )
-gravityEnabled = false
 kinematicBodyNP = NodePath("../..")
 
 [node name="CharacterMove" type="Node" parent="Source"]

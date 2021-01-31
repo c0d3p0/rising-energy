@@ -9,139 +9,45 @@
 [ext_resource path="res://animation/level/finish.tres" type="Animation" id=7]
 [ext_resource path="res://animation/level/reload.tres" type="Animation" id=8]
 [ext_resource path="res://source/level/LevelProgress.cs" type="Script" id=9]
-[ext_resource path="res://.import/wintersong_alexander_nakarada.ogg-4109d6d1c84a265716bf235d003ab0d2.oggstr" type="AudioStream" id=10]
-[ext_resource path="res://.import/tap_alexander_nakarada.ogg-3cf665f39dd59dc8e0fc18f7edfb2141.oggstr" type="AudioStream" id=11]
-[ext_resource path="res://sound/bg/celebration_alexander_nakarada.ogg" type="AudioStream" id=12]
+[ext_resource path="res://animation/level/pre_intro.tres" type="Animation" id=10]
+[ext_resource path="res://animation/level/cave_bgm.tres" type="Animation" id=11]
+[ext_resource path="res://animation/level/intro_end.tres" type="Animation" id=12]
 [ext_resource path="res://.import/level_started.wav-7b8720e278ca8835fc40b4e340f790b9.sample" type="AudioStream" id=13]
+[ext_resource path="res://animation/level/fight_bgm.tres" type="Animation" id=14]
+[ext_resource path="res://animation/level/mountain_bgm.tres" type="Animation" id=15]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "cave_bgm"
-length = 156.3
-tracks/0/type = "audio"
-tracks/0/path = NodePath("AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 10 )
-} ],
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 156.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -2.0, -2.0 ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "fight_bgm"
-length = 69.0
-tracks/0/type = "audio"
-tracks/0/path = NodePath("AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 11 )
-} ],
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 69 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -6.0, -6.0 ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "intro_end"
-length = 0.04
-step = 0.04
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"values": [  ]
-}
-
-[sub_resource type="Animation" id=5]
-length = 141.2
-tracks/0/type = "audio"
-tracks/0/path = NodePath("AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 12 )
-} ],
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 141.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -8.0, -8.0 ]
-}
-
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=2]
 animation = "cave_bgm"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "fight_bgm"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "finish"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "intro"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "intro_end"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "mountain_bgm"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "pre_intro"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "reload"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
@@ -150,37 +56,35 @@ animation = "reload"
 [sub_resource type="AnimationNodeStateMachineTransition" id=15]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=16]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
-
-[sub_resource type="AnimationNodeStateMachine" id=21]
-states/cave_bgm/node = SubResource( 6 )
+[sub_resource type="AnimationNodeStateMachine" id=19]
+states/cave_bgm/node = SubResource( 2 )
 states/cave_bgm/position = Vector2( 301, 168 )
-states/fight_bgm/node = SubResource( 7 )
+states/fight_bgm/node = SubResource( 3 )
 states/fight_bgm/position = Vector2( 301, 85.4346 )
-states/finish/node = SubResource( 8 )
+states/finish/node = SubResource( 4 )
 states/finish/position = Vector2( 498, 48 )
-states/intro/node = SubResource( 9 )
+states/intro/node = SubResource( 5 )
 states/intro/position = Vector2( -33, 85.4346 )
-states/intro_end/node = SubResource( 10 )
+states/intro_end/node = SubResource( 6 )
 states/intro_end/position = Vector2( 119.566, 85.4346 )
-states/mountain_bgm/node = SubResource( 11 )
+states/mountain_bgm/node = SubResource( 7 )
 states/mountain_bgm/position = Vector2( 301, -2 )
-states/reload/node = SubResource( 12 )
+states/pre_intro/node = SubResource( 8 )
+states/pre_intro/position = Vector2( -33, -2 )
+states/reload/node = SubResource( 9 )
 states/reload/position = Vector2( 498, 128.435 )
-transitions = [ "mountain_bgm", "fight_bgm", SubResource( 13 ), "cave_bgm", "fight_bgm", SubResource( 14 ), "fight_bgm", "mountain_bgm", SubResource( 15 ), "fight_bgm", "cave_bgm", SubResource( 16 ), "intro_end", "mountain_bgm", SubResource( 17 ), "intro_end", "cave_bgm", SubResource( 18 ), "intro", "intro_end", SubResource( 19 ), "intro_end", "fight_bgm", SubResource( 20 ) ]
-start_node = "intro"
+transitions = [ "mountain_bgm", "fight_bgm", SubResource( 10 ), "cave_bgm", "fight_bgm", SubResource( 11 ), "fight_bgm", "mountain_bgm", SubResource( 12 ), "fight_bgm", "cave_bgm", SubResource( 13 ), "intro_end", "mountain_bgm", SubResource( 14 ), "intro_end", "cave_bgm", SubResource( 15 ), "intro", "intro_end", SubResource( 16 ), "intro_end", "fight_bgm", SubResource( 17 ), "pre_intro", "intro", SubResource( 18 ) ]
+start_node = "pre_intro"
 graph_offset = Vector2( -114.434, -45.4294 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=22]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
 
 [node name="LevelManager" type="Control"]
 anchor_right = 1.0
@@ -210,7 +114,6 @@ __meta__ = {
 }
 
 [node name="FadePanel" type="Panel" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 1280.0
 margin_bottom = 720.0
 custom_styles/panel = SubResource( 1 )
@@ -219,23 +122,24 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/cave_bgm = SubResource( 2 )
-anims/fight_bgm = SubResource( 3 )
+anims/cave_bgm = ExtResource( 11 )
+anims/fight_bgm = ExtResource( 14 )
 anims/finish = ExtResource( 7 )
 anims/intro = ExtResource( 5 )
-anims/intro_end = SubResource( 4 )
-anims/mountain_bgm = SubResource( 5 )
+anims/intro_end = ExtResource( 12 )
+anims/mountain_bgm = ExtResource( 15 )
+anims/pre_intro = ExtResource( 10 )
 anims/reload = ExtResource( 8 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 21 )
+tree_root = SubResource( 19 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 22 )
+parameters/playback = SubResource( 20 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = 4.0
+volume_db = -2.0
 
 [node name="Source" type="Node" parent="."]
 

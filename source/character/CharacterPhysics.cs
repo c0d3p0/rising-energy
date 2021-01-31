@@ -85,7 +85,7 @@ public class CharacterPhysics : Node
 	public float gravity = -19.61f;
 
 	[Export]
-	public bool gravityEnabled = true;
+	public bool gravityEnabled = false;
 
 	[Export]
 	public float lockZPosition = 0f;

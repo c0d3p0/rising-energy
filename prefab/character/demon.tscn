@@ -41,7 +41,7 @@ flags = 4
 load_path = "res://.import/demon_profile.png-40976f0d8e2faea16ebba6e3a6c5e627.stex"
 
 [sub_resource type="StreamTexture" id=5]
-flags = 4
+flags = 7
 load_path = "res://.import/profile_image_border.png-4da1582b73dae9e47679e588dd845f72.stex"
 
 [sub_resource type="StreamTexture" id=6]
@@ -102,24 +102,24 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=22]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=23]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=24]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
 switch_mode = 2
 auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=26]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=27]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=29]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachine" id=30]
 states/die/node = SubResource( 9 )
@@ -138,13 +138,15 @@ states/spell/node = SubResource( 17 )
 states/spell/position = Vector2( 717.243, 104.247 )
 states/walk/node = SubResource( 18 )
 states/walk/position = Vector2( 495.243, 104.247 )
-transitions = [ "idle", "die", SubResource( 19 ), "spawn", "inactive_idle", SubResource( 20 ), "inactive_idle", "ready_idle", SubResource( 21 ), "idle", "hit", SubResource( 22 ), "ready_idle", "walk", SubResource( 23 ), "walk", "spell", SubResource( 24 ), "spell", "walk", SubResource( 25 ), "idle", "walk", SubResource( 26 ), "walk", "idle", SubResource( 27 ), "hit", "walk", SubResource( 28 ), "walk", "hit", SubResource( 29 ) ]
+transitions = [ "idle", "die", SubResource( 19 ), "spawn", "inactive_idle", SubResource( 20 ), "inactive_idle", "ready_idle", SubResource( 21 ), "idle", "hit", SubResource( 22 ), "walk", "spell", SubResource( 23 ), "spell", "walk", SubResource( 24 ), "idle", "walk", SubResource( 25 ), "walk", "idle", SubResource( 26 ), "hit", "walk", SubResource( 27 ), "walk", "hit", SubResource( 28 ), "ready_idle", "idle", SubResource( 29 ) ]
 start_node = "spawn"
-graph_offset = Vector2( -9.75658, 92.464 )
+graph_offset = Vector2( -9.75658, 52.336 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=31]
 
-[node name="Demon" type="KinematicBody"]
+[node name="Demon" type="KinematicBody" groups=[
+"D",
+]]
 collision_mask = 18
 script = ExtResource( 1 )
 enemyBehaviorNP = NodePath("Source/StandardBossBehavior")
@@ -181,6 +183,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1, 0 )
 [node name="StrikeArea" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0 )
 monitoring = false
+monitorable = false
 collision_layer = 256
 collision_mask = 32
 
@@ -220,8 +223,9 @@ __meta__ = {
 [node name="BorderTextureRect" type="TextureRect" parent="HUDControl"]
 margin_left = 1175.0
 margin_top = 2.0
-margin_right = 1656.0
-margin_bottom = 483.0
+margin_right = 1658.0
+margin_bottom = 485.0
+rect_min_size = Vector2( 101, 101 )
 rect_scale = Vector2( 0.208, 0.208 )
 texture = SubResource( 5 )
 __meta__ = {
@@ -303,7 +307,7 @@ attenuation_model = 3
 [node name="EffectAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 11 )
 attenuation_model = 3
-unit_db = 20.0
+unit_db = 4.0
 
 [node name="EffectAudioStreamPlayer3D_2" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 11 )
@@ -331,6 +335,7 @@ parameters/hit/TimeScale/scale = 1.3
 
 [node name="CharacterPhysics" type="Node" parent="Source"]
 script = ExtResource( 2 )
+gravityEnabled = true
 kinematicBodyNP = NodePath("../..")
 
 [node name="CharacterMove" type="Node" parent="Source"]
@@ -343,7 +348,7 @@ moveInYEnabled = false
 [node name="StandardBossBehavior" type="Node" parent="Source"]
 script = ExtResource( 6 )
 enemyCharacterNP = NodePath("../..")
-kinPrefabKeyList = [ "skull" ]
+kinPrefabKeyList = [ "cranium" ]
 projectilePrefabKeyList = [ "blue_eye", "purple_eye", "yellow_eye" ]
 projectileSpotNPMap = {
 "blue_eye": NodePath("../../Body/EyeSpot"),
@@ -392,8 +397,8 @@ energyTakenMap = {
 }
 energySpentMap = {
 "blue_eye": Vector3( 150, 150, 150 ),
+"cranium": Vector3( 180, 180, 180 ),
 "purple_eye": Vector3( 110, 110, 110 ),
-"skull": Vector3( 150, 150, 150 ),
 "yellow_eye": Vector3( 130, 130, 130 )
 }
 

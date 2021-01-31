@@ -1,0 +1,24 @@
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/glow.png-da7001d08cb87ea4499e091d56215a80.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/glow.png-da7001d08cb87ea4499e091d56215a80.stex"
+
+[resource]
+flags_transparent = true
+albedo_color = Color( 0.94902, 0, 1, 1 )
+albedo_texture = SubResource( 1 )
+emission_enabled = true
+emission = Color( 1.9, 0.2, 2.1, 1 )
+emission_energy = 0.5
+emission_operator = 1
+emission_on_uv2 = false
+emission_texture = SubResource( 2 )
+rim_enabled = true
+rim = 1.0
+rim_tint = 1.0
+uv1_scale = Vector3( 2, 2, 1 )
