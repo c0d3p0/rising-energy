@@ -4,6 +4,7 @@ using Godot;
 using Godot.Collections;
 
 
+// TODO: Unused, REMOVE
 public class PreLoader : Node
 {
 	public void RequestResources()
@@ -13,14 +14,14 @@ public class PreLoader : Node
 			SCG.IEnumerator<string> it = materialRenderScenePathList.GetEnumerator();
 			PackedScene ps;
 			Spatial s;
-			ulong instanceId;
+			string instanceId;
 			int index = 0;
 
 			while(it.MoveNext())
 			{
 				ps = ResourceLoader.Load<PackedScene>(it.Current);
 				s = ps.Instance() as Spatial;
-				instanceId = s.GetInstanceId();
+				instanceId = s.GetInstanceId().ToString();
 				materialRenderSceneMap.Add(instanceId, s);
 				materialRenderIdsList.Add(index++, instanceId);
 					
@@ -38,7 +39,7 @@ public class PreLoader : Node
 		if(renderTimer.IsStopped())
 		{
 			Spatial s;
-			ulong checkingId;
+			string checkingId;
 
 			for(int i = 0; i < materialRenderScenePathList.Count; i++)
 			{
@@ -50,7 +51,7 @@ public class PreLoader : Node
 					materialRenderContainer.CallDeferred(this.GetGDMethodAddChild(), s);
 					addedMaterialRenderIdsList.Add(checkingId, null);
 					renderTimer.Start();
-					addedNodeIdList.Add(s.GetInstanceId());
+					addedNodeIdList.Add(s.GetInstanceId().ToString());
 
 					if(OS.IsDebugBuild())
 						GD.PushWarning("Adding: " + s.Name);
@@ -63,7 +64,7 @@ public class PreLoader : Node
 	{
 		if(renderTimer.IsStopped() && addedNodeIdList.Count > 0)
 		{
-			ulong id = addedNodeIdList[0];
+			string id = addedNodeIdList[0];
 			Spatial s = materialRenderSceneMap[id];
 			s.QueueFree();
 			addedNodeIdList.RemoveAt(0);
@@ -89,10 +90,10 @@ public class PreLoader : Node
 
 	private void Initialize()
 	{
-		materialRenderSceneMap = new Dictionary<ulong, Spatial>();
-		materialRenderIdsList = new Dictionary<int, ulong>();
-		addedMaterialRenderIdsList = new Dictionary<ulong, object>();
-		addedNodeIdList = new Array<ulong>();
+		materialRenderSceneMap = new Dictionary<string, Spatial>();
+		materialRenderIdsList = new Dictionary<int, string>();
+		addedMaterialRenderIdsList = new Dictionary<string, object>();
+		addedNodeIdList = new Array<string>();
 		
 		taskRunner.Call(this.GetMethodSetActive(), true);
 		taskRunner.Call(this.GetMethodPut(), this, nameof(RequestResources));
@@ -161,8 +162,8 @@ public class PreLoader : Node
 	private Spatial materialRenderContainer;
 	private Timer renderTimer;
 
-	private Dictionary<ulong, Spatial> materialRenderSceneMap;
-	private Dictionary<int, ulong> materialRenderIdsList;
-	private Dictionary<ulong, object> addedMaterialRenderIdsList;
-	private Array<ulong> addedNodeIdList;
+	private Dictionary<string, Spatial> materialRenderSceneMap;
+	private Dictionary<int, string> materialRenderIdsList;
+	private Dictionary<string, object> addedMaterialRenderIdsList;
+	private Array<string> addedNodeIdList;
 }

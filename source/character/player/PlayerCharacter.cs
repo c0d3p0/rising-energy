@@ -119,6 +119,11 @@ public class PlayerCharacter : KinematicBody
 		playerInputInterpreter.SetPhysicsProcess(active);
 	}
 
+	public void TransitTo(string actionName)
+	{
+		playerCharacterAction.TransitTo(actionName);
+	}
+
 	public void SetToDialogueInteraction(bool active)
 	{
 		playerInputInterpreter.SetProcess(!active);

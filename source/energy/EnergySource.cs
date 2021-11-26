@@ -3,7 +3,7 @@ using Godot;
 
 public class EnergySource : Spatial
 {
-	public void Interact(Spatial playerCharacter, sbyte interaction, Godot.Object signalData)
+	public void Interact(Spatial playerCharacter, int interaction, Godot.Object signalData)
 	{
 		signalData.Call(this.GetMethodSet(),
 				energySourceBoost.Interact(playerCharacter, interaction));

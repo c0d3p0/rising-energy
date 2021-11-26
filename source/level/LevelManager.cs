@@ -58,7 +58,7 @@ public class LevelManager : Control
 	public Vector3 playerStartingDirection = new Vector3(1f, 0f, 0f);
 
 	[Export]
-	public byte maximumActiveEnemies = 3;
+	public int maximumActiveEnemies = 3;
 
 	[Export]
 	public Array<string> landEnemyPrefabKeyList;

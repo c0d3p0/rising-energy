@@ -51,7 +51,7 @@ public class SurvivalLevelManager : Control
 	public Vector3 energySourceSpawnPosition = new Vector3(21f, 0f, 0f);
 	
 	[Export]
-	public byte maximumActiveEnemies = 3;
+	public int maximumActiveEnemies = 3;
 
 	[Export]
 	public Array<string> landEnemyPrefabKeyList;

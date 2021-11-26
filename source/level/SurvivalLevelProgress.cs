@@ -56,7 +56,7 @@ public class SurvivalLevelProgress : EnemySpawer
 			}
 		}	
 
-		activeEnemyMap.Remove(kin.GetInstanceId());
+		activeEnemyMap.Remove(kin.GetInstanceId().ToString());
 	}
 
 	public void SetBossEvilEnergySpawnData(Node evilEnergy, Dictionary paramMap)	// Called by NodeFactory

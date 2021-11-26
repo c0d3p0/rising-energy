@@ -6,14 +6,18 @@ public class CameraManager : Node
 {
 	public void AddDeathPit(Spatial deathPit)
 	{
-		if(!deathPitMap.ContainsKey(deathPit.GetInstanceId()))
-			deathPitMap.Add(deathPit.GetInstanceId(), deathPit);
+		string iid = deathPit.GetInstanceId().ToString();
+
+		if(!deathPitMap.ContainsKey(iid))
+			deathPitMap.Add(iid, deathPit);
 	}
 
 	public void RemoveDeathPit(Spatial deathPit)
 	{
-		if(deathPitMap.ContainsKey(deathPit.GetInstanceId()))
-			this.deathPitMap.Remove(deathPit.GetInstanceId());
+		string iid = deathPit.GetInstanceId().ToString();
+		
+		if(deathPitMap.ContainsKey(iid))
+			this.deathPitMap.Remove(iid);
 	}
 
 	public void SetFightArea(Spatial fightArea)
@@ -101,7 +105,7 @@ public class CameraManager : Node
 
 	private void Initialize()
 	{
-		deathPitMap = new Dictionary<ulong, Spatial>();
+		deathPitMap = new Dictionary<string, Spatial>();
 	}
 
 	public override void _EnterTree()
@@ -162,7 +166,7 @@ public class CameraManager : Node
 	private Spatial target;
 	private Vector3 distance;
 
-	private Dictionary<ulong, Spatial> deathPitMap;
+	private Dictionary<string, Spatial> deathPitMap;
 	private Spatial fightArea;
 	private Vector3 targetLastPosition;
 }

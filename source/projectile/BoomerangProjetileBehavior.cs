@@ -27,7 +27,7 @@ public class BoomerangProjetileBehavior : BaseAreaProjectileBehavior
 
 	protected override void Reposition()
 	{
-		if(repositionEnabled)
+		if(target != null && repositionEnabled)
 		{
 			Vector3 tp = target.GlobalTransform.origin;
 			Vector3 pp = enemyCharacter.Translation;
@@ -69,8 +69,11 @@ public class BoomerangProjetileBehavior : BaseAreaProjectileBehavior
 
 	private void DefineLimit()
 	{
-		float d = this.RandfRange(rng, moveToleranceRange.x, moveToleranceRange.y);
-		limit = target.GlobalTransform.origin + (direction * new Vector3(d, d, 0f));
+		if(target != null)
+		{
+			float d = this.RandfRange(rng, moveToleranceRange.x, moveToleranceRange.y);
+			limit = target.GlobalTransform.origin + (direction * new Vector3(d, d, 0f));
+		}
 	}
 
 	protected override void DecideWhatToDo()

@@ -3,7 +3,7 @@ using Godot;
 
 public class EnergySourceBoost : Node
 {
-	public bool Interact(Spatial playerCharacter, sbyte interaction)
+	public bool Interact(Spatial playerCharacter, int interaction)
 	{
 		if(!finished)
 		{

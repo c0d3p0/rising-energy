@@ -31,7 +31,7 @@ public class GameplayDataGUI : Node
 		string[] prefixes = new string[]{"Rank ", "Total Time: ", "Deaths: "};
 		string indexText;
 
-		for(byte id = 0; id < normalGameLabelListMap.Count; id++)
+		for(int id = 0; id < normalGameLabelListMap.Count; id++)
 		{
 			placeControl = normalGamePlaceControlMap[id];
 			indexText = id.ToString();
@@ -60,7 +60,7 @@ public class GameplayDataGUI : Node
 		string key = "playerScore";
 		string indexText;
 
-		for(byte id = 0; id < survivalGameLabelMap.Count; id++)
+		for(int id = 0; id < survivalGameLabelMap.Count; id++)
 		{
 			placeControl = survivalGamePlaceControlMap[id];
 			indexText = id.ToString();
@@ -89,11 +89,11 @@ public class GameplayDataGUI : Node
 	private void InitializeNormalGamePlaceControlMap()
 	{
 		Control placeControl;
-		byte id;
+		int id;
 
-		for(byte i = 1; i < normalGameControl.GetChildCount(); i++)
+		for(int i = 1; i < normalGameControl.GetChildCount(); i++)
 		{
-			id = (byte) (i - 1);
+			id = i - 1;
 			placeControl = normalGameControl.GetChild<Control>(i);
 			InitializeNormalGameLabelListMap(id, placeControl);
 			normalGamePlaceControlMap.Add(id, placeControl);
@@ -103,11 +103,11 @@ public class GameplayDataGUI : Node
 	private void InitializeSurvivalGamePlaceControlMap()
 	{
 		Control placeControl;
-		byte id;
+		int id;
 
-		for(byte i = 1; i < survivalGameControl.GetChildCount() - 1; i++)
+		for(int i = 1; i < survivalGameControl.GetChildCount() - 1; i++)
 		{
-			id = (byte) (i - 1);
+			id = (i - 1);
 			placeControl = survivalGameControl.GetChild<Control>(i);
 			survivalGameLabelMap.Add(id, placeControl.GetChild<Label>(
 					placeControl.GetChildCount() - 1));
@@ -115,7 +115,7 @@ public class GameplayDataGUI : Node
 		}
 	}
 
-	private void InitializeNormalGameLabelListMap(byte id, Control placeControl)
+	private void InitializeNormalGameLabelListMap(int id, Control placeControl)
 	{
 		Array<Label> labelList = new Array<Label>();
 		
@@ -127,10 +127,10 @@ public class GameplayDataGUI : Node
 
 	private void Initialize()
 	{
-		normalGameLabelListMap = new Dictionary<byte, Array<Label>>();
-		survivalGameLabelMap = new Dictionary<byte, Label>();
-		normalGamePlaceControlMap = new Dictionary<byte, Control>();
-		survivalGamePlaceControlMap = new Dictionary<byte, Control>();
+		normalGameLabelListMap = new Dictionary<int, Array<Label>>();
+		survivalGameLabelMap = new Dictionary<int, Label>();
+		normalGamePlaceControlMap = new Dictionary<int, Control>();
+		survivalGamePlaceControlMap = new Dictionary<int, Control>();
 		gameplayDataScreen = GetNode<Control>(gameplayDataScreenNP); 
 		normalGameControl = GetNode<Control>(normalGameControlNP);
 		survivalGameControl = GetNode<Control>(survivalGameControlNP);
@@ -158,10 +158,10 @@ public class GameplayDataGUI : Node
 	public NodePath survivalGameControlNP;
 
 
-	private Dictionary<byte, Control> normalGamePlaceControlMap;
-	private Dictionary<byte, Array<Label>> normalGameLabelListMap;
-	private Dictionary<byte, Control> survivalGamePlaceControlMap;
-	private Dictionary<byte, Label> survivalGameLabelMap;
+	private Dictionary<int, Control> normalGamePlaceControlMap;
+	private Dictionary<int, Array<Label>> normalGameLabelListMap;
+	private Dictionary<int, Control> survivalGamePlaceControlMap;
+	private Dictionary<int, Label> survivalGameLabelMap;
 	private Label normalGameNoDataLabel;
 	private Label survivalGameNoDataLabel;
 

@@ -4,7 +4,7 @@ using Godot;
 using Godot.Collections;
 
 
-// NOTE: Unused
+// TODO: Unused, REMOVE
 public class NodePreInstance : Node
 {
 	public void SetKinSpawnData(Node node, Dictionary paramMap)

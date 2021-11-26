@@ -151,7 +151,7 @@ public class TaskRunner : Node
 	private ST.ManualResetEvent manualResetEvent;
 	
 
-	private const byte REQUEST_FINISHED = 0;
-	private const byte REQUESTER = 1;
-	private const byte CALLBACK_METHOD = 2;
+	private const int REQUEST_FINISHED = 0;
+	private const int REQUESTER = 1;
+	private const int CALLBACK_METHOD = 2;
 }

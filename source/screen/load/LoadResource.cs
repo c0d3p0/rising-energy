@@ -22,30 +22,26 @@ public class LoadResource : Node
 						split[index].Split(".")[0], ResourceLoader.Load(it.Current));			
 			}
 
-			if(OS.IsDebugBuild())
-				GD.PushWarning("Resources stored inside GlobalResources!");
+			WriteDebugMessage("Resources stored inside GlobalResources!");
 		}
 
-		loaded = true;
+		preload.Visible = true;
+		preload.Connect(this.GetGDSignalTreeExited(),
+				this, nameof(HandleFinished));
 	}
 
 	private void HandleFinished()
 	{
-		if(loaded && splashScreenTimer.IsStopped())
-		{
-			if(OS.IsDebugBuild())
-				GD.PushWarning("Resources Loaded!");
-
-			nextNode.SetProcess(true);
-			SetProcess(false);
-		}
+		SetProcess(false);
+		nextNode.SetProcess(true);
+		WriteDebugMessage("Resources Loaded!");
 	}
 
 	private void Initialize()
 	{
 		globalResource = GetNode(globalResourceNodePath);
 		nextNode = GetNode(nextNodeNP);
-		splashScreenTimer = GetNode<Timer>(splashScreenTimerNP);
+		preload = GetNode<Spatial>(preloadNP);
 
 		Node globalData = GetNode(globalDataNodePath);
 		globalData.Call(this.GetMethodPut(), "scene_to_load",
@@ -69,9 +65,10 @@ public class LoadResource : Node
 		StartRequest();
 	}
 
-	public override void _Process(float delta)
+	private void WriteDebugMessage(string message)
 	{
-		HandleFinished();
+		if(OS.IsDebugBuild())
+			GD.PushWarning(message);				
 	}
 
 
@@ -94,7 +91,7 @@ public class LoadResource : Node
 	public NodePath nextNodeNP;
 
 	[Export]
-	public NodePath splashScreenTimerNP;
+	public NodePath preloadNP;
 
 	[Export]
 	public bool active = true;
@@ -102,6 +99,5 @@ public class LoadResource : Node
 
 	private Node globalResource;
 	private Node nextNode;
-	private Timer splashScreenTimer;
-	private bool loaded;
+	private Spatial preload;
 }

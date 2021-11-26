@@ -96,7 +96,7 @@ public class AirSpellerEnemyBehavior : BaseEnemyBehavior
 		base.Initialize();
 		projectileSpot = GetNode<Spatial>(projectileSpotNP);
 		spellTimer = GetNode<Timer>(spellTimerNP);
-		projectileAmount = (byte) this.RandiRange(rng,
+		projectileAmount = this.RandiRange(rng,
 				(int) projectileAmountRange.x, (int) projectileAmountRange.y);
 		spellTimer.Start(this.RandfRange(rng, spellTimeRange.x, spellTimeRange.y));
 	}
@@ -129,7 +129,7 @@ public class AirSpellerEnemyBehavior : BaseEnemyBehavior
 
 	private Timer spellTimer;
 	private Spatial projectileSpot;
-	private byte projectileAmount;
+	private int projectileAmount;
 
 	private Spatial currentProjectile;
 	private bool requestedProjectile;

@@ -19,7 +19,7 @@ public class EnemySpawer : Node
 					this.GetMethodOnKinDestroyed(), this.CreateSingleBind(e));
 			e.Connect(this.GetGDSignalReady(), e,
 					this.GetMethodTransitTo(), this.CreateSingleBind("spawn"));
-			activeEnemyMap.Add(e.GetInstanceId(), e);
+			activeEnemyMap.Add(e.GetInstanceId().ToString(), e);
 			currentEnemy = e;
 		}
 	}
@@ -39,19 +39,23 @@ public class EnemySpawer : Node
 	
 	public void AddEnemySpawnSpot(VisibilityNotifier spawnSpot)
 	{
-		if(!spawnSpotMap.ContainsKey(spawnSpot.GetInstanceId()))
-			spawnSpotMap.Add(spawnSpot.GetInstanceId(), spawnSpot);
+		string iid = spawnSpot.GetInstanceId().ToString();
+
+		if(!spawnSpotMap.ContainsKey(iid))
+			spawnSpotMap.Add(iid, spawnSpot);
 	}
 
 	public void RemoveEnemySpawnSpot(VisibilityNotifier spawnSpot)
 	{
-		if(spawnSpotMap.ContainsKey(spawnSpot.GetInstanceId()))
-			spawnSpotMap.Remove(spawnSpot.GetInstanceId());
+		string iid = spawnSpot.GetInstanceId().ToString();
+
+		if(spawnSpotMap.ContainsKey(iid))
+			spawnSpotMap.Remove(iid);
 	}
 
 	public virtual void OnKinDestroyed(Spatial enemy)
 	{
-		activeEnemyMap.Remove(enemy.GetInstanceId());
+		activeEnemyMap.Remove(enemy.GetInstanceId().ToString());
 	}
 
 	protected void TryToSpawnEnemy()
@@ -111,7 +115,7 @@ public class EnemySpawer : Node
 		VisibilityNotifier itSpot = null;
 		Vector2 closestDistance = new Vector2();
 		Vector2 itDistance;
-		SCG.IEnumerator<SCG.KeyValuePair<ulong, VisibilityNotifier>> it =
+		SCG.IEnumerator<SCG.KeyValuePair<string, VisibilityNotifier>> it =
 				spawnSpotMap.GetEnumerator();
 
 		if(it.MoveNext())
@@ -200,8 +204,8 @@ public class EnemySpawer : Node
 
 	protected void Initialize()
 	{
-		spawnSpotMap = new Dictionary<ulong, VisibilityNotifier>();
-		activeEnemyMap = new Dictionary<ulong, Spatial>();
+		spawnSpotMap = new Dictionary<string, VisibilityNotifier>();
+		activeEnemyMap = new Dictionary<string, Spatial>();
 		enemySpawnTimer = GetNode<Timer>(enemySpawnTimerNP);
 		rng = new RandomNumberGenerator();
 		enemySpawnTimer.WaitTime = this.RandfRange(rng,
@@ -282,8 +286,8 @@ public class EnemySpawer : Node
 	protected Array<string> airEnemyPrefabKeyList;
 	protected int maximumActiveEnemies = 3;
 	protected Timer enemySpawnTimer;
-	protected Dictionary<ulong, VisibilityNotifier> spawnSpotMap;
-	protected Dictionary<ulong, Spatial> activeEnemyMap;
+	protected Dictionary<string, VisibilityNotifier> spawnSpotMap;
+	protected Dictionary<string, Spatial> activeEnemyMap;
 	protected RandomNumberGenerator rng;
 	protected VisibilityNotifier closestSpawn;
 	protected Vector2 spawnRangeX;

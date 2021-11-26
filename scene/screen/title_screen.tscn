@@ -353,8 +353,8 @@ margin_left = 20.0
 margin_top = -200.0
 margin_right = 744.0
 margin_bottom = -41.0
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 0.8, 0.25098, 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Rising Energy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -451,7 +451,7 @@ margin_top = 320.0
 margin_right = 1180.0
 margin_bottom = 357.0
 custom_colors/font_color = Color( 1, 0.8, 0.25098, 1 )
-text = "Version 1.2"
+text = "Version 1.4"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -534,6 +534,7 @@ cheatCodeDataMap = {
 "nodefactory": [ "scene_to_load", "res://scene/test/node_factory_test_level.tscn" ],
 "testlevel": [ "scene_to_load", "res://scene/test/test_level.tscn" ]
 }
+
 [connection signal="visibility_changed" from="ContentControl" to="Source/TitleScreen" method="OnContentControlVisibilityChanged"]
 [connection signal="pressed" from="ContentControl/ActionControl/NewGameButton" to="Source/TitleScreen" method="OnNewGameButtonPressed"]
 [connection signal="pressed" from="ContentControl/ActionControl/SurvivalGameButton" to="Source/TitleScreen" method="OnSurvivalGameButtonPressed"]

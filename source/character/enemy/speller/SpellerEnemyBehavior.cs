@@ -11,7 +11,8 @@ public class SpellerEnemyBehavior : BaseEnemyBehavior
 			currentProjectile.Translation = projectileSpot.GlobalTransform.origin;
 			currentProjectile.Call(this.GetMethodSetDirection(), direction);
 			currentProjectile.Call(this.GetMethodTransitTo(), "spawn");
-			activeProjectileMap.Add(currentProjectile.GetInstanceId(), currentProjectile);
+			activeProjectileMap.Add(
+					currentProjectile.GetInstanceId().ToString(), currentProjectile);
 			currentProjectile = null;
 			requestedProjectile = false;
 		}
@@ -36,7 +37,7 @@ public class SpellerEnemyBehavior : BaseEnemyBehavior
 
 	public void OnKinDestroyed(Spatial projectile)
 	{
-		activeProjectileMap.Remove(projectile.GetInstanceId());
+		activeProjectileMap.Remove(projectile.GetInstanceId().ToString());
 	}
 
 	private void HandleSwitchSide()
@@ -136,7 +137,7 @@ public class SpellerEnemyBehavior : BaseEnemyBehavior
 		frontRayCast = GetNode<RayCast>(frontRayCastNP);
 		downRayCast = GetNode<RayCast>(downRayCastNP);
 		projectileSpot = GetNode<Spatial>(projectileSpotNP);
-		activeProjectileMap = new Dictionary<ulong, Spatial>();
+		activeProjectileMap = new Dictionary<string, Spatial>();
 	}
 
 	public override void _Ready()
@@ -179,5 +180,5 @@ public class SpellerEnemyBehavior : BaseEnemyBehavior
 	private Spatial projectileSpot;
 	private Spatial currentProjectile;
 	private bool requestedProjectile;
-	private Dictionary<ulong, Spatial> activeProjectileMap;
+	private Dictionary<string, Spatial> activeProjectileMap;
 }

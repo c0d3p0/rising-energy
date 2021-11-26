@@ -7,13 +7,16 @@ public class EnemyCharacterAction : BaseEnemyCharacterAction
 	public void Hit(Area attackerArea, Area victimArea, uint strikeId,
 			float damageTaken, float energyGiven)
 	{
-		if(!IsStrikeTaken(attackerArea.GetInstanceId(), strikeId))
+		string aaiid = attackerArea.GetInstanceId().ToString();
+		string sid = strikeId.ToString();
+
+		if(!IsStrikeTaken(aaiid, sid))
 		{
 			float dt = attackerArea.CollisionLayer == reducedDamageStrikeMask ?
 					damageTaken * damageReductionScale : damageTaken;
 			EmitSignal(this.GetSignalHealthChanged(), dt);
 			EmitSignal(this.GetSignalEnergyChanged(), energyGiven);
-			AddStrikeTaken(attackerArea.GetInstanceId(), strikeId);
+			AddStrikeTaken(aaiid, sid);
 			enemyCharacter.Call(this.GetMethodActivateInput(), false);
 
 			if(this.EmitSignal<bool>(this, this.GetSignalDead()))
@@ -23,19 +26,19 @@ public class EnemyCharacterAction : BaseEnemyCharacterAction
 		}
 	}
 
-	protected void AddStrikeTaken(ulong attackerInstanceId, uint strikeId)
+	protected void AddStrikeTaken(string attackerInstanceId, string strikeId)
 	{
 		strikeIdMap.Add(CreateStrikeData(attackerInstanceId, strikeId), null);
 	}
 
-	protected bool IsStrikeTaken(ulong attackerInstanceId, ulong strikeId)
+	protected bool IsStrikeTaken(string attackerInstanceId, string strikeId)
 	{
 		return strikeIdMap.ContainsKey(CreateStrikeData(attackerInstanceId, strikeId));
 	}
 
-	protected Array<ulong> CreateStrikeData(ulong attackerInstanceId, ulong strikeId)
+	protected Array<string> CreateStrikeData(string attackerInstanceId, string strikeId)
 	{
-		Array<ulong> strikeDataList = new Array<ulong>();
+		Array<string> strikeDataList = new Array<string>();
 		strikeDataList.Add(attackerInstanceId);
 		strikeDataList.Add(strikeId);
 		return strikeDataList;
@@ -44,7 +47,7 @@ public class EnemyCharacterAction : BaseEnemyCharacterAction
 	protected override void Initialize()
 	{
 		base.Initialize();
-		strikeIdMap = new Dictionary<Array<ulong>, object>();
+		strikeIdMap = new Dictionary<Array<string>, object>();
 	}
 
 
@@ -56,5 +59,5 @@ public class EnemyCharacterAction : BaseEnemyCharacterAction
 
 
 	// Used to prevent the same hit to be taken more than once.
-	protected Dictionary<Array<ulong>, object> strikeIdMap;
+	protected Dictionary<Array<string>, object> strikeIdMap;
 }

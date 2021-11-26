@@ -44,7 +44,7 @@ public abstract class BaseBossBehavior : BaseEnemyBehavior
 
 	public void OnKinDestroyed(Spatial kin)
 	{
-		activeKinMap.Remove(kin.GetInstanceId());
+		activeKinMap.Remove(kin.GetInstanceId().ToString());
 	}
 
 	protected void TryToRequestKin()
@@ -93,7 +93,7 @@ public abstract class BaseBossBehavior : BaseEnemyBehavior
 				kinSpawnPivot.y + kinSpawnRange.y);
 		currentKin.Translation = new Vector3(posX, posY, kinSpawnPivot.z);
 		currentKin.Call(this.GetMethodTransitTo(), "spawn");
-		activeKinMap.Add(currentKin.GetInstanceId(), currentKin);
+		activeKinMap.Add(currentKin.GetInstanceId().ToString(), currentKin);
 		currentKin = null;
 		requestedKin = false;
 	}
@@ -104,7 +104,7 @@ public abstract class BaseBossBehavior : BaseEnemyBehavior
 		currentKin.Call(this.GetMethodSetDirection(), direction);
 		currentKin.Call(this.GetMethodSetRepositionPivot(), kinSpawnPivot);
 		currentKin.Call(this.GetMethodTransitTo(), "spawn");
-		activeKinMap.Add(currentKin.GetInstanceId(), currentKin);
+		activeKinMap.Add(currentKin.GetInstanceId().ToString(), currentKin);
 		currentKin = null;
 		requestedKin = false;
 	}
@@ -124,7 +124,7 @@ public abstract class BaseBossBehavior : BaseEnemyBehavior
 				IsTargetInTheSameDirection() &&
 				this.RandiRange(rng, rngMinValue, rngMaxValue) <= spellTriggerRng)
 		{
-			kinId = (byte) this.RandiRange(rng, 0, kinKeys.Length - 1);
+			kinId = this.RandiRange(rng, 0, kinKeys.Length - 1);
 			return this.EmitSignal<bool>(this, this.GetSignalCanAttack(), kinKeys[kinId]);
 		}
 
@@ -180,7 +180,7 @@ public abstract class BaseBossBehavior : BaseEnemyBehavior
 		base.Initialize();
 		kinPrefabKeyMap = new Dictionary<string, object>();
 		projectilePrefabKeyMap = new Dictionary<string, object>();
-		activeKinMap = new Dictionary<ulong, Spatial>();
+		activeKinMap = new Dictionary<string, Spatial>();
 		projectileSpotMap = this.GetNodeMap<string, Spatial>(
 					this, projectileSpotNPMap);
 		InitializeKinData();
@@ -232,10 +232,10 @@ public abstract class BaseBossBehavior : BaseEnemyBehavior
 	protected Dictionary<string, Spatial> projectileSpotMap;
 	protected Dictionary<string, object> kinPrefabKeyMap;
 	protected Dictionary<string, object> projectilePrefabKeyMap;
-	protected Dictionary<ulong, Spatial> activeKinMap;
+	protected Dictionary<string, Spatial> activeKinMap;
 	protected string[] kinKeys;
 	protected Vector3 kinSpawnPivot;
-	protected byte kinId;
+	protected int kinId;
 	protected Spatial currentKin;
 	protected bool requestedKin;
 }

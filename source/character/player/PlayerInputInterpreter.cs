@@ -79,9 +79,9 @@ public class PlayerInputInterpreter : Node
 
 	private void ComputerActionInputs()
 	{
-		byte actionInputMask = (byte) (Input.IsActionPressed(inputAttack) ? ATTACK_MASK : 0);
-		actionInputMask |= (byte) (Input.IsActionPressed(inputJump) ? JUMP_MASK : 0);
-		actionInputMask |= (byte) (Input.IsActionPressed(inputBlock) ? BLOCK_MASK : 0);
+		int actionInputMask = (Input.IsActionPressed(inputAttack) ? ATTACK_MASK : 0);
+		actionInputMask |= (Input.IsActionPressed(inputJump) ? JUMP_MASK : 0);
+		actionInputMask |= (Input.IsActionPressed(inputBlock) ? BLOCK_MASK : 0);
 		currentActionInputMask = actionInputMask;
 		
 		while(actionInputBufferList.Count >= actionInputBufferLength)
@@ -93,14 +93,14 @@ public class PlayerInputInterpreter : Node
 
 	private void ComputeActionInputUnionMask()
 	{
-		SCG.IEnumerator<byte> it = actionInputBufferList.GetEnumerator();
+		SCG.IEnumerator<int> it = actionInputBufferList.GetEnumerator();
 		actionInputUnionMask = ATTACK_MASK | JUMP_MASK | BLOCK_MASK;
 
 		while(it.MoveNext())
 			actionInputUnionMask &= it.Current;
 	}
 
-	private bool IsActionInputPressed(byte actionInput)
+	private bool IsActionInputPressed(int actionInput)
 	{
 		return ((actionInput & actionInputUnionMask) == 0) &&
 				((actionInput & currentActionInputMask) == actionInput);
@@ -148,7 +148,7 @@ public class PlayerInputInterpreter : Node
 
 	private void Initialize()
 	{
-		actionInputBufferList = new Array<byte>();
+		actionInputBufferList = new Array<int>();
 		actionInputBufferList.Add(0);
 		Input.SetMouseMode(Input.MouseMode.Captured);
 		inputUp = GetFixedInputName(inputUp);
@@ -170,7 +170,7 @@ public class PlayerInputInterpreter : Node
 		InterpretInputs();
 	}
 
-	public byte PlayerIndex
+	public int PlayerIndex
 	{
 		set
 		{
@@ -180,14 +180,14 @@ public class PlayerInputInterpreter : Node
 
 
 	[Export]
-	private byte actionInputBufferLength = 5;
+	private int actionInputBufferLength = 5;
 
-	private byte playerIndex;
+	private int playerIndex;
 
 	private Vector3 direction;
-	private Array<byte> actionInputBufferList;
-	private byte currentActionInputMask;
-	private byte actionInputUnionMask;
+	private Array<int> actionInputBufferList;
+	private int currentActionInputMask;
+	private int actionInputUnionMask;
 
 	private string inputUp = "up";
 	private string inputDown = "down";
@@ -197,7 +197,7 @@ public class PlayerInputInterpreter : Node
 	private string inputJump = "jump";
 	private string inputBlock = "block";
 
-	private const byte ATTACK_MASK = 1;
-	private const byte JUMP_MASK = 2;
-	private const byte BLOCK_MASK = 4;
+	private const int ATTACK_MASK = 1;
+	private const int JUMP_MASK = 2;
+	private const int BLOCK_MASK = 4;
 }

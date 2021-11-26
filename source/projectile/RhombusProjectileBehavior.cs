@@ -54,8 +54,8 @@ public class RhombusProjectileBehavior : BaseEnemyBehavior
 		}	
 	}
 
-	private void SetCurrentDirections(sbyte a, sbyte b, sbyte c,
-			sbyte d, sbyte e, sbyte f)
+	private void SetCurrentDirections(int a, int b, int c,
+			int d, int e, int f)
 	{
 		currentDirections[0] = a;
 		currentDirections[1] = b;
@@ -87,7 +87,7 @@ public class RhombusProjectileBehavior : BaseEnemyBehavior
 	{
 		base.Initialize();
 		currentIndex = -1;
-		currentDirections = new sbyte[6];
+		currentDirections = new int[6];
 	}
 
 	public override void _Ready() {}
@@ -112,8 +112,8 @@ public class RhombusProjectileBehavior : BaseEnemyBehavior
 
 
 	private float currentStepOriginY;
-	private sbyte currentIndex;
+	private int currentIndex;
 	private Vector3 desiredDirection;
 
-	private sbyte[] currentDirections;
+	private int[] currentDirections;
 }

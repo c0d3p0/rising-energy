@@ -49,7 +49,7 @@ public class TeleportBossBehavior : BaseBossBehavior
 	{
 		teleportPoints = new Vector3[teleportPointList.Count];
 		SCG.IEnumerator<Vector3> it = teleportPointList.GetEnumerator();
-		byte index = 0;
+		int index = 0;
 
 		while(it.MoveNext())
 			teleportPoints[index++] = kinSpawnPivot + it.Current;

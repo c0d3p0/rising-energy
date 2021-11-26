@@ -138,8 +138,8 @@ public class LevelProgress : Node
 
 		if(totalTime >= 0)
 		{
-			if((long) (OS.GetTicksMsec() - startTime) < (long) int.MaxValue)
-				totalTime += ((int) OS.GetTicksMsec()) - startTime;
+			if((OS.GetTicksMsec() - startTime) < int.MaxValue)
+				totalTime += (int) (OS.GetTicksMsec() - startTime);
 			else
 				totalTime = int.MinValue;
 				
@@ -205,7 +205,7 @@ public class LevelProgress : Node
 	private void InitializeLevel()
 	{
 		nodeFactory.Call(this.GetMethodSetActive(), true);
-		startTime = (int) OS.GetTicksMsec();
+		startTime = OS.GetTicksMsec();
 		globalData.Call(this.GetMethodPut(), "scene_to_load",
 				this.GetScenePath(currentLevelScenePath));
 		currentLevelProgress = this.Call<int>(globalData, this.GetMethodGet(),
@@ -349,7 +349,7 @@ public class LevelProgress : Node
 	private Dictionary<int, Vector3> checkpointPositionMap;
 
 	private int currentLevelProgress;
-	private int startTime;
+	private ulong startTime;
 
 	private Spatial currentBoss;
 	private Spatial currentFightArea;

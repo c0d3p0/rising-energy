@@ -15,8 +15,8 @@ public class NodeFactory : Node
 {
 	public void Get(string key, Godot.Object signalData)
 	{
-		PackedScene ps = this.Call<PackedScene>(globalResource,
-						this.GetMethodGet(), key);
+		PackedScene ps = this.Call<PackedScene>(
+				globalResource, this.GetMethodGet(), key);
 
 		if(ps != null)
 		{
@@ -65,11 +65,8 @@ public class NodeFactory : Node
 			}
 			catch(System.Exception e)
 			{
-				if(OS.IsDebugBuild())
-				{
-					GD.PushWarning(this.CreateString("Problems trying to dispose a Node: ",
-							e.Message, e.StackTrace));
-				}
+				WriteDebugMessage(this.CreateString(
+						"Problems trying to dispose a Node: ", e.Message, e.StackTrace));
 			}
 		}
 	}
@@ -111,12 +108,9 @@ public class NodeFactory : Node
 					}
 					else
 					{
-						if(OS.IsDebugBuild())
-						{
-							GD.PushWarning(this.CreateString(
-									"GlobalResources couldn't return a PackedScene with the key nodeKey '",
-									nodeKey, "'"));
-						}
+						WriteDebugMessage(this.CreateString("GlobalResources ", 
+								"couldn't return a PackedScene with the key nodeKey '",
+								nodeKey, "'"));
 					}
 				}
 			}
@@ -124,9 +118,8 @@ public class NodeFactory : Node
 			{
 				if(n != null && !nodeInstanceMap.ContainsKey(n.GetInstanceId()))
 					n.QueueFree();
-					
-				if(OS.IsDebugBuild())
-					GD.PushWarning(GetErrorMessage(r, callbackMethod, nodeKey, e));
+				
+				WriteDebugMessage(GetErrorMessage(r, callbackMethod, nodeKey, e));
 			}
 		}	
 	}
@@ -227,6 +220,12 @@ public class NodeFactory : Node
 			manualResetEvent.Reset();
 	}
 
+	private void WriteDebugMessage(string message)
+	{
+		if(OS.IsDebugBuild())
+			GD.PushWarning(message);				
+	}
+
 
 	[Export]
 	public string globalResourceNodePath = "/root/GlobalResource";
@@ -240,9 +239,9 @@ public class NodeFactory : Node
 	private SCG.Dictionary<ulong, Node> nodeInstanceMap;
 	
 
-	private const byte REQUEST_FINISHED = 0;
-	private const byte REQUESTER = 1;
-	private const byte NODE_KEY = 2;
-	private const byte CALLBACK_METHOD = 3;
-	private const byte PARAM_MAP = 4;
+	private const int REQUEST_FINISHED = 0;
+	private const int REQUESTER = 1;
+	private const int NODE_KEY = 2;
+	private const int CALLBACK_METHOD = 3;
+	private const int PARAM_MAP = 4;
 }
